@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>二分图+生成树构造：留下一条边：AT_arc119_d | zhangxixi的博客</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="二分图+生成树构造：留下一条边：AT_arc119_d 原创 于 2024-01-02 15:20:40 发布 · 公开 · 846 阅读 · 18 · 22 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;zhangt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二分图+生成树构造：留下一条边：AT_arc119_d">
+<meta property="og:url" content="http://example.com/2024/01/02/CSDN-OI%E2%80%94%E2%80%94316_%E4%BA%8C%E5%88%86%E5%9B%BE+%E7%94%9F%E6%88%90%E6%A0%91%E6%9E%84%E9%80%A0%EF%BC%9A%E7%95%99%E4%B8%8B%E4%B8%80%E6%9D%A1%E8%BE%B9%EF%BC%9AAT_arc119_d/index.html">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="二分图+生成树构造：留下一条边：AT_arc119_d 原创 于 2024-01-02 15:20:40 发布 · 公开 · 846 阅读 · 18 · 22 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;zhangt">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-02T07:20:40.000Z">
+<meta property="article:modified_time" content="2026-06-30T09:53:52.195Z">
+<meta property="article:author" content="zhangxixi">
+<meta property="article:tag" content="二分图">
+<meta property="article:tag" content="构造">
+<meta property="article:tag" content="生成树">
+<meta name="twitter:card" content="summary"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "二分图+生成树构造：留下一条边：AT_arc119_d",
+  "url": "http://example.com/2024/01/02/CSDN-OI%E2%80%94%E2%80%94316_%E4%BA%8C%E5%88%86%E5%9B%BE+%E7%94%9F%E6%88%90%E6%A0%91%E6%9E%84%E9%80%A0%EF%BC%9A%E7%95%99%E4%B8%8B%E4%B8%80%E6%9D%A1%E8%BE%B9%EF%BC%9AAT_arc119_d/",
+  "image": "",
+  "datePublished": "2024-01-02T07:20:40.000Z",
+  "dateModified": "2026-06-30T09:53:52.195Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "zhangxixi",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2024/01/02/CSDN-OI%E2%80%94%E2%80%94316_%E4%BA%8C%E5%88%86%E5%9B%BE+%E7%94%9F%E6%88%90%E6%A0%91%E6%9E%84%E9%80%A0%EF%BC%9A%E7%95%99%E4%B8%8B%E4%B8%80%E6%9D%A1%E8%BE%B9%EF%BC%9AAT_arc119_d/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '二分图+生成树构造：留下一条边：AT_arc119_d',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">423</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">362</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">二分图+生成树构造：留下一条边：AT_arc119_d</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">二分图+生成树构造：留下一条边：AT_arc119_d</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-02T07:20:40.000Z" title="发表于 2024-01-02 15:20:40">2024-01-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-06-30T09:53:52.195Z" title="更新于 2026-06-30 17:53:52">2026-06-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="二分图-生成树构造：留下一条边：AT-arc119-d"><a href="#二分图-生成树构造：留下一条边：AT-arc119-d" class="headerlink" title="二分图+生成树构造：留下一条边：AT_arc119_d"></a>二分图+生成树构造：留下一条边：AT_arc119_d</h1><blockquote>
+<p>原创 于 2024-01-02 15:20:40 发布 · 公开 · 846 阅读 · 18 · 22 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑<br>文章链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangtingxiqwq/article/details/135341327">https://blog.csdn.net/zhangtingxiqwq/article/details/135341327</a></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/AT_arc119_d">https://www.luogu.com.cn/problem/AT_arc119_d</a> </p>
+<p>首先，我们可以发现，同行和同列的红色格子会相互影响。因此我们可以考虑连边。这里我们容易想到两种连边方式：</p>
+<ol>
+<li><p>红色格子之间连边。</p>
+</li>
+<li><p>位于 $(i,j)$ 的红色格子，把第 $i$ 行和第 $j$ 列连边。</p>
+</li>
+</ol>
+<p>考虑第一种连边方式。一条边的意义是什么？一行还是一列？如果是表示一行或者一列，那么这行有多个红色格子又要如何体现？我们发现这种连边方式无法解释。</p>
+<p>因此我们考虑另一种连边方式：行向列连边。这种连边就容易理解多了。一条边代表一个红点，它的意义是可以用它来消去两边其中一个点，也就是消去一行和一列。但这个东西看起来又有点怪怪的，因为与我们还要考虑红色点之间会互相影响。我们再重新考虑一下。一条边能去删一个点的前提条件应该是左右两边的点都还没被删。</p>
+<p>这里其实我们可以换一种理解方式，我们删除一个边和对应的点，同时删除这个点连出去的所有边。</p>
+<p>通过这种理解方式，我们就可以确定删红点数量的上界。我们这里对连通块进行分块考虑。对于一个 $k$ 个点的连通块，我们最多可以操作 $k-1$ 次。每次操作可以删掉一行和一列。也就是这个连通块恰好剩下一行或者一列没有被删。</p>
+<p>显然对于每个连通块都满足。但对于剩下的，我们是删行还是删列呢？我们可以先把其他删掉，然后剩下 $W$ 行 $H$ 列。如果行多，那么我们删列优。如果列多，我们删行更优。</p>
+<p>因此我们现在求出了最优答案了。显然考虑方案。</p>
+<p>观察上面那个形式像什么。 $k$ 个点， $k-1$ 条边，这形成了一棵树。同时这棵树一个是一个二分图。我们从叶子开始每条边删掉下面那个点即可。最后留下一对白点和黑点，我们就按照上面贪心的方法来删。</p>
+<p>至于如何得到一棵合法的生成树，根据上面的构造方案， 显然每个生成树都是合法的。因此问题得以解决。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 2510</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span> &#123;</span><br><span class="line">	<span class="type">int</span> x; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;p; </span><br><span class="line">&#125;;</span><br><span class="line">vector&lt;node&gt;G[N&lt;&lt;<span class="number">1</span>]; </span><br><span class="line"><span class="type">int</span> f[N&lt;&lt;<span class="number">1</span>]; </span><br><span class="line"><span class="type">char</span> str[N], c; </span><br><span class="line"><span class="type">int</span> n, m, i, j, k, T, ans, tot, H, W;</span><br><span class="line">pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;V[N&lt;&lt;<span class="number">1</span>]; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fa</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(f[x] == x) <span class="keyword">return</span> x; </span><br><span class="line">	<span class="keyword">return</span> f[x] = <span class="built_in">fa</span>(f[x]); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add_edge</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> v)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">fa</span>(u) == <span class="built_in">fa</span>(v)) <span class="keyword">return</span> ; </span><br><span class="line">	f[<span class="built_in">fa</span>(u)] = <span class="built_in">fa</span>(v); ++ans; </span><br><span class="line">	G[u].<span class="built_in">pb</span>(&#123;v, &#123;i, j&#125;&#125;); G[v].<span class="built_in">pb</span>(&#123;u, &#123;i, j&#125;&#125;); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> t : G[x]) <span class="keyword">if</span>(t.x != fa) &#123;</span><br><span class="line">		<span class="type">int</span> y = t.x, flg=<span class="number">0</span>; </span><br><span class="line">		<span class="keyword">if</span>(!V[tot].fi) V[tot] = &#123;t.p.fi, t.p.se&#125;, flg=<span class="number">1</span>; </span><br><span class="line">		<span class="built_in">dfs</span>(y, x); </span><br><span class="line">		<span class="keyword">if</span>(flg) <span class="keyword">continue</span>; </span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(y&lt;=n) <span class="built_in">printf</span>(<span class="string">&quot;X %d %d\n&quot;</span>, t.p.fi, t.p.se), --H; </span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;Y %d %d\n&quot;</span>, t.p.fi, t.p.se), --W; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	n=H=<span class="built_in">read</span>(); m=W=<span class="built_in">read</span>(); </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n+m; ++i) f[i]=i; </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; ++i) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, str<span class="number">+1</span>); </span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>; j&lt;=m; ++j) </span><br><span class="line">			<span class="keyword">if</span>(str[j] == <span class="string">&#x27;R&#x27;</span>) <span class="built_in">add_edge</span>(i, j + n); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans); </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n+m; ++i) <span class="keyword">if</span>(<span class="built_in">fa</span>(i) == i &amp;&amp; G[i].<span class="built_in">size</span>()) &#123;</span><br><span class="line">		++tot; <span class="built_in">dfs</span>(i, <span class="number">0</span>); </span><br><span class="line">	&#125;</span><br><span class="line">	c = (W &lt; H ? <span class="string">&#x27;Y&#x27;</span> : <span class="string">&#x27;X&#x27;</span>); </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=tot; ++i) <span class="built_in">printf</span>(<span class="string">&quot;%c %d %d\n&quot;</span>, c, V[i].fi, V[i].se); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">zhangxixi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/01/02/CSDN-OI%E2%80%94%E2%80%94316_%E4%BA%8C%E5%88%86%E5%9B%BE+%E7%94%9F%E6%88%90%E6%A0%91%E6%9E%84%E9%80%A0%EF%BC%9A%E7%95%99%E4%B8%8B%E4%B8%80%E6%9D%A1%E8%BE%B9%EF%BC%9AAT_arc119_d/">http://example.com/2024/01/02/CSDN-OI%E2%80%94%E2%80%94316_%E4%BA%8C%E5%88%86%E5%9B%BE+%E7%94%9F%E6%88%90%E6%A0%91%E6%9E%84%E9%80%A0%EF%BC%9A%E7%95%99%E4%B8%8B%E4%B8%80%E6%9D%A1%E8%BE%B9%EF%BC%9AAT_arc119_d/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">zhangxixi的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/">二分图</a><a class="post-meta__tags" href="/tags/%E7%94%9F%E6%88%90%E6%A0%91/">生成树</a><a class="post-meta__tags" href="/tags/%E6%9E%84%E9%80%A0/">构造</a></div><div class="post-share"><div class="social-share" data-image="/" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/01/03/CSDN-OI%E2%80%94%E2%80%94317_%E6%A0%91%E5%89%96+set%EF%BC%88%E5%8A%A8%E6%80%81%E7%BB%B4%E6%8A%A4%E6%A0%91%E4%B8%8A%E7%9B%B4%E5%BE%84%EF%BC%88%E5%BD%A2%E6%80%81%E4%B8%8D%E5%8F%98%EF%BC%8C%E7%82%B9%E6%9D%83%E5%8F%98%EF%BC%89%EF%BC%89%EF%BC%9A0103A/" title="树剖+set（动态维护树上直径（形态不变，点权变））：0103A"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">树剖+set（动态维护树上直径（形态不变，点权变））：0103A</div></div><div class="info-2"><div class="info-item-1">树剖+set（动态维护树上直径（形态不变，点权变））：0103A 原创 于 2024-01-03 20:41:34 发布 · 公开 · 453 阅读 · 6 · 9 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/135372558  http://cplusoj.com/d/senior/p/SS20240103A    显然可以点分树，然后被卡空间  任何一条树上的链都可以这样表示：   因此我们可以把所有轻儿子挂在重链上，然后求重链的最大子段和 因为我们要支持删除，同时树上每个节点要求连出去轻儿子中的最大，因此我们树上每个节点拿个set维护所有轻儿子 12345pre coding at 14:46st coding at 15:09st bugging at 17:08passing at 20:27fn blogging at 20...</div></div></div></a><a class="pagination-related" href="/2024/01/02/CSDN-OI%E2%80%94%E2%80%94315_reverse%E5%90%8E%E5%B7%AE%E5%88%86%E5%BE%AA%E7%8E%AF%E5%90%8C%E6%9E%84%EF%BC%9ACF1045B/" title="reverse后差分循环同构：CF1045B"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">reverse后差分循环同构：CF1045B</div></div><div class="info-2"><div class="info-item-1">reverse后差分循环同构：CF1045B 原创 于 2024-01-02 09:57:01 发布 · 公开 · 392 阅读 · 6 · 7 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/135333770  https://www.luogu.com.cn/problem/CF1045B  分析题目可得，一个 $x$ 不能被凑出的充要条件是：  $\forall a \in A$ ， $\exist, a’\in A$ ，满足： $a+a’\equiv b\pmod M$   显然 $a$ 变大时， $a’$ 会变小。对 $a$ 排序，然后reverse为 $a’$ 。如果 $a$ 和 $a’$ 差分数组循环同构，则我们找出来一个 $x$  12345pre coding at st coding at 9:29st bugging ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2023/11/12/CSDN-OI%E2%80%94%E2%80%94222_%E5%88%86%E6%B2%BB%E6%9E%84%E9%80%A0%EF%BC%9AP9384/" title="分治构造：P9384"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-12</div><div class="info-item-2">分治构造：P9384</div></div><div class="info-2"><div class="info-item-1">分治构造：P9384 原创 于 2023-11-12 21:30:38 发布 · 公开 · 178 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/134366235  https://www.luogu.com.cn/problem/P9384  分治构造是很常见的一种构造 不能有三元环和五元环，考虑推广出去，也就是不能有奇环 那如果我们让每种颜色都为二分图，那么必然满足 考虑 0-9 总共10个数字，数据范围1000，考虑 $2^{10}&gt;1000$ ，考虑 $log$ 级复杂度的做法 假如我们采用分治构造，左区间所有点向右区间所有点连边，边为分治层数。显然对于每种颜色都是个二分图，满足题意 </div></div></div></a><a class="pagination-related" href="/2023/09/12/CSDN-OI%E2%80%94%E2%80%94073_%E7%94%9F%E6%88%90%E6%A0%91%E3%80%81Prufer%E5%BA%8F%E5%88%97%E7%9A%84%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98%EF%BC%9A0912T1/" title="生成树、Prufer序列的计数问题：0912T1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-12</div><div class="info-item-2">生成树、Prufer序列的计数问题：0912T1</div></div><div class="info-2"><div class="info-item-1">生成树、Prufer序列的计数问题：0912T1 原创 于 2023-09-12 19:31:04 发布 · 公开 · 181 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132839073  看到生成树计数，很容易想到生成树计数 然后发现每个点有度数限制，我们可以先考虑枚举每个点的度数（也可以是Prufer 序列中的出现次数） 假设出现次数为 $a$ ，可以得出其生成树方案为 $\frac{n!}{\prod {(a_i-1)!}}$  然后后面是个组合数的形式，然后需要推一堆式子  巧拆阶乘换成组合数形式  多把无用项移到外面  熟练使用范德蒙德卷积   </div></div></div></a><a class="pagination-related" href="/2023/10/25/CSDN-OI%E2%80%94%E2%80%94189_%E6%8E%92%E5%88%97%E7%BD%AE%E6%8D%A2%E7%8E%AF%E4%B8%8A%E6%9E%84%E9%80%A0%EF%BC%9A1025T3/" title="排列置换环上构造：1025T3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-25</div><div class="info-item-2">排列置换环上构造：1025T3</div></div><div class="info-2"><div class="info-item-1">排列置换环上构造：1025T3 原创 于 2023-10-25 15:07:49 发布 · 公开 · 263 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/134035399  http://cplusoj.com/d/senior/p/SS231025C  排列构造的新知识：上置换环！ 我们发现朴素做法是 $n^2$ 级别的，但数据范围希望我们是 $\frac {n^2}2$ 级别的。我们发现我们暴力复制序列显得非常蠢，因为很多序列前后我们其实可以考虑合并。 至于怎么合并？我们直接维护指针。然后我们现在要“运”东西到相应位置。而“运”东西的期望步数是 $\frac n 2$ 的。 然后这个证明直接上置换环。我们相当于一个个置换环来搞。而置换环个数的期望是 $\ln$ 个. 1234567891011121314151...</div></div></div></a><a class="pagination-related" href="/2023/11/02/CSDN-OI%E2%80%94%E2%80%94198_%E6%95%B0%E5%AD%A6+%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA+%E6%9E%84%E9%80%A0%EF%BC%9A1102T3/" title="数学+分类讨论+构造：1102T3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-02</div><div class="info-item-2">数学+分类讨论+构造：1102T3</div></div><div class="info-2"><div class="info-item-1">数学+分类讨论+构造：1102T3 原创 于 2023-11-02 21:13:59 发布 · 公开 · 159 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/134191475  http://cplusoj.com/d/senior/p/SS231102C  首先可以通过枚举逆序对点的贡献推出无解情况为 $n \bmod 4 &gt; 1$  然后构造可以按 $n\bmod 3$ 进行分类 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687...</div></div></div></a><a class="pagination-related" href="/2023/11/16/CSDN-OI%E2%80%94%E2%80%94231_%E7%94%A8%E6%AC%A7%E6%8B%89%E8%B7%AF%E5%BE%84%E5%88%A4%E6%96%AD%E5%9B%BE%E5%90%8C%E6%9E%84%E6%8E%A8%E5%87%BAreverse%E5%90%88%E6%B3%95%E6%80%A7%EF%BC%9A1116T4/" title="用欧拉路径判断图同构推出reverse合法性：1116T4"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-16</div><div class="info-item-2">用欧拉路径判断图同构推出reverse合法性：1116T4</div></div><div class="info-2"><div class="info-item-1">用欧拉路径判断图同构推出reverse合法性：1116T4 原创 于 2023-11-16 16:11:12 发布 · 公开 · 249 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/134444131  http://cplusoj.com/d/senior/p/SS231116D  假设我们要把 $a$ 变成 $b$ ，我们在 $a_i$ 和 $a_{i+1}$ 之间连边， $b$ 同理，则 $a$ 能变成 $b$ 的充要条件是两图 $A,B$ 同构。 必要性显然，因为无论如何reverse都不会改变图的形态。我们现在要证明的是图的任意欧拉路径都可以通过reverse构造出来。 考虑第一个 $a_i\neq b_i$ 的位置 $i$ ，设 $x&#x3D;b_i,y&#x3D;b_{i-1}&#x3D;a_{i-1...</div></div></div></a><a class="pagination-related" href="/2023/10/15/CSDN-OI%E2%80%94%E2%80%94169_%E9%99%90%E5%88%B6%E6%9D%A1%E4%BB%B6%E5%8A%A0%E5%85%A5%E6%9E%84%E9%80%A0%E8%8C%83%E5%9B%B4%EF%BC%9AGym%20-%20102832L/" title="限制条件加入构造范围：Gym - 102832L"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-15</div><div class="info-item-2">限制条件加入构造范围：Gym - 102832L</div></div><div class="info-2"><div class="info-item-1">限制条件加入构造范围：Gym - 102832L 原创 于 2023-10-15 12:26:25 发布 · 公开 · 203 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/133840957  https://vjudge.net/contest/587311#problem/D  场上列方程求首项，假设是全部加1，然后一部分（后缀）减去 $k+1$ ，就用到了以下两个条件：   但在这两种情况符合情况下，  这个条件不一定满足 然后就不会了  我们为什么不能把第三个条件也加入到方程里呢？ 我们发现用减的方法很容易弄成负数，我们就考虑加上 $k+1$  考虑一个首项凑出的最小序列长什么样：   然后这个东西如果已经比 $S$ 大，则不合法。否则我们一段一段加就行 </div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">zhangxixi</div><div class="author-info-description">你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">423</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">362</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhangxixi2008"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is zhangxixi's Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E5%9B%BE-%E7%94%9F%E6%88%90%E6%A0%91%E6%9E%84%E9%80%A0%EF%BC%9A%E7%95%99%E4%B8%8B%E4%B8%80%E6%9D%A1%E8%BE%B9%EF%BC%9AAT-arc119-d"><span class="toc-text">二分图+生成树构造：留下一条边：AT_arc119_d</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN%E6%96%87%E7%AB%A0%E6%90%AC%E8%BF%90%E8%87%B3Hexo/" title="CSDN文章搬运至Hexo">CSDN文章搬运至Hexo</a><time datetime="2026-06-30T09:35:04.000Z" title="发表于 2026-06-30 17:35:04">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94121_%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%88%E5%A5%87%E5%81%B6%E8%80%83%E8%99%91%E6%B3%95%EF%BC%89+%E8%AE%A1%E6%95%B0+DP%EF%BC%88%E5%88%A4%E5%AE%9A%E8%BD%ACdp%EF%BC%89%EF%BC%9ACF838C/" title="博弈论（奇偶考虑法）+计数+DP（判定转dp）：CF838C">博弈论（奇偶考虑法）+计数+DP（判定转dp）：CF838C</a><time datetime="2026-06-30T08:31:23.000Z" title="发表于 2026-06-30 16:31:23">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94177_set%E7%BB%B4%E6%8A%A4%E8%BF%9E%E7%BB%AD%E6%AE%B5+%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%9A1018T2/" title="set维护连续段+线段树：1018T2">set维护连续段+线段树：1018T2</a><time datetime="2026-06-30T08:31:12.000Z" title="发表于 2026-06-30 16:31:12">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94342_8.20T2%20%E9%BB%91%E8%89%B2%E5%A4%A7%E6%A1%A5%EF%BC%88%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86%E3%80%81%E6%9D%8E%E8%B6%85%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%89/" title="8.20T2 黑色大桥（函数处理、李超线段树）">8.20T2 黑色大桥（函数处理、李超线段树）</a><time datetime="2026-06-30T08:29:40.000Z" title="发表于 2026-06-30 16:29:40">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/" title="油猴脚本不能使用？那是因为没有打开开发者模式！">油猴脚本不能使用？那是因为没有打开开发者模式！</a><time datetime="2026-06-30T07:38:52.000Z" title="发表于 2026-06-30 15:38:52">2026-06-30</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

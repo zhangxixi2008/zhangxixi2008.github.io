@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>运用时间线段树对树上问题进行离线处理 | zhangxixi的博客</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="运用时间线段树对树上问题进行离线处理 原创 于 2023-08-24 12:20:09 发布 · 公开 · 126 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;zhangtingxiqwq&#x2F;ar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="运用时间线段树对树上问题进行离线处理">
+<meta property="og:url" content="http://example.com/2023/08/24/CSDN-OI%E2%80%94%E2%80%94032_%E8%BF%90%E7%94%A8%E6%97%B6%E9%97%B4%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AF%B9%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E8%BF%9B%E8%A1%8C%E7%A6%BB%E7%BA%BF%E5%A4%84%E7%90%86/index.html">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="运用时间线段树对树上问题进行离线处理 原创 于 2023-08-24 12:20:09 发布 · 公开 · 126 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;zhangtingxiqwq&#x2F;ar">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-24T04:20:09.000Z">
+<meta property="article:modified_time" content="2026-06-30T09:53:51.866Z">
+<meta property="article:author" content="zhangxixi">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "运用时间线段树对树上问题进行离线处理",
+  "url": "http://example.com/2023/08/24/CSDN-OI%E2%80%94%E2%80%94032_%E8%BF%90%E7%94%A8%E6%97%B6%E9%97%B4%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AF%B9%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E8%BF%9B%E8%A1%8C%E7%A6%BB%E7%BA%BF%E5%A4%84%E7%90%86/",
+  "image": "",
+  "datePublished": "2023-08-24T04:20:09.000Z",
+  "dateModified": "2026-06-30T09:53:51.866Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "zhangxixi",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2023/08/24/CSDN-OI%E2%80%94%E2%80%94032_%E8%BF%90%E7%94%A8%E6%97%B6%E9%97%B4%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AF%B9%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E8%BF%9B%E8%A1%8C%E7%A6%BB%E7%BA%BF%E5%A4%84%E7%90%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '运用时间线段树对树上问题进行离线处理',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">423</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">362</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">运用时间线段树对树上问题进行离线处理</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">运用时间线段树对树上问题进行离线处理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-24T04:20:09.000Z" title="发表于 2023-08-24 12:20:09">2023-08-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-06-30T09:53:51.866Z" title="更新于 2026-06-30 17:53:51">2026-06-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">166</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="运用时间线段树对树上问题进行离线处理"><a href="#运用时间线段树对树上问题进行离线处理" class="headerlink" title="运用时间线段树对树上问题进行离线处理"></a>运用时间线段树对树上问题进行离线处理</h1><blockquote>
+<p>原创 于 2023-08-24 12:20:09 发布 · 公开 · 126 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑<br>文章链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangtingxiqwq/article/details/132471723">https://blog.csdn.net/zhangtingxiqwq/article/details/132471723</a></p>
+</blockquote>
+<h2 id="运用时间线段树对树上问题进行离线处理-1"><a href="#运用时间线段树对树上问题进行离线处理-1" class="headerlink" title="运用时间线段树对树上问题进行离线处理"></a>运用时间线段树对树上问题进行离线处理</h2><p>对于树上问题，有时候离线处理更优，但要维护操作之间的有序性，可以考虑用时间线段树维护。</p>
+<p>例题：CF383C</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">zhangxixi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/08/24/CSDN-OI%E2%80%94%E2%80%94032_%E8%BF%90%E7%94%A8%E6%97%B6%E9%97%B4%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AF%B9%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E8%BF%9B%E8%A1%8C%E7%A6%BB%E7%BA%BF%E5%A4%84%E7%90%86/">http://example.com/2023/08/24/CSDN-OI%E2%80%94%E2%80%94032_%E8%BF%90%E7%94%A8%E6%97%B6%E9%97%B4%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AF%B9%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E8%BF%9B%E8%A1%8C%E7%A6%BB%E7%BA%BF%E5%A4%84%E7%90%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">zhangxixi的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></div><div class="post-share"><div class="social-share" data-image="/" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/08/24/CSDN-OI%E2%80%94%E2%80%94033_%E5%AF%B9%E4%BA%8Edp%E9%A2%9C%E8%89%B2%E7%B1%BB%E9%97%AE%E9%A2%98%E7%9A%84%E5%88%87%E6%8D%A2%E6%96%B9%E6%B3%95%EF%BC%9AP9561/" title="对于dp颜色类问题的切换方法：P9561"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">对于dp颜色类问题的切换方法：P9561</div></div><div class="info-2"><div class="info-item-1">对于dp颜色类问题的切换方法：P9561 原创 于 2023-08-24 12:21:05 发布 · 公开 · 115 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132471731  对于dp颜色类问题的切换方法两种颜色为例，一般情况下 $dp[i][0]$ 可以由 $dp[j][0&#x2F;1]$ 在某些情况下转移 但从0到0的过程中，对于 $j$ 前的1，可能 $j$ 满足，但 $i$ 不满足 此时可以考虑0只从1转移，1只从0转移，对于新的0，我们除了统计当前dp值，我们还要维护之前1的转移值 常用于线段+颜色类dp问题 题：P9561 </div></div></div></a><a class="pagination-related" href="/2023/08/24/CSDN-OI%E2%80%94%E2%80%94031_%E9%80%9A%E8%BF%87%E5%A5%87%E5%81%B6%E6%80%A7%E6%9D%A5%E6%9E%84%E9%80%A0%EF%BC%9AP9575/" title="通过奇偶性来构造：P9575"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">通过奇偶性来构造：P9575</div></div><div class="info-2"><div class="info-item-1">通过奇偶性来构造：P9575 原创 于 2023-08-24 12:19:10 发布 · 公开 · 125 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132471708   对于没有思路的，和数有关的构造题，可以考虑2的情况，也就是用奇偶来构造 构造时需要考虑：  如何用奇偶构造合法  非法是否能用奇偶反证    例题：P9575考虑到 $x$ 不定，可以转化为奇偶问题。 发现在奇偶情况下容易构造，且非法可以奇偶反证。 </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2023/08/12/CSDN-OI%E2%80%94%E2%80%94024_%E7%BA%BF%E6%AE%B5%E6%A0%91%E8%AE%B0%E5%BD%95%E7%B3%BB%E6%95%B0%E7%BB%B4%E6%8A%A4%E5%8A%A8%E6%80%81%E4%BF%A1%E6%81%AF%EF%BC%9AZR2612/" title="线段树记录系数维护动态信息：ZR2612"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-12</div><div class="info-item-2">线段树记录系数维护动态信息：ZR2612</div></div><div class="info-2"><div class="info-item-1">线段树记录系数维护动态信息：ZR2612 原创 已于 2023-08-12 23:18:15 修改 · 公开 · 87 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132255084  http://zhengruioi.com/problem/2612  $a_i+b_j\ge 0$ &#x3D;&gt; $a_i\ge -b_j$  因此考虑把 $b$ 去负， $a_i\ge b_j$  也就是一个区间 $a$ 最小值大于 $b$ 最大值 套路1 （大小关系转不同） 对于此类只需判断不同东西的大小关系（即没有反向 $b_j\ge a_i$ 的关系），可以通过排序和离散化是的 $a,b$ 互不相同  套路2 （大小贡献转值域分治）化为互不相同后，相当于求一类大于另一类的总数，支持修改  显然可以把区间数对应到值域上...</div></div></div></a><a class="pagination-related" href="/2023/08/08/CSDN-OI%E2%80%94%E2%80%94016_%E9%80%9A%E8%BF%87%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BB%B4%E6%8A%A4%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E7%BB%93%E6%9E%9C%EF%BC%9AZR2609/" title="通过数据结构维护数论分块结果：ZR2609"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-08</div><div class="info-item-2">通过数据结构维护数论分块结果：ZR2609</div></div><div class="info-2"><div class="info-item-1">通过数据结构维护数论分块结果：ZR2609 原创 于 2023-08-08 22:46:25 发布 · 公开 · 80 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132178041  http://zhengruioi.com/problem/2609  对于  这类东西，应该是自然反应，枚举个 $a_i$ ，然后数论分块，这里是 $O(n\sqrt n)$  然后会在纸上推一大轮（结论忘了）推出 $x$ 的合法区间 $[l,r]$ ，然后就是判断 $a_j\in[l,r]$  这个时候应该去想题目是不是有什么性质，一般可以从最简单的贪心角度考虑，显然越前越好  对于区间询问一对数，当枚举一个数时，另一个数如果方向确定应该越接近越好  然后很显然一个思路，对值域拿个数据结构维护，这样是 $O(n\sqrt n\lo...</div></div></div></a><a class="pagination-related" href="/2023/08/06/CSDN-OI%E2%80%94%E2%80%94012_cqd%E5%88%86%E6%B2%BB%E6%80%9D%E6%83%B3/" title="cqd分治思想"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-06</div><div class="info-item-2">cqd分治思想</div></div><div class="info-2"><div class="info-item-1">cqd分治思想 原创 于 2023-08-06 20:33:04 发布 · 公开 · 160 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132135114  https://www.luogu.com.cn/problem/P3810  常用于维护三维偏序问题，对于相等的情况处理我感觉不太好，之前ABC打cdq被制裁了 三维，第一维显然排序 分治，所以第二维很明显了。因为只需要考虑左对右的贡献，所以黑白染色一下，再按b排即可。然后黑白一个对应查询一个对应修改操作。 最后一个拿树状数组 </div></div></div></a><a class="pagination-related" href="/2023/08/05/CSDN-OI%E2%80%94%E2%80%94008_%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%88%86%E6%B2%BB/" title="线段树分治"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-05</div><div class="info-item-2">线段树分治</div></div><div class="info-2"><div class="info-item-1">线段树分治 原创 于 2023-08-05 23:51:09 发布 · 公开 · 108 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132126153  https://www.luogu.com.cn/problem/P5787  理解：  操作离线  用时间线段树维护  整体统计答案，进入到某个节点加入，离开时撤销  可以用可撤销数据结构维护（可能可以可持久化或LCT维护？以后再学）   </div></div></div></a><a class="pagination-related" href="/2023/08/10/CSDN-OI%E2%80%94%E2%80%94022_%E9%A2%9C%E8%89%B2%E7%B1%BB%E9%97%AE%E9%A2%98%E4%B8%8E%E5%88%86%E6%B2%BB%EF%BC%9AP7215/" title="颜色类问题与分治：P7215"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-10</div><div class="info-item-2">颜色类问题与分治：P7215</div></div><div class="info-2"><div class="info-item-1">颜色类问题与分治：P7215 原创 于 2023-08-10 23:26:19 发布 · 公开 · 77 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132221132  https://www.luogu.com.cn/problem/P7215  化为点分治后，把原问题变成钦定一个点必选的问题  转化这一步是点分治维护颜色类题目的一个性质，如果某种颜色外面有，就会在外面被考虑，不需要在此层对朴素分治也有启发，对于在大区间统计了的答案，就不需要在小区间统计了  考虑在钦定一个点必选时，怎么做，首先把它定义为根。 把每种颜色丢入一个队列里，然后暴力往上跳，如果这个点已经被访问过，说明之前已经全部被访问过，不用再跳了。 访问过程中继续记录新的颜色。   </div></div></div></a><a class="pagination-related" href="/2023/08/25/CSDN-OI%E2%80%94%E2%80%94035_%E6%A0%91%E5%A5%97%E6%A0%91%E5%B0%8F%E7%BB%93/" title="树套树小结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-25</div><div class="info-item-2">树套树小结</div></div><div class="info-2"><div class="info-item-1">树套树小结 原创 于 2023-08-25 18:43:47 发布 · 公开 · 179 阅读 · 1 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132501426  树状数组套权值线段树，实现过程类似主席树，采用动态开点实现 https://www.luogu.com.cn/problem/P3380  树状数组部分  线段树部分  </div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">zhangxixi</div><div class="author-info-description">你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">423</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">362</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhangxixi2008"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is zhangxixi's Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E7%94%A8%E6%97%B6%E9%97%B4%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AF%B9%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E8%BF%9B%E8%A1%8C%E7%A6%BB%E7%BA%BF%E5%A4%84%E7%90%86"><span class="toc-text">运用时间线段树对树上问题进行离线处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%94%A8%E6%97%B6%E9%97%B4%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%AF%B9%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E8%BF%9B%E8%A1%8C%E7%A6%BB%E7%BA%BF%E5%A4%84%E7%90%86-1"><span class="toc-text">运用时间线段树对树上问题进行离线处理</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN%E6%96%87%E7%AB%A0%E6%90%AC%E8%BF%90%E8%87%B3Hexo/" title="CSDN文章搬运至Hexo">CSDN文章搬运至Hexo</a><time datetime="2026-06-30T09:35:04.000Z" title="发表于 2026-06-30 17:35:04">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94121_%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%88%E5%A5%87%E5%81%B6%E8%80%83%E8%99%91%E6%B3%95%EF%BC%89+%E8%AE%A1%E6%95%B0+DP%EF%BC%88%E5%88%A4%E5%AE%9A%E8%BD%ACdp%EF%BC%89%EF%BC%9ACF838C/" title="博弈论（奇偶考虑法）+计数+DP（判定转dp）：CF838C">博弈论（奇偶考虑法）+计数+DP（判定转dp）：CF838C</a><time datetime="2026-06-30T08:31:23.000Z" title="发表于 2026-06-30 16:31:23">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94177_set%E7%BB%B4%E6%8A%A4%E8%BF%9E%E7%BB%AD%E6%AE%B5+%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%9A1018T2/" title="set维护连续段+线段树：1018T2">set维护连续段+线段树：1018T2</a><time datetime="2026-06-30T08:31:12.000Z" title="发表于 2026-06-30 16:31:12">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94342_8.20T2%20%E9%BB%91%E8%89%B2%E5%A4%A7%E6%A1%A5%EF%BC%88%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86%E3%80%81%E6%9D%8E%E8%B6%85%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%89/" title="8.20T2 黑色大桥（函数处理、李超线段树）">8.20T2 黑色大桥（函数处理、李超线段树）</a><time datetime="2026-06-30T08:29:40.000Z" title="发表于 2026-06-30 16:29:40">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/" title="油猴脚本不能使用？那是因为没有打开开发者模式！">油猴脚本不能使用？那是因为没有打开开发者模式！</a><time datetime="2026-06-30T07:38:52.000Z" title="发表于 2026-06-30 15:38:52">2026-06-30</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>atcoder库中类欧（类欧几里得算法）floor_sum用法 | zhangxixi的博客</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="atcoder库中类欧（类欧几里得算法）floor_sum用法 原创 于 2023-09-05 22:11:16 发布 · 公开 · 650 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;zhan">
+<meta property="og:type" content="article">
+<meta property="og:title" content="atcoder库中类欧（类欧几里得算法）floor_sum用法">
+<meta property="og:url" content="http://example.com/2023/09/05/CSDN-OI%E2%80%94%E2%80%94060_atcoder%E5%BA%93%E4%B8%AD%E7%B1%BB%E6%AC%A7%EF%BC%88%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95%EF%BC%89floor_sum%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="atcoder库中类欧（类欧几里得算法）floor_sum用法 原创 于 2023-09-05 22:11:16 发布 · 公开 · 650 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;zhan">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-05T14:11:16.000Z">
+<meta property="article:modified_time" content="2026-06-30T09:53:51.901Z">
+<meta property="article:author" content="zhangxixi">
+<meta property="article:tag" content="atcoder库">
+<meta property="article:tag" content="floor_sum">
+<meta property="article:tag" content="库">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="类欧">
+<meta name="twitter:card" content="summary"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "atcoder库中类欧（类欧几里得算法）floor_sum用法",
+  "url": "http://example.com/2023/09/05/CSDN-OI%E2%80%94%E2%80%94060_atcoder%E5%BA%93%E4%B8%AD%E7%B1%BB%E6%AC%A7%EF%BC%88%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95%EF%BC%89floor_sum%E7%94%A8%E6%B3%95/",
+  "image": "",
+  "datePublished": "2023-09-05T14:11:16.000Z",
+  "dateModified": "2026-06-30T09:53:51.901Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "zhangxixi",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2023/09/05/CSDN-OI%E2%80%94%E2%80%94060_atcoder%E5%BA%93%E4%B8%AD%E7%B1%BB%E6%AC%A7%EF%BC%88%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95%EF%BC%89floor_sum%E7%94%A8%E6%B3%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'atcoder库中类欧（类欧几里得算法）floor_sum用法',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">423</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">362</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">atcoder库中类欧（类欧几里得算法）floor_sum用法</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">atcoder库中类欧（类欧几里得算法）floor_sum用法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-05T14:11:16.000Z" title="发表于 2023-09-05 22:11:16">2023-09-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-06-30T09:53:51.901Z" title="更新于 2026-06-30 17:53:51">2026-06-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">140</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="atcoder库中类欧（类欧几里得算法）floor-sum用法"><a href="#atcoder库中类欧（类欧几里得算法）floor-sum用法" class="headerlink" title="atcoder库中类欧（类欧几里得算法）floor_sum用法"></a>atcoder库中类欧（类欧几里得算法）floor_sum用法</h1><blockquote>
+<p>原创 于 2023-09-05 22:11:16 发布 · 公开 · 650 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑<br>文章链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangtingxiqwq/article/details/132701473">https://blog.csdn.net/zhangtingxiqwq/article/details/132701473</a></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/practice2/tasks/practice2_c">https://atcoder.jp/contests/practice2/tasks/practice2_c</a> </p>
+<p>求 $\sum_{i &#x3D; 0}^{N - 1} floor((A \times i + B) &#x2F; m)$ </p>
+<p>直接使用即可：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ans=<span class="built_in">floor_sum</span>(n, m, A, B); <span class="comment">//注意顺序</span></span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">zhangxixi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/09/05/CSDN-OI%E2%80%94%E2%80%94060_atcoder%E5%BA%93%E4%B8%AD%E7%B1%BB%E6%AC%A7%EF%BC%88%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95%EF%BC%89floor_sum%E7%94%A8%E6%B3%95/">http://example.com/2023/09/05/CSDN-OI%E2%80%94%E2%80%94060_atcoder%E5%BA%93%E4%B8%AD%E7%B1%BB%E6%AC%A7%EF%BC%88%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95%EF%BC%89floor_sum%E7%94%A8%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">zhangxixi的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><a class="post-meta__tags" href="/tags/atcoder%E5%BA%93/">atcoder库</a><a class="post-meta__tags" href="/tags/%E5%BA%93/">库</a><a class="post-meta__tags" href="/tags/%E7%B1%BB%E6%AC%A7/">类欧</a><a class="post-meta__tags" href="/tags/floor-sum/">floor_sum</a></div><div class="post-share"><div class="social-share" data-image="/" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/09/06/CSDN-OI%E2%80%94%E2%80%94061_%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" title="类欧几里得算法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">类欧几里得算法</div></div><div class="info-2"><div class="info-item-1">类欧几里得算法 原创 于 2023-09-06 16:49:39 发布 · 公开 · 224 阅读 · 3 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132718582  求 $\sum\limits_{i&#x3D;0}^{n}\lfloor \frac{ai+b}{c} \rfloor$推式子步骤： 分类讨论$a&#x3D;0$是个最简式子 $b\ge c$ 或 $a\ge c$由 $f(a\bmod c,b\bmod c,c,n)$ 转移过来，拆一下括号就行 其他情况设 $M&#x3D;\lfloor\frac{an+b}{c}\rfloor$  $\lfloor \frac{ai+b}{c} \rfloor&#x3D;\sum_{j&#x3D;1}^M [j\le\lfloor\frac{ai+b}{c}\rfloor]...</div></div></div></a><a class="pagination-related" href="/2023/09/05/CSDN-OI%E2%80%94%E2%80%94059_%E5%9F%BA%E7%8E%AF%E6%A0%91%E5%92%8C%E7%82%B9%E5%BA%A6%E6%95%B0%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%A1%E6%95%B0%EF%BC%9ACF1863G/" title="基环树和点度数相关的计数：CF1863G"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">基环树和点度数相关的计数：CF1863G</div></div><div class="info-2"><div class="info-item-1">基环树和点度数相关的计数：CF1863G 原创 于 2023-09-05 17:23:22 发布 · 公开 · 350 阅读 · 3 · 1 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132696642  https://codeforces.com/contest/1863/problem/G  首先建图，然后分析出交换在图上的变化，发现每条点最多只有一个入边标粗，求最终形态。 首先可以猜答案为 $\prod_{v}(\mathrm{in}_v + 1)$ ，但是环上会有不合法的和重复的。   发现以下情况会重复：   总共有 $\sum_{i&#x3D;1}^k\mathrm{in}{c_i}$ 种，重复有 $\sum{i&#x3D;1}^k\mathrm{in}{c_i}-1$ 种，加上之前不合法的有 $\sum{i&#x3D;1...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2023/08/24/CSDN-OI%E2%80%94%E2%80%94034_%CE%BC%5E2%E7%9A%84%E6%A0%B9%E5%8F%B7%E6%9A%B4%E5%8A%9B%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/" title="μ^2的根号暴力计算方法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-24</div><div class="info-item-2">μ^2的根号暴力计算方法</div></div><div class="info-2"><div class="info-item-1">μ^2的根号暴力计算方法 原创 于 2023-08-24 12:57:16 发布 · 公开 · 156 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132386010  上结论：  左边式子的本质就是 $n$ 以内有多少个数没有平方因子 然后我们枚举所有平方因子 $i^2$ ，包含它的有 $\Large\frac {n}{i^2}$ 个 右边本质是一个容斥，首先所有数都有平方因子 $1^2$ ，然后类似 $2^2,3^2$ 这类要减掉，有些重复减的要加上，例如 $6^2$ 。而像 $4^2,9^2$ 的 $\mu (i)&#x3D;0$ ，所以不会被统计 </div></div></div></a><a class="pagination-related" href="/2023/08/10/CSDN-OI%E2%80%94%E2%80%94017_%E6%8A%8A%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6%E8%BD%AC%E4%B8%BA%E4%B8%8D%E7%AD%89%E5%BC%8F%EF%BC%9ACF1394C/" title="把约束条件转为不等式：CF1394C"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-10</div><div class="info-item-2">把约束条件转为不等式：CF1394C</div></div><div class="info-2"><div class="info-item-1">把约束条件转为不等式：CF1394C 原创 于 2023-08-10 16:10:42 发布 · 公开 · 150 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132212342  https://www.luogu.com.cn/problem/CF1394C  当时对于同号和异号的情况进行分类讨论，一个转化为±条件，一个转化为max条件。 由于分类讨论而且约束条件种类不同，导致不能整体判断。 而解题的关键在于把这些约束条件转化为不等式条件，化为不等式后有些时候发现不完整（就是计数里漏的情况），所以只需要写成判断所有约束条件同时满足即可。   </div></div></div></a><a class="pagination-related" href="/2023/09/16/CSDN-OI%E2%80%94%E2%80%94087_atcoder%E5%BA%93%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C%E6%B5%81%E7%94%A8%E6%B3%95/" title="atcoder库中的网络流用法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-16</div><div class="info-item-2">atcoder库中的网络流用法</div></div><div class="info-2"><div class="info-item-1">atcoder库中的网络流用法 原创 已于 2023-09-16 22:02:18 修改 · 公开 · 459 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132643984  头文件： 12#include&lt;atcoder/all&gt;using namespace atcoder;   定义： 1mf_graph&lt;int&gt;G(N); //N为边数  连边： 1G.add_edge(u,v,w); //u-&gt;v容量为w  最大流： 1int maxflow = G.flow(S,T,1e9); //从S流向T，初始流量为1e9  如果本地调试，可以使用以下代码： 1234567891011121314151617181920212223242526272829303132333435363...</div></div></div></a><a class="pagination-related" href="/2023/09/10/CSDN-OI%E2%80%94%E2%80%94064_%E7%B1%BB%E6%AC%A7%E7%AC%94%E8%AE%B0%E5%AD%98%E6%A1%A3/" title="类欧笔记存档"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-10</div><div class="info-item-2">类欧笔记存档</div></div><div class="info-2"><div class="info-item-1">类欧笔记存档 原创 于 2023-09-10 15:58:46 发布 · 公开 · 215 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132792181  电子版： https://blog.csdn.net/zhangtingxiqwq/article/details/132718582          </div></div></div></a><a class="pagination-related" href="/2023/11/07/CSDN-OI%E2%80%94%E2%80%94214_%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/" title="矩阵树定理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-07</div><div class="info-item-2">矩阵树定理</div></div><div class="info-2"><div class="info-item-1">矩阵树定理 原创 已于 2023-11-07 20:17:18 修改 · 公开 · 240 阅读 · 1 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132152078  启蒙： http://zhengruioi.com/contest/1416 T1，T2的10分暴力（后面是论文科技，不搞了） https://www.luogu.com.cn/problem/P6178  $O(n^3)$ 解决无向图生成树计数问题。 行列式 交换两行，行列式变号  一行整体加上 $k$ 倍另一行，行列式符号不变  行列式如果只有其中对角线非0，那么它的值就是对角线上值的乘积  矩阵树定理好像要求余子式，至于为啥oi不用管，记结论就行   构造构造一个度数矩阵， $f[x][x]$ 表示 $x$ 的度数（外向树为出度，内向树为入度）， $g[x...</div></div></div></a><a class="pagination-related" href="/2023/09/06/CSDN-OI%E2%80%94%E2%80%94061_%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" title="类欧几里得算法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-06</div><div class="info-item-2">类欧几里得算法</div></div><div class="info-2"><div class="info-item-1">类欧几里得算法 原创 于 2023-09-06 16:49:39 发布 · 公开 · 224 阅读 · 3 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132718582  求 $\sum\limits_{i&#x3D;0}^{n}\lfloor \frac{ai+b}{c} \rfloor$推式子步骤： 分类讨论$a&#x3D;0$是个最简式子 $b\ge c$ 或 $a\ge c$由 $f(a\bmod c,b\bmod c,c,n)$ 转移过来，拆一下括号就行 其他情况设 $M&#x3D;\lfloor\frac{an+b}{c}\rfloor$  $\lfloor \frac{ai+b}{c} \rfloor&#x3D;\sum_{j&#x3D;1}^M [j\le\lfloor\frac{ai+b}{c}\rfloor]...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">zhangxixi</div><div class="author-info-description">你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">423</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">362</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhangxixi2008"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is zhangxixi's Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#atcoder%E5%BA%93%E4%B8%AD%E7%B1%BB%E6%AC%A7%EF%BC%88%E7%B1%BB%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95%EF%BC%89floor-sum%E7%94%A8%E6%B3%95"><span class="toc-text">atcoder库中类欧（类欧几里得算法）floor_sum用法</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN%E6%96%87%E7%AB%A0%E6%90%AC%E8%BF%90%E8%87%B3Hexo/" title="CSDN文章搬运至Hexo">CSDN文章搬运至Hexo</a><time datetime="2026-06-30T09:35:04.000Z" title="发表于 2026-06-30 17:35:04">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94121_%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%88%E5%A5%87%E5%81%B6%E8%80%83%E8%99%91%E6%B3%95%EF%BC%89+%E8%AE%A1%E6%95%B0+DP%EF%BC%88%E5%88%A4%E5%AE%9A%E8%BD%ACdp%EF%BC%89%EF%BC%9ACF838C/" title="博弈论（奇偶考虑法）+计数+DP（判定转dp）：CF838C">博弈论（奇偶考虑法）+计数+DP（判定转dp）：CF838C</a><time datetime="2026-06-30T08:31:23.000Z" title="发表于 2026-06-30 16:31:23">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94177_set%E7%BB%B4%E6%8A%A4%E8%BF%9E%E7%BB%AD%E6%AE%B5+%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%9A1018T2/" title="set维护连续段+线段树：1018T2">set维护连续段+线段树：1018T2</a><time datetime="2026-06-30T08:31:12.000Z" title="发表于 2026-06-30 16:31:12">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94342_8.20T2%20%E9%BB%91%E8%89%B2%E5%A4%A7%E6%A1%A5%EF%BC%88%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86%E3%80%81%E6%9D%8E%E8%B6%85%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%89/" title="8.20T2 黑色大桥（函数处理、李超线段树）">8.20T2 黑色大桥（函数处理、李超线段树）</a><time datetime="2026-06-30T08:29:40.000Z" title="发表于 2026-06-30 16:29:40">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/" title="油猴脚本不能使用？那是因为没有打开开发者模式！">油猴脚本不能使用？那是因为没有打开开发者模式！</a><time datetime="2026-06-30T07:38:52.000Z" title="发表于 2026-06-30 15:38:52">2026-06-30</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

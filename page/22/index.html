@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>zhangxixi的博客 - 你好啊！</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）">
+<meta property="og:type" content="website">
+<meta property="og:title" content="zhangxixi的博客">
+<meta property="og:url" content="http://example.com/page/22/index.html">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="zhangxixi">
+<meta name="twitter:card" content="summary"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/page/22/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'zhangxixi的博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">423</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">362</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">zhangxixi的博客</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/08/CSDN-OI%E2%80%94%E2%80%94216_%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%95%B0%E2%80%94%E2%80%94%E8%80%83%E8%99%91%E5%BE%AA%E7%8E%AF%E8%8A%82%EF%BC%9A1108T3/" title="字符串数数——考虑循环节：1108T3">字符串数数——考虑循环节：1108T3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-08T10:16:22.000Z" title="发表于 2023-11-08 18:16:22">2023-11-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%9C%9F%E6%9C%9B/">期望</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%A6%82%E7%8E%87/">概率</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%BE%AA%E7%8E%AF%E8%8A%82/">循环节</a></span></div><div class="content">字符串数数——考虑循环节：1108T3 原创 于 2023-11-08 18:16:22 发布 · 公开 · 158 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/134295576  http://47.92.197.167:5283/contest/428/problem/3  一个字符串的最小表示法每个位置的概率只和其 最短 循环节有关。 假设循环节长为 $d$ ，则前面每个位置是开头的概率为 $\dfrac 1 d$  我们可以先预处理一个 $g_i$ ，表示长为 $i$ 的字符串没有循环节的方案数。 然后对于每个串，我们枚举其约数 $j$ ，表示循环节长度为 $j$ 。前面 $j$ 个位置都有 $\dfrac 1 j\times \dfrac {g_j}{26^{a_i}}$ 的期望。 对于询问两个相邻的串，...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/07/CSDN-OI%E2%80%94%E2%80%94215_%E8%B4%AA%E5%BF%83%E8%BD%ACDP%EF%BC%9AAGC022E/" title="贪心转DP：AGC022E">贪心转DP：AGC022E</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-07T12:30:56.000Z" title="发表于 2023-11-07 20:30:56">2023-11-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a></span></div><div class="content">贪心转DP：AGC022E 原创 已于 2023-11-07 20:30:56 修改 · 公开 · 214 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132152603  upd on 11.7 : 1的个数维护2个即可  https://www.luogu.com.cn/problem/AT_agc022_e  考虑如何选取是最优的，显然是000变0，110和010都是同时消掉01 观察此性质，可以发现0最多不会同时出现3个。对于第2种方法，在入0的时候我们不能确定是否还有连续0，但入1的时候可以确定前面没有连续0，所以在1的时候来维护000是可以的。 这个过程中1要么进来，要么进来之前被消掉，所以在此过程中1的个数不减。 所以考虑维护1的个数和0的个数，而1的个数最多是3个。 这是一个朴素的贪心思路，然后抓住1...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/07/CSDN-OI%E2%80%94%E2%80%94214_%E7%9F%A9%E9%98%B5%E6%A0%91%E5%AE%9A%E7%90%86/" title="矩阵树定理">矩阵树定理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-07T12:17:18.000Z" title="发表于 2023-11-07 20:17:18">2023-11-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%9F%A9%E9%98%B5/">矩阵</a></span></div><div class="content">矩阵树定理 原创 已于 2023-11-07 20:17:18 修改 · 公开 · 240 阅读 · 1 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132152078  启蒙： http://zhengruioi.com/contest/1416 T1，T2的10分暴力（后面是论文科技，不搞了） https://www.luogu.com.cn/problem/P6178  $O(n^3)$ 解决无向图生成树计数问题。 行列式 交换两行，行列式变号  一行整体加上 $k$ 倍另一行，行列式符号不变  行列式如果只有其中对角线非0，那么它的值就是对角线上值的乘积  矩阵树定理好像要求余子式，至于为啥oi不用管，记结论就行   构造构造一个度数矩阵， $f[x][x]$ 表示 $x$ 的度数（外向树为出度，内向树为入度）， $g[x...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/07/CSDN-OI%E2%80%94%E2%80%94213_%E4%B8%8D%E5%AE%8C%E5%85%A8%E8%80%83%E8%99%91%E6%9E%84%E9%80%A0+dp%E4%B8%8E%E6%9E%84%E9%80%A0%EF%BC%9A1107T2/" title="不完全考虑构造+dp与构造：1107T2">不完全考虑构造+dp与构造：1107T2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-07T12:04:33.000Z" title="发表于 2023-11-07 20:04:33">2023-11-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/dp/">dp</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%9E%84%E9%80%A0/">构造</a></span></div><div class="content">不完全考虑构造+dp与构造：1107T2 原创 已于 2023-11-07 20:04:33 修改 · 公开 · 117 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/134274865  http://cplusoj.com/d/senior/p/SS231107B  发现reverse操作会对一堆数进行修改，但如果我们只关注其中一些数呢？ 假设我们已经构造好 $[1,i-1]$ ，我们现在尝试构造 $[i,n]$ ，我们可操作的范围是在 $[i-1,n]$  假设 $i$ 在 $pos_i$ ，我们其实要在一个长为 $n-i+1$ 的序列上把位置 $pos_i-i+2$ 移到位置2，这个东西很dp。于是我们就设 $dp(x,y)$ 表示长为 $x$ ，从 $y$ 移到2的最小步数。 注意这个dp不一定需要最优的策略...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/07/CSDN-OI%E2%80%94%E2%80%94212_%E6%A8%A1%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%B5%81%E4%B9%8Bdp%E7%B1%BB%EF%BC%9A1107T3/" title="模拟网络流之dp类：1107T3">模拟网络流之dp类：1107T3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-07T12:04:02.000Z" title="发表于 2023-11-07 20:04:02">2023-11-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%A8%A1%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%B5%81/">模拟网络流</a></span></div><div class="content">模拟网络流之dp类：1107T3 原创 于 2023-11-07 20:04:02 发布 · 公开 · 361 阅读 · 3 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/134275008  http://cplusoj.com/d/senior/p/SS231107C  可以发现是求第 $i$ 层到第 $j$ 层的最大流。 同样先转成最小割，显然割点比个边优。然后我们可以利用状压dp来求。 $f(i,j,s)$ 表示在第 $i$ 层，还可以割 $j$ 条边，这层还存活的点集为 $s$ ，最快在哪里就流不动了。 我们先假设一条不割从上一层转移。然后我们枚举割哪条从同层转移。 1234567891011121314151617181920212223242526272829303132333435363738394041424344...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/07/CSDN-OI%E2%80%94%E2%80%94211_%E8%80%B3%E5%88%86%E8%A7%A3%E4%B8%8E%E5%8F%8C%E6%9E%81%E5%AE%9A%E5%90%91/" title="耳分解与双极定向">耳分解与双极定向</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-07T00:48:06.000Z" title="发表于 2023-11-07 08:48:06">2023-11-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a></span></div><div class="content">耳分解与双极定向 原创 已于 2023-11-07 08:48:06 修改 · 公开 · 464 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132112802  耳分解对于无向图中的任意边双和有向图中的任意强联通都可以按照此方法构造：  $S&#x3D;{u}$  每次找 $S$ 的两个元素 $u,v$ （可相同），找一条 不经过 $S$ 的路径 ，并把路劲上的所有点加入 $S$     可以拿来dp，来构造某种条件的边双。 常用的状态设计 $f(S)$ ，然后枚举 $T$ 为 $S$ 补集的子集。再枚举 $u,v\in S$ 。这种是 $O(3^n\times n^2)$ 。 部分题目可以： $f(S,i,j)$ 当前在 $i$ 目标点为 $j$ ，然后转移可以枚举 $j$ 或者是不在 $S$ 中的点。 $O(2...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/06/CSDN-OI%E2%80%94%E2%80%94210_%E4%B8%8A%E4%B8%8B%E7%95%8C%E7%BD%91%E7%BB%9C%E6%B5%81%E5%B0%8F%E7%BB%93/" title="上下界网络流小结">上下界网络流小结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-06T13:24:16.000Z" title="发表于 2023-11-06 21:24:16">2023-11-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C/">网络</a></span></div><div class="content">上下界网络流小结 原创 已于 2023-11-06 21:24:16 修改 · 公开 · 134 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132093889   正式请看：https://oi-wiki.org/graph/flow/bound/ 无源汇上下界可行流新建源汇 $S,T$ ，若 $a\to b$ 有 $[c,d]$ 。网络流中上界肯定满足。 我们变成：  $S\to b,c$  $a\to T,c$  $a\to b,c-d$   因为我们求的是可行流。若 $a$ 能流 $c$ 到 $b$ ，则 $b$ 必然可以流 $c$ 回 $a$ 。前两天边就是为了实现这个判断的过程。最后一条是上界的限制。 有源汇上下界可行流发现源点和汇点为特殊点，因为他们流入流量不等于流出流量。 所以 $T\to S, [0...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/06/CSDN-OI%E2%80%94%E2%80%94209_%E5%81%8F%E5%BA%8F%E5%85%B3%E7%B3%BB%E7%94%A8%E5%88%86%E6%B2%BB%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE%EF%BC%9AARC165F/" title="偏序关系用分治优化建图：ARC165F">偏序关系用分治优化建图：ARC165F</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-06T11:56:26.000Z" title="发表于 2023-11-06 19:56:26">2023-11-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">拓扑排序</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%88%86%E6%B2%BB/">分治</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE/">优化建图</a></span></div><div class="content">偏序关系用分治优化建图：ARC165F 原创 于 2023-11-06 19:56:26 发布 · 公开 · 247 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/134253598  https://atcoder.jp/contests/arc165/tasks/arc165_f  首先可以建图，然后变成求字典序最小的的拓扑排序 然后发现这样复杂度会炸，观察连边的条件是什么：  $l_i&lt;l_j$  $r_i&lt;r_j$   这是个二维偏序问题，我们考虑用分治来解决 我们按 $l$ 排序，本区间内再按 $r$ 排序：   复杂度 $O(n\log^2n)$  12345678910111213141516171819202122232425262728293031323334353637383940414...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/06/CSDN-OI%E2%80%94%E2%80%94208_%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91%E8%BD%AC%E5%8C%96%E5%8C%BA%E9%97%B4%EF%BC%88%E5%AF%B9%E4%BA%8E%E5%A4%9A%E5%8C%BA%E9%97%B4%E7%B1%BB%E9%97%AE%E9%A2%98%EF%BC%89+%E6%89%AB%E6%8F%8F%E7%BA%BF%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%BB%B4%E6%8A%A4%EF%BC%9A1031T3/" title="珂朵莉树转化区间（对于多区间类问题）+扫描线线段树维护：1031T3">珂朵莉树转化区间（对于多区间类问题）+扫描线线段树维护：1031T3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-06T08:36:28.000Z" title="发表于 2023-11-06 16:36:28">2023-11-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/">扫描线</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/">珂朵莉树</a></span></div><div class="content">珂朵莉树转化区间（对于多区间类问题）+扫描线线段树维护：1031T3 原创 于 2023-11-06 16:36:28 发布 · 公开 · 374 阅读 · 3 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/134249552  http://cplusoj.com/d/senior/p/SS231031C  珂朵莉树有个很好的性质：  任意时刻，所有区间都是不交的  所以我们可以把所有区间先拿珂朵莉树变成一堆小区间，每个区间有个存活时间 $[t_1,t_2]$  考虑这个区间意义。他会在 $l\in[1,t1],r\in[t1,t2]$ 的判断区间贡献 $len$  考虑回到询问区间。我们把这两种区间放在一起扫描线，然后推下式子再拿线段树维护即可 123456789101112131415161718192021222324252...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/06/CSDN-OI%E2%80%94%E2%80%94207_%E6%8E%92%E5%88%97%E4%B8%8E%E7%BD%AE%E6%8D%A2%E6%8D%A2+%E5%AE%B9%E6%96%A5+%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6%EF%BC%9A%5BGym-103446B%5D/" title="排列与置换换+容斥+多项式生成函数启发式合并：[Gym-103446B]">排列与置换换+容斥+多项式生成函数启发式合并：[Gym-103446B]</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-06T03:46:51.000Z" title="发表于 2023-11-06 11:46:51">2023-11-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/">多项式</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AE%B9%E6%96%A5/">容斥</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/">生成函数</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BD%AE%E6%8D%A2%E7%8E%AF/">置换环</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/">启发式合并</a></span></div><div class="content">排列与置换换+容斥+多项式生成函数启发式合并：[Gym-103446B] 原创 于 2023-11-06 11:46:51 发布 · 公开 · 370 阅读 · 8 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/134243178  https://vjudge.net/contest/591700#problem/G  看到排列，先考虑置换换，题意转化为置换环相邻的不能再最终序列上相邻 而这个过程看起来很容斥，所以我们容斥：至少要 $x$ 个相邻 我们发现每个置换环的所有边不能全部同时被选，所以我们每个置换环要分开考虑，最后再乘起来 然而这样的复杂度会炸。但是我们可以写成生成函数的形式，然后用启发式合并起来 12345678910111213141516171819202122232425262728293031323334353...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/21/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/#content-inner">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/#content-inner">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/#content-inner">43</a><a class="extend next" rel="next" href="/page/23/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">zhangxixi</div><div class="author-info-description">你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">423</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">362</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhangxixi2008"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is zhangxixi's Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN%E6%96%87%E7%AB%A0%E6%90%AC%E8%BF%90%E8%87%B3Hexo/" title="CSDN文章搬运至Hexo">CSDN文章搬运至Hexo</a><time datetime="2026-06-30T09:35:04.000Z" title="发表于 2026-06-30 17:35:04">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94121_%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%88%E5%A5%87%E5%81%B6%E8%80%83%E8%99%91%E6%B3%95%EF%BC%89+%E8%AE%A1%E6%95%B0+DP%EF%BC%88%E5%88%A4%E5%AE%9A%E8%BD%ACdp%EF%BC%89%EF%BC%9ACF838C/" title="博弈论（奇偶考虑法）+计数+DP（判定转dp）：CF838C">博弈论（奇偶考虑法）+计数+DP（判定转dp）：CF838C</a><time datetime="2026-06-30T08:31:23.000Z" title="发表于 2026-06-30 16:31:23">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94177_set%E7%BB%B4%E6%8A%A4%E8%BF%9E%E7%BB%AD%E6%AE%B5+%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%9A1018T2/" title="set维护连续段+线段树：1018T2">set维护连续段+线段树：1018T2</a><time datetime="2026-06-30T08:31:12.000Z" title="发表于 2026-06-30 16:31:12">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94342_8.20T2%20%E9%BB%91%E8%89%B2%E5%A4%A7%E6%A1%A5%EF%BC%88%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86%E3%80%81%E6%9D%8E%E8%B6%85%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%89/" title="8.20T2 黑色大桥（函数处理、李超线段树）">8.20T2 黑色大桥（函数处理、李超线段树）</a><time datetime="2026-06-30T08:29:40.000Z" title="发表于 2026-06-30 16:29:40">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/" title="油猴脚本不能使用？那是因为没有打开开发者模式！">油猴脚本不能使用？那是因为没有打开开发者模式！</a><time datetime="2026-06-30T07:38:52.000Z" title="发表于 2026-06-30 15:38:52">2026-06-30</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Haskell/"><span class="card-category-list-name">Haskell</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo-%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">Hexo 教程</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo%E6%B5%8B%E8%AF%95/"><span class="card-category-list-name">Hexo测试</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI/"><span class="card-category-list-name">OI</span><span class="card-category-list-count">389</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/"><span class="card-category-list-name">2023-2024赛季</span><span class="card-category-list-count">353</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI/2024%E6%98%A5PHT%E9%A2%98%E5%8D%95/"><span class="card-category-list-name">2024春PHT题单</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI/2024%E7%A7%8B%E4%B8%80%E6%9C%AC%E9%80%9A%E7%9C%81%E9%80%89%E7%AF%87%E9%A2%98%E7%9B%AE%E9%80%89%E5%81%9A/"><span class="card-category-list-name">2024秋一本通省选篇题目选做</span><span class="card-category-list-count">16</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI/%E8%AF%AD%E6%B3%95/"><span class="card-category-list-name">语法</span><span class="card-category-list-count">2</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%88%86%E6%B2%BB/" style="font-size: 1.1em; color: #999">线段树分治</a> <a href="/tags/%E6%9D%A1%E4%BB%B6/" style="font-size: 1.1em; color: #999">条件</a> <a href="/tags/%E9%9A%8F%E6%9C%BA/" style="font-size: 1.1em; color: #999">随机</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" style="font-size: 1.45em; color: #99a7ba">网络流</a> <a href="/tags/%E5%AF%B9%E5%81%B6%E5%9B%BE/" style="font-size: 1.1em; color: #999">对偶图</a> <a href="/tags/fhq-treap/" style="font-size: 1.1em; color: #999">fhq-treap</a> <a href="/tags/%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/" style="font-size: 1.15em; color: #999b9e">分数规划</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9F%BA/" style="font-size: 1.2em; color: #999da3">线性基</a> <a href="/tags/git/" style="font-size: 1.2em; color: #999da3">git</a> <a href="/tags/%E8%99%9A%E6%A0%91/" style="font-size: 1.2em; color: #999da3">虚树</a> <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" style="font-size: 1.2em; color: #999da3">树状数组</a> <a href="/tags/%E5%9B%9B%E8%BE%B9%E5%BD%A2%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 1.1em; color: #999">四边形不等式</a> <a href="/tags/win10/" style="font-size: 1.1em; color: #999">win10</a> <a href="/tags/ddp/" style="font-size: 1.1em; color: #999">ddp</a> <a href="/tags/%E6%8E%92%E5%88%97/" style="font-size: 1.15em; color: #999b9e">排列</a> <a href="/tags/haskell/" style="font-size: 1.1em; color: #999">haskell</a> <a href="/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/" style="font-size: 1.15em; color: #999b9e">主席树</a> <a href="/tags/pandoc/" style="font-size: 1.1em; color: #999">pandoc</a> <a href="/tags/MST/" style="font-size: 1.1em; color: #999">MST</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E7%AD%9B/" style="font-size: 1.1em; color: #999">线性筛</a> <a href="/tags/%E5%B7%AE%E5%88%86/" style="font-size: 1.25em; color: #999fa7">差分</a> <a href="/tags/%E9%80%86%E5%85%83/" style="font-size: 1.1em; color: #999">逆元</a> <a href="/tags/%E6%9A%B4%E5%8A%9B%E5%8D%B7%E7%A7%AF/" style="font-size: 1.1em; color: #999">暴力卷积</a> <a href="/tags/set/" style="font-size: 1.3em; color: #99a1ac">set</a> <a href="/tags/%E5%88%86%E6%B2%BB/" style="font-size: 1.4em; color: #99a5b6">分治</a> <a href="/tags/%E7%BB%BC%E8%AF%84/" style="font-size: 1.1em; color: #999">综评</a> <a href="/tags/%E4%BA%8C%E7%BB%B4%E5%81%8F%E5%BA%8F/" style="font-size: 1.1em; color: #999">二维偏序</a> <a href="/tags/Hexo/" style="font-size: 1.15em; color: #999b9e">Hexo</a> <a href="/tags/%E6%98%A0%E5%B0%84/" style="font-size: 1.1em; color: #999">映射</a> <a href="/tags/%E5%A2%9E%E9%87%8F%E6%9E%84%E9%80%A0/" style="font-size: 1.1em; color: #999">增量构造</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" style="font-size: 1.1em; color: #999">环境变量</a> <a href="/tags/atcoder%E5%BA%93/" style="font-size: 1.1em; color: #999">atcoder库</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.1em; color: #999">博客</a> <a href="/tags/%E5%80%8D%E5%A2%9E/" style="font-size: 1.25em; color: #999fa7">倍增</a> <a href="/tags/%E4%BA%8C%E5%88%86%E9%98%9F%E5%88%97/" style="font-size: 1.15em; color: #999b9e">二分队列</a> <a href="/tags/%E6%8B%86%E8%B4%A1%E7%8C%AE/" style="font-size: 1.35em; color: #99a3b1">拆贡献</a> <a href="/tags/%E8%BD%AE%E5%BB%93%E7%BA%BFdp/" style="font-size: 1.15em; color: #999b9e">轮廓线dp</a> <a href="/tags/%E5%9B%BE%E8%AE%BA/" style="font-size: 1.5em; color: #99a9bf">图论</a> <a href="/tags/%E8%99%9A%E7%82%B9/" style="font-size: 1.1em; color: #999">虚点</a> <a href="/tags/FWT/" style="font-size: 1.25em; color: #999fa7">FWT</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/06/">
+            <span class="card-archive-list-date">
+              六月 2026
+            </span>
+            <span class="card-archive-list-count">33</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              五月 2026
+            </span>
+            <span class="card-archive-list-count">17</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/04/">
+            <span class="card-archive-list-date">
+              四月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/10/">
+            <span class="card-archive-list-date">
+              十月 2024
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/09/">
+            <span class="card-archive-list-date">
+              九月 2024
+            </span>
+            <span class="card-archive-list-count">16</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/08/">
+            <span class="card-archive-list-date">
+              八月 2024
+            </span>
+            <span class="card-archive-list-count">16</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/05/">
+            <span class="card-archive-list-date">
+              五月 2024
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/04/">
+            <span class="card-archive-list-date">
+              四月 2024
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">423</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">309.2k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-06-30T10:03:22.997Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

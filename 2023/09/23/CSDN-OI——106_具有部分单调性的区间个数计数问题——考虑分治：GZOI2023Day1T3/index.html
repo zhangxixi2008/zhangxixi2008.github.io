@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3 | zhangxixi的博客</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3 原创 已于 2023-09-23 21:45:36 修改 · 公开 · 160 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https:&#x2F;&#x2F;blog.csdn.n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3">
+<meta property="og:url" content="http://example.com/2023/09/23/CSDN-OI%E2%80%94%E2%80%94106_%E5%85%B7%E6%9C%89%E9%83%A8%E5%88%86%E5%8D%95%E8%B0%83%E6%80%A7%E7%9A%84%E5%8C%BA%E9%97%B4%E4%B8%AA%E6%95%B0%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E8%80%83%E8%99%91%E5%88%86%E6%B2%BB%EF%BC%9AGZOI2023Day1T3/index.html">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3 原创 已于 2023-09-23 21:45:36 修改 · 公开 · 160 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https:&#x2F;&#x2F;blog.csdn.n">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/602176c99aac403c08c090ba501a47c5.png">
+<meta property="article:published_time" content="2023-09-23T13:45:36.000Z">
+<meta property="article:modified_time" content="2026-06-30T09:53:51.952Z">
+<meta property="article:author" content="zhangxixi">
+<meta property="article:tag" content="分治">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/blog_migrate/602176c99aac403c08c090ba501a47c5.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3",
+  "url": "http://example.com/2023/09/23/CSDN-OI%E2%80%94%E2%80%94106_%E5%85%B7%E6%9C%89%E9%83%A8%E5%88%86%E5%8D%95%E8%B0%83%E6%80%A7%E7%9A%84%E5%8C%BA%E9%97%B4%E4%B8%AA%E6%95%B0%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E8%80%83%E8%99%91%E5%88%86%E6%B2%BB%EF%BC%9AGZOI2023Day1T3/",
+  "image": "",
+  "datePublished": "2023-09-23T13:45:36.000Z",
+  "dateModified": "2026-06-30T09:53:51.952Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "zhangxixi",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2023/09/23/CSDN-OI%E2%80%94%E2%80%94106_%E5%85%B7%E6%9C%89%E9%83%A8%E5%88%86%E5%8D%95%E8%B0%83%E6%80%A7%E7%9A%84%E5%8C%BA%E9%97%B4%E4%B8%AA%E6%95%B0%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E8%80%83%E8%99%91%E5%88%86%E6%B2%BB%EF%BC%9AGZOI2023Day1T3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">423</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">362</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-23T13:45:36.000Z" title="发表于 2023-09-23 21:45:36">2023-09-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-06-30T09:53:51.952Z" title="更新于 2026-06-30 17:53:51">2026-06-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/">OI</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/2023-2024%E8%B5%9B%E5%AD%A3/">2023-2024赛季</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">245</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3"><a href="#具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3" class="headerlink" title="具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3"></a>具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3</h1><blockquote>
+<p>原创 已于 2023-09-23 21:45:36 修改 · 公开 · 160 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑<br>文章链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangtingxiqwq/article/details/133218885">https://blog.csdn.net/zhangtingxiqwq/article/details/133218885</a></p>
+</blockquote>
+<p>询问有多少区间满足 $Sum\times Len\le Max^2$ </p>
+<p>发现在 $Max$ 定的情况下，显然满足单调性</p>
+<p>对于此类题目，可以考虑分治处理</p>
+<p>对于当前分治区间，我们采用的分治策略是左右独立算+计算跨区间</p>
+<p>显然必然是一段后缀加一段前缀。</p>
+<p>先枚举左端点，然后根据上面结论，我们必须使：</p>
+<ul>
+<li>$Max$ 定</li>
+</ul>
+<p>所以右边界已经限定</p>
+<p>剩下的满足单调性，二分即可</p>
+<p>定右端点同理</p>
+<p> <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i-blog.csdnimg.cn/blog_migrate/602176c99aac403c08c090ba501a47c5.png" alt="在这里插入图片描述"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">zhangxixi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/09/23/CSDN-OI%E2%80%94%E2%80%94106_%E5%85%B7%E6%9C%89%E9%83%A8%E5%88%86%E5%8D%95%E8%B0%83%E6%80%A7%E7%9A%84%E5%8C%BA%E9%97%B4%E4%B8%AA%E6%95%B0%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E8%80%83%E8%99%91%E5%88%86%E6%B2%BB%EF%BC%9AGZOI2023Day1T3/">http://example.com/2023/09/23/CSDN-OI%E2%80%94%E2%80%94106_%E5%85%B7%E6%9C%89%E9%83%A8%E5%88%86%E5%8D%95%E8%B0%83%E6%80%A7%E7%9A%84%E5%8C%BA%E9%97%B4%E4%B8%AA%E6%95%B0%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E8%80%83%E8%99%91%E5%88%86%E6%B2%BB%EF%BC%9AGZOI2023Day1T3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">zhangxixi的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%88%86%E6%B2%BB/">分治</a></div><div class="post-share"><div class="social-share" data-image="/" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/09/24/CSDN-OI%E2%80%94%E2%80%94107_%E4%BA%A4%E9%94%99%E5%BA%8F%E5%88%97%E2%80%94%E2%80%94%E5%B7%AE%E5%88%86%EF%BC%9AGZOI2023D2T3/" title="交错序列——差分：GZOI2023D2T3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">交错序列——差分：GZOI2023D2T3</div></div><div class="info-2"><div class="info-item-1">交错序列——差分：GZOI2023D2T3 原创 于 2023-09-24 18:20:20 发布 · 公开 · 235 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/133247058   单点修改，全局查询交错序列最大值（ $\max(\sum_i (-1)^ib_i)$ ）， $b$ 为 $a$ 的子序列  正常做法是线段树，但对于交错序列问题，有一种更好的方法，就是差分 考虑 $a_i-a_j$ ，本质就是 $[j+1,i]$ 的差分数组之和。由于选的段数没有限制，那必然是全选正数 </div></div></div></a><a class="pagination-related" href="/2023/09/23/CSDN-OI%E2%80%94%E2%80%94105_%E7%82%B9%E5%88%86%E6%B2%BB%E7%BB%B4%E6%8A%A4dp+%E8%BF%9E%E9%80%9A%E5%9D%97%E4%B8%8A%E6%96%B0%E5%9E%8Bdp%E6%80%9D%E8%B7%AF+%E4%B9%98%E7%A7%AF%E6%96%B9%E9%9D%A2%E8%BF%9B%E8%A1%8C%E6%A0%B9%E5%8F%B7dp%EF%BC%9A0922T4/" title="点分治维护dp+连通块上新型dp思路+乘积方面进行根号dp：0922T4"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">点分治维护dp+连通块上新型dp思路+乘积方面进行根号dp：0922T4</div></div><div class="info-2"><div class="info-item-1">点分治维护dp+连通块上新型dp思路+乘积方面进行根号dp：0922T4 原创 已于 2023-09-23 21:44:26 修改 · 公开 · 395 阅读 · 4 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/133217931  首先连通块，所以点分治肯定是 Trick1 钦定选根的连通块dp对于钦定选根的连通块dp，有一种常见思路 先对原树求其dfn序，按dfn序 倒序 求解 具体的，对于当前点 $i$ （注意这里都是指dfn序），我们可以钦定 $i$ 是否选 如果 $i$ 选，就由 $i+1$ ，也就是 $i$ 的第一个儿子转移过来（因为只有他选他子树才可能被选） 如果 $i$ 不选，就由 $i+w_i$ 转移过来，因为他的儿子必然不会被选 至于 $i$ 和 $i+w_i$ 同时选的情况，我们在 $i+1$ 那里已经算了 ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2023/09/16/CSDN-OI%E2%80%94%E2%80%94086_FWT%E5%B0%8F%E7%BB%93/" title="FWT小结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-16</div><div class="info-item-2">FWT小结</div></div><div class="info-2"><div class="info-item-1">FWT小结 原创 于 2023-09-16 19:44:49 发布 · 公开 · 295 阅读 · 2 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/132922605  核心思想：把 $a,b$ 化成 $fwt(a),fwt(b)$ ，相乘后再化为 $a$  化的过程用的是分治 所以和FFT其实一模一样 OR &#x2F; AND 卷积不需要什么技巧，暴力分治转移即可 每次分治下去，相当于位数减一 注意合并过程中我们是计算对应位的贡献 因为其它位的贡献我们在分治下去时已经计算了 后面区间其他数贡献到前面某个位置已经统计到后面的那个位置了  OR    考虑如何还原 对上面式子进行换元即可   123456void OR(int *f, int x) &#123;	for(k=1, o=2; o&lt;=n; o&lt;&lt;=1...</div></div></div></a><a class="pagination-related" href="/2023/10/17/CSDN-OI%E2%80%94%E2%80%94172_%E5%88%86%E6%B2%BB%E7%B1%BBdp%EF%BC%9A1017T3/" title="分治类dp：1017T3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-17</div><div class="info-item-2">分治类dp：1017T3</div></div><div class="info-2"><div class="info-item-1">分治类dp：1017T3 原创 于 2023-10-17 15:19:52 发布 · 公开 · 170 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/133884752  http://cplusoj.com/d/senior/p/SS231017C  感觉可以分治某个区间 $[l,r]$ ，且他们都是在下面 $k$ 已经选的基础上 然后肯定要枚举最大值，最大值越长越好  Hint 1  Hint 2$f(l, r, k)$ 可以通过枚举 $mid$ ，或者枚举 $k’$ 进行暴力转移  根据Hint1，我们区间最大如果选则必然是选整个区间，高度是最小值，然后往最小值两边递归 同理，如果最大值不选则是往最大值两边递归 这是一个按最大最小分治的过程，可以通过记忆化来优化 1234567891011121314151617...</div></div></div></a><a class="pagination-related" href="/2023/09/26/CSDN-OI%E2%80%94%E2%80%94114_%E4%B8%AD%E9%97%B4%E7%9B%B8%E9%81%87%E6%B3%95%EF%BC%88%E5%88%86%E6%B2%BB%E7%B1%BB%E9%97%AE%E9%A2%98%E9%9D%9E%E7%AD%89%E5%A4%A7%E5%88%86%E6%B2%BB%E7%9A%84%E5%B9%B3%E8%A1%A1%E5%81%9A%E6%B3%95%EF%BC%89/" title="中间相遇法（分治类问题非等大分治的平衡做法）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-26</div><div class="info-item-2">中间相遇法（分治类问题非等大分治的平衡做法）</div></div><div class="info-2"><div class="info-item-1">中间相遇法（分治类问题非等大分治的平衡做法） 原创 于 2023-09-26 19:24:59 发布 · 公开 · 179 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/133321701  分治，如果分成两半大小不一样，很容易被卡到 $O(n^2)$  在某些题目中，利用中间相遇法，我们可以优化这个过程 其优化的前提是分治的大头在找分界点   复杂度不用证，很好理解吧 这层找地越久，下一层就越均匀 </div></div></div></a><a class="pagination-related" href="/2023/09/25/CSDN-OI%E2%80%94%E2%80%94112_%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8A%E7%9A%84%E4%BA%A4%E4%BA%92+%E5%88%86%E6%B2%BB%E4%B8%8E%E4%BA%A4%E4%BA%92%EF%BC%9ACF788D/" title="坐标系上的交互+分治与交互：CF788D"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-25</div><div class="info-item-2">坐标系上的交互+分治与交互：CF788D</div></div><div class="info-2"><div class="info-item-1">坐标系上的交互+分治与交互：CF788D 原创 于 2023-09-25 22:05:46 发布 · 公开 · 1.3k 阅读 · 1 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/133281428  https://codeforces.com/contest/788/problem/D    坐标系上的交互有一种常见套路，就是抓住一些关键的线  x轴y轴  y&#x3D;x（就是此题）   然后考虑接下来怎么做。 交互题常见有二分的套路，此题我们可以考虑推广到分治。 不断判断mid，然后就可以求出最近的范围，并递归下去即可 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556...</div></div></div></a><a class="pagination-related" href="/2023/09/26/CSDN-OI%E2%80%94%E2%80%94115_%E5%90%AF%E5%8F%91%E5%BC%8F%E5%88%86%E8%A3%82/" title="启发式分裂"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-26</div><div class="info-item-2">启发式分裂</div></div><div class="info-2"><div class="info-item-1">启发式分裂 原创 于 2023-09-26 19:30:37 发布 · 公开 · 281 阅读 · 1 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/133321898  启发式分裂和启发式合并类似 对于一个数据结构，我们要对它进行分裂的时候，如果暴力拆成两个数据结构，很容易被卡 这个时候我们就可以考虑启发式分裂，把小的分出去，大的保留 在分治、set等题目中有广泛应用 </div></div></div></a><a class="pagination-related" href="/2023/11/12/CSDN-OI%E2%80%94%E2%80%94222_%E5%88%86%E6%B2%BB%E6%9E%84%E9%80%A0%EF%BC%9AP9384/" title="分治构造：P9384"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-12</div><div class="info-item-2">分治构造：P9384</div></div><div class="info-2"><div class="info-item-1">分治构造：P9384 原创 于 2023-11-12 21:30:38 发布 · 公开 · 178 阅读 · 0 · 0 · 本内容遵循CC 4.0 BY-SA版权协议 版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。 GEO检测 · 编辑文章链接：https://blog.csdn.net/zhangtingxiqwq/article/details/134366235  https://www.luogu.com.cn/problem/P9384  分治构造是很常见的一种构造 不能有三元环和五元环，考虑推广出去，也就是不能有奇环 那如果我们让每种颜色都为二分图，那么必然满足 考虑 0-9 总共10个数字，数据范围1000，考虑 $2^{10}&gt;1000$ ，考虑 $log$ 级复杂度的做法 假如我们采用分治构造，左区间所有点向右区间所有点连边，边为分治层数。显然对于每种颜色都是个二分图，满足题意 </div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">zhangxixi</div><div class="author-info-description">你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">423</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">362</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhangxixi2008"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is zhangxixi's Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B7%E6%9C%89%E9%83%A8%E5%88%86%E5%8D%95%E8%B0%83%E6%80%A7%E7%9A%84%E5%8C%BA%E9%97%B4%E4%B8%AA%E6%95%B0%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E8%80%83%E8%99%91%E5%88%86%E6%B2%BB%EF%BC%9AGZOI2023Day1T3"><span class="toc-text">具有部分单调性的区间个数计数问题——考虑分治：GZOI2023Day1T3</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN%E6%96%87%E7%AB%A0%E6%90%AC%E8%BF%90%E8%87%B3Hexo/" title="CSDN文章搬运至Hexo">CSDN文章搬运至Hexo</a><time datetime="2026-06-30T09:35:04.000Z" title="发表于 2026-06-30 17:35:04">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94121_%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%88%E5%A5%87%E5%81%B6%E8%80%83%E8%99%91%E6%B3%95%EF%BC%89+%E8%AE%A1%E6%95%B0+DP%EF%BC%88%E5%88%A4%E5%AE%9A%E8%BD%ACdp%EF%BC%89%EF%BC%9ACF838C/" title="博弈论（奇偶考虑法）+计数+DP（判定转dp）：CF838C">博弈论（奇偶考虑法）+计数+DP（判定转dp）：CF838C</a><time datetime="2026-06-30T08:31:23.000Z" title="发表于 2026-06-30 16:31:23">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94177_set%E7%BB%B4%E6%8A%A4%E8%BF%9E%E7%BB%AD%E6%AE%B5+%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%9A1018T2/" title="set维护连续段+线段树：1018T2">set维护连续段+线段树：1018T2</a><time datetime="2026-06-30T08:31:12.000Z" title="发表于 2026-06-30 16:31:12">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN-OI%E2%80%94%E2%80%94342_8.20T2%20%E9%BB%91%E8%89%B2%E5%A4%A7%E6%A1%A5%EF%BC%88%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86%E3%80%81%E6%9D%8E%E8%B6%85%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%89/" title="8.20T2 黑色大桥（函数处理、李超线段树）">8.20T2 黑色大桥（函数处理、李超线段树）</a><time datetime="2026-06-30T08:29:40.000Z" title="发表于 2026-06-30 16:29:40">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/" title="油猴脚本不能使用？那是因为没有打开开发者模式！">油猴脚本不能使用？那是因为没有打开开发者模式！</a><time datetime="2026-06-30T07:38:52.000Z" title="发表于 2026-06-30 15:38:52">2026-06-30</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
