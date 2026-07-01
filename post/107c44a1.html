@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>一元二次方程根与系数的关系 | zhangxixi的博客</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;zhangtingxi&#x2F;p&#x2F;16323376.html  有一元二次方程： ax2+bx+c&#x3D;0(a≠0)\Large ax^2+bx+c&#x3D;0\quad(a\ne 0) ax2+bx+c&#x3D;0(a&#x3D;0) 其两个根为： x1&#x3D;−b+b2−4ac2a,x2−b−b2−4ac2a(△&#x3D;b2−4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一元二次方程根与系数的关系">
+<meta property="og:url" content="http://zhangxixi2008.github.io/post/107c44a1">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;zhangtingxi&#x2F;p&#x2F;16323376.html  有一元二次方程： ax2+bx+c&#x3D;0(a≠0)\Large ax^2+bx+c&#x3D;0\quad(a\ne 0) ax2+bx+c&#x3D;0(a&#x3D;0) 其两个根为： x1&#x3D;−b+b2−4ac2a,x2−b−b2−4ac2a(△&#x3D;b2−4">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zhangxixi2008.github.io/page_img/p7.png">
+<meta property="article:published_time" content="2022-05-28T18:45:00.000Z">
+<meta property="article:modified_time" content="2026-07-01T03:15:40.607Z">
+<meta property="article:author" content="zhangxixi">
+<meta property="article:tag" content="一元二次方程">
+<meta property="article:tag" content="二次方程">
+<meta property="article:tag" content="代数">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="方程">
+<meta property="article:tag" content="根">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zhangxixi2008.github.io/page_img/p7.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "一元二次方程根与系数的关系",
+  "url": "http://zhangxixi2008.github.io/post/107c44a1",
+  "image": "http://zhangxixi2008.github.io/page_img/p7.png",
+  "datePublished": "2022-05-28T18:45:00.000Z",
+  "dateModified": "2026-07-01T03:15:40.607Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "zhangxixi",
+      "url": "http://zhangxixi2008.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="http://zhangxixi2008.github.io/post/107c44a1"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xfiga2r6c8");
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200,"highlightFullpage":true,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '一元二次方程根与系数的关系',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div class="bg-animation" id="web_bg" style="background-image: url(https://i.loli.net/2019/09/09/5oDRkWVKctx2b6A.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">675</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">471</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">22</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fa fa-chart-bar"></i><span> Statistic</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/page_img/p7.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">一元二次方程根与系数的关系</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fa fa-chart-bar"></i><span> Statistic</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">一元二次方程根与系数的关系</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2022-05-28T18:45:00.000Z" title="发表于 2022-05-29 02:45:00">2022-05-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">142</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2026-07-01 11:15:40&quot;}" hidden></div><blockquote>
+<p><strong>本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhangtingxi/p/16323376.html">https://www.cnblogs.com/zhangtingxi/p/16323376.html</a></strong></p>
+</blockquote>
+<p>有一元二次方程：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="1.44em"><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi><mo>=</mo><mn>0</mn><mspace width="1em"/><mo stretchy="false">(</mo><mi>a</mi><mo mathvariant="normal">≠</mo><mn>0</mn><mo stretchy="false">)</mo></mstyle></mrow><annotation encoding="application/x-tex">\Large ax^2+bx+c=0\quad(a\ne 0)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.3592em;vertical-align:-0.12em;"></span><span class="mord mathnormal sizing reset-size6 size8">a</span><span class="mord sizing reset-size6 size8"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8605em;"><span style="top:-3.413em;margin-right:0.0347em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size8 size6 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin sizing reset-size6 size8">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.12em;vertical-align:-0.12em;"></span><span class="mord mathnormal sizing reset-size6 size8">b</span><span class="mord mathnormal sizing reset-size6 size8">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin sizing reset-size6 size8">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.62em;"></span><span class="mord mathnormal sizing reset-size6 size8">c</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel sizing reset-size6 size8">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.44em;vertical-align:-0.36em;"></span><span class="mord sizing reset-size6 size8">0</span><span class="mspace sizing reset-size6 size8" style="margin-right:1em;"></span><span class="mopen sizing reset-size6 size8">(</span><span class="mord mathnormal sizing reset-size6 size8">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel sizing reset-size6 size8"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mspace nobreak"></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.44em;vertical-align:-0.36em;"></span><span class="mord sizing reset-size6 size8">0</span><span class="mclose sizing reset-size6 size8">)</span></span></span></span></span></p>
+<p>其两个根为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="1.44em"><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>+</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mfrac><mrow><mo>−</mo><mi>b</mi><mo>−</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mspace width="1em"/><mo stretchy="false">(</mo><mo>△</mo><mo>=</mo><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi><mo>⩾</mo><mn>0</mn><mo stretchy="false">)</mo></mstyle></mrow><annotation encoding="application/x-tex">\Large x_1=\frac{-b+\sqrt{b^2-4ac}}{2a},x_2\frac{-b-\sqrt{b^2-4ac}}{2a}
+\quad(\vartriangle=b^2-4ac\geqslant0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.836em;vertical-align:-0.216em;"></span><span class="mord sizing reset-size6 size8"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2975em;"><span style="top:-2.85em;margin-left:0em;margin-right:0.0347em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size8 size6 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel sizing reset-size6 size8">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3.2754em;vertical-align:-0.9878em;"></span><span class="mord sizing reset-size6 size8"><span class="mopen nulldelimiter sizing reset-size8 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5886em;"><span style="top:-2.754em;"><span class="pstrut" style="height:3.44em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathnormal">a</span></span></span><span style="top:-3.67em;"><span class="pstrut" style="height:3.44em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-4.117em;"><span class="pstrut" style="height:3.44em;"></span><span class="mord"><span class="mord">−</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9116em;"><span class="svg-align" style="top:-3.44em;"><span class="pstrut" style="height:3.44em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7365em;"><span style="top:-3.289em;margin-right:0.0347em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size8 size6 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mord mathnormal">a</span><span class="mord mathnormal">c</span></span></span><span style="top:-3.3116em;"><span class="pstrut" style="height:3.44em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1284em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size8 size6"></span></span><span class="mpunct sizing reset-size6 size8">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord sizing reset-size6 size8"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2975em;"><span style="top:-2.85em;margin-left:0em;margin-right:0.0347em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size8 size6 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord sizing reset-size6 size8"><span class="mopen nulldelimiter sizing reset-size8 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5886em;"><span style="top:-2.754em;"><span class="pstrut" style="height:3.44em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathnormal">a</span></span></span><span style="top:-3.67em;"><span class="pstrut" style="height:3.44em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-4.117em;"><span class="pstrut" style="height:3.44em;"></span><span class="mord"><span class="mord">−</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9116em;"><span class="svg-align" style="top:-3.44em;"><span class="pstrut" style="height:3.44em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7365em;"><span style="top:-3.289em;margin-right:0.0347em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size8 size6 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mord mathnormal">a</span><span class="mord mathnormal">c</span></span></span><span style="top:-3.3116em;"><span class="pstrut" style="height:3.44em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1284em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size8 size6"></span></span><span class="mspace sizing reset-size6 size8" style="margin-right:1em;"></span><span class="mopen sizing reset-size6 size8">(</span><span class="mrel amsrm sizing reset-size6 size8">△</span></span><span class="base"><span class="strut" style="height:0.5283em;"></span><span class="mrel sizing reset-size6 size8">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.3592em;vertical-align:-0.12em;"></span><span class="mord sizing reset-size6 size8"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8605em;"><span style="top:-3.413em;margin-right:0.0347em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size8 size6 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin sizing reset-size6 size8">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1248em;vertical-align:-0.1968em;"></span><span class="mord sizing reset-size6 size8">4</span><span class="mord mathnormal sizing reset-size6 size8">a</span><span class="mord mathnormal sizing reset-size6 size8">c</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel amsrm sizing reset-size6 size8">⩾</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.44em;vertical-align:-0.36em;"></span><span class="mord sizing reset-size6 size8">0</span><span class="mclose sizing reset-size6 size8">)</span></span></span></span></span></p>
+<p>有：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="1.44em"><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mo>−</mo><mfrac><mi>b</mi><mi>a</mi></mfrac><mspace linebreak="newline"></mspace><mstyle mathsize="1.44em"><msub><mi>x</mi><mn>1</mn></msub><mo>⋅</mo><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mfrac><mi>c</mi><mi>a</mi></mfrac></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\Large x_1+x_2=-\frac{b}{a}\\\Large x_1 \cdot x_2=\frac{c}{a}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.056em;vertical-align:-0.216em;"></span><span class="mord sizing reset-size6 size8"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2975em;"><span style="top:-2.85em;margin-left:0em;margin-right:0.0347em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size8 size6 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin sizing reset-size6 size8">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.836em;vertical-align:-0.216em;"></span><span class="mord sizing reset-size6 size8"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2975em;"><span style="top:-2.85em;margin-left:0em;margin-right:0.0347em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size8 size6 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel sizing reset-size6 size8">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.9627em;vertical-align:-0.9878em;"></span><span class="mord sizing reset-size6 size8">−</span><span class="mord sizing reset-size6 size8"><span class="mopen nulldelimiter sizing reset-size8 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.754em;"><span class="pstrut" style="height:3.44em;"></span><span class="mord"><span class="mord mathnormal">a</span></span></span><span style="top:-3.67em;"><span class="pstrut" style="height:3.44em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-4.117em;"><span class="pstrut" style="height:3.44em;"></span><span class="mord"><span class="mord mathnormal">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size8 size6"></span></span></span><span class="mspace newline sizing reset-size6 size8"></span><span class="base"><span class="strut" style="height:0.856em;vertical-align:-0.216em;"></span><span class="mord sizing reset-size6 size8"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2975em;"><span style="top:-2.85em;margin-left:0em;margin-right:0.0347em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size8 size6 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin sizing reset-size6 size8">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.836em;vertical-align:-0.216em;"></span><span class="mord sizing reset-size6 size8"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2975em;"><span style="top:-2.85em;margin-left:0em;margin-right:0.0347em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size8 size6 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel sizing reset-size6 size8">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.5827em;vertical-align:-0.9878em;"></span><span class="mord sizing reset-size6 size8"><span class="mopen nulldelimiter sizing reset-size8 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.754em;"><span class="pstrut" style="height:3.44em;"></span><span class="mord"><span class="mord mathnormal">a</span></span></span><span style="top:-3.67em;"><span class="pstrut" style="height:3.44em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-4.117em;"><span class="pstrut" style="height:3.44em;"></span><span class="mord"><span class="mord mathnormal">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size8 size6"></span></span></span></span></span></span></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://zhangxixi2008.github.io">zhangxixi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://zhangxixi2008.github.io/post/107c44a1">http://zhangxixi2008.github.io/post/107c44a1</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://zhangxixi2008.github.io" target="_blank">zhangxixi的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a><a class="post-meta__tags" href="/tags/%E4%BB%A3%E6%95%B0/">代数</a><a class="post-meta__tags" href="/tags/%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B/">二次方程</a><a class="post-meta__tags" href="/tags/%E6%96%B9%E7%A8%8B/">方程</a><a class="post-meta__tags" href="/tags/%E6%A0%B9/">根</a><a class="post-meta__tags" href="/tags/%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B/">一元二次方程</a></div><div class="post-share"><div class="social-share" data-image="/page_img/p7.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/post/3649a112" title="5.28图论专题总结"><img class="cover" src="/page_img/p14.png" onerror="onerror=null;src='/img/404.png'" alt="cover of previous post" loading='lazy'><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">5.28图论专题总结</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16331782.html  题目地址 A CF771A  若 a 和 b 是朋友，且 b 和 c 是朋友，那么 a 和 c 也是朋友。  看到这类字眼，一般就是说明是由完全图组成。 B CF449B 做法大致是先全部做一遍最短路，然后每个关键点判断是否能由相连点加上公路长度所得。 此题运用的是一条边可以去掉是它可以被替代。 C CF1340C  此题到达每个路口涉及时间，很明显的分层图 此题建边后边权非0即1，很明显01bfs  我认为此题唯一难点是推...</div></div></div></a><a class="pagination-related" href="/post/cf8a5ab4" title="【CF827C DNA Evolution】题解"><img class="cover" src="/page_img/p11.png" onerror="onerror=null;src='/img/404.png'" alt="cover of next post" loading='lazy'><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">【CF827C DNA Evolution】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16306588.html  题目链接 题目 DNA链由核苷酸组成。有四种类型的核苷酸：“A”，“T”，“G”，“C”。 DNA链是核苷酸序列。科学家决定追踪一种稀有物种的进化，它最初的DNA链为s。 物种的进化被描述为DNA的一系列变化。每个变化都是某些核苷酸的变化，例如，DNA链“AAGC”中可能发生以下变化：第二个核苷酸可以变为“T”，然后变成“ATGC”。 科学家们知道DNA链的某些片段会受到某些未知感染的影响。这些感染可以被表示为核苷酸序列...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/post/e50fc058" title="【ZR #541. 【19普转提 4】简单函数】题解"><img class="cover" src="/page_img/p16.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-09</div><div class="info-item-2">【ZR #541. 【19普转提 4】简单函数】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15780513.html  题目链接 题目 定义f(n)=∣n−∑d∣n,d≠nd∣f(n) = |n - \sum_{d|n,d\not =n}d|f(n)=∣n−∑d∣n,d=n​d∣。 每次给出A,BA,BA,B，求∑i=ABf(i)\sum_{i=A}^B f(i)∑i=AB​f(i)。 对于100%100\%100%的数据，A,B≤107A,B\le 10^7A,B≤107。 思路 看到 A，BA，BA，B 的范围，想着能不能快速求 ...</div></div></div></a><a class="pagination-related" href="/post/ba575f07" title="【P5931 [清华集训2015]灯泡】题解"><img class="cover" src="/page_img/p9.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-11</div><div class="info-item-2">【P5931 [清华集训2015]灯泡】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15675706.html  题目链接 题目 相比 WildleopardWildleopardWildleopard 的家，他的弟弟 MildleopardMildleopardMildleopard 比较穷。他的房子是狭窄的，而且在他的房间里仅有一个灯泡。每天晚上，他徘徊在自己狭小的房子里，思考如何赚更多的钱。有一天，他发现他的影子的长度随着他在灯泡和墙壁之间走动时会发生变化。一个突然的想法出现在他的脑海里，他想知道在房间里他的影子的最大长度。 ...</div></div></div></a><a class="pagination-related" href="/post/385d3d39" title="线性求逆元"><img class="cover" src="/page_img/p4.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-03</div><div class="info-item-2">线性求逆元</div></div><div class="info-2"><div class="info-item-1">线性求逆元  本文搬运自本人高中时期CSDN博客，若图片加载不出来，可到原文查看：https://blog.csdn.net/zhangtingxiqwq/article/details/132650059    先暴力求出 1n!\frac 1 {n!}n!1​   往回推出 1i!\frac 1 {i!}i!1​   1i=(i−1)!i!\Large \frac 1 i=\frac{(i-1)!}{i!}i1​=i!(i−1)!​   </div></div></div></a><a class="pagination-related" href="/post/1a715817" title="一元二次方程求根公式"><img class="cover" src="/page_img/p7.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-14</div><div class="info-item-2">一元二次方程求根公式</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15551902.html  此文章只是给自己看到，当作一个备忘录 一元二次方程求根公式 形如： ax2+bx+c=0(a≠0)ax^2+bx+c=0\quad(a\ne0) ax2+bx+c=0(a=0) 可得： x=−b±b2−4ac2a(△=b2−4ac⩾0)x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\quad(\vartriangle=b^2-4ac\geqslant0) x=2a−b±b2−4ac​​(△=b2−4a...</div></div></div></a><a class="pagination-related" href="/post/cbb089f3" title="【Loj #10013. 「一本通 1.2 例 3」曲线】题解"><img class="cover" src="/page_img/p20.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-11</div><div class="info-item-2">【Loj #10013. 「一本通 1.2 例 3」曲线】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15674711.html  题目链接 题目 明明做作业的时候遇到了 nnn 个二次函数 Si(x)=ax2+bx+cS_i(x)= ax^2 + bx + cS​i​​(x)=ax​2​​+bx+c，他突发奇想设计了一个新的函数 F(x)=max{Si(x)},i=1…nF(x) = max{S_i(x)}, i = 1ldots nF(x)=max{S​i​​(x)},i=1…n。 明明现在想求这个函数在 [0,1000][0,1000][0,1...</div></div></div></a><a class="pagination-related" href="/post/8a967cc5" title="二次函数公式法"><img class="cover" src="/page_img/p18.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-13</div><div class="info-item-2">二次函数公式法</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16473421.html  y=ax2+bx+c\Large y=ax^2+bx+c y=ax2+bx+c y=a(x2+bax+ca)\Large y=a(x^2+\dfrac{b}{a}x+\dfrac{c}{a})  y=a(x2+ab​x+ac​) y=a(x2+2×x×b2a+ca)\Large y=a(x^2+2\times x\times \dfrac b {2a}+\dfrac c a) y=a(x2+2×x×2ab​+ac​) y...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="author-info-name">zhangxixi</div><div class="author-info-description">如风自由、如星璀璨</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">675</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">471</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">22</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhangxixi2008"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/zhangxixi2008" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:2008zhangtx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本博客中有部分内容搬运自博客园（本人初中博客）和CSDN（本人高中博客），若图片加载不出，可以点击文章最上方链接回原网页访问</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/ac009363" title="Hexo数据统计页面"><img src="/page_img/p20.png" onerror="this.onerror=null;this.src='/img/404.png'" alt="Hexo数据统计页面"/ loading='lazy'></a><div class="content"><a class="title" href="/post/ac009363" title="Hexo数据统计页面">Hexo数据统计页面</a><time datetime="2026-07-01T12:23:04.000Z" title="发表于 2026-07-01 20:23:04">2026-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/1fae2220" title="Hexo Butterfly 主题配置修改文档"><img src="/page_img/p10.png" onerror="this.onerror=null;this.src='/img/404.png'" alt="Hexo Butterfly 主题配置修改文档"/ loading='lazy'></a><div class="content"><a class="title" href="/post/1fae2220" title="Hexo Butterfly 主题配置修改文档">Hexo Butterfly 主题配置修改文档</a><time datetime="2026-07-01T10:07:54.000Z" title="发表于 2026-07-01 18:07:54">2026-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/6c17798a" title="Powershell中给Git设置代理"><img src="/page_img/p8.png" onerror="this.onerror=null;this.src='/img/404.png'" alt="Powershell中给Git设置代理"/ loading='lazy'></a><div class="content"><a class="title" href="/post/6c17798a" title="Powershell中给Git设置代理">Powershell中给Git设置代理</a><time datetime="2026-07-01T03:35:05.000Z" title="发表于 2026-07-01 11:35:05">2026-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/7b3d1f9c" title="博客园文章搬运至Hexo"><img src="/page_img/p14.png" onerror="this.onerror=null;this.src='/img/404.png'" alt="博客园文章搬运至Hexo"/ loading='lazy'></a><div class="content"><a class="title" href="/post/7b3d1f9c" title="博客园文章搬运至Hexo">博客园文章搬运至Hexo</a><time datetime="2026-07-01T02:46:32.000Z" title="发表于 2026-07-01 10:46:32">2026-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/88183943" title="Hexo中启用Katex"><img src="/page_img/p13.png" onerror="this.onerror=null;this.src='/img/404.png'" alt="Hexo中启用Katex"/ loading='lazy'></a><div class="content"><a class="title" href="/post/88183943" title="Hexo中启用Katex">Hexo中启用Katex</a><time datetime="2026-06-30T13:42:11.000Z" title="发表于 2026-06-30 21:42:11">2026-06-30</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/footimg.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By zhangxixi</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div><div class="footer_custom_text">你的未来定闪闪发光、光芒万丈！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="/js/tw_cn.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="请在此处搜索搜索" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.5-b1"></script></div></div></body></html>
