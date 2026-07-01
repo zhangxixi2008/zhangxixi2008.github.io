@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>manacher算法一图复习 | zhangxixi的博客</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;zhangtingxi&#x2F;p&#x2F;16555504.html  完整版请戳这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="manacher算法一图复习">
+<meta property="og:url" content="http://example.com/2022/08/05/%E5%8D%9A%E5%AE%A2%E5%9B%AD-manacher%E7%AE%97%E6%B3%95%E4%B8%80%E5%9B%BE%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;zhangtingxi&#x2F;p&#x2F;16555504.html  完整版请戳这">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/upx5fl9f.png">
+<meta property="article:published_time" content="2022-08-05T02:57:00.000Z">
+<meta property="article:modified_time" content="2026-07-01T03:15:40.549Z">
+<meta property="article:author" content="zhangxixi">
+<meta property="article:tag" content="manacher">
+<meta property="article:tag" content="字符串">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/upx5fl9f.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "manacher算法一图复习",
+  "url": "http://example.com/2022/08/05/%E5%8D%9A%E5%AE%A2%E5%9B%AD-manacher%E7%AE%97%E6%B3%95%E4%B8%80%E5%9B%BE%E5%A4%8D%E4%B9%A0/",
+  "image": "",
+  "datePublished": "2022-08-05T02:57:00.000Z",
+  "dateModified": "2026-07-01T03:15:40.549Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "zhangxixi",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2022/08/05/%E5%8D%9A%E5%AE%A2%E5%9B%AD-manacher%E7%AE%97%E6%B3%95%E4%B8%80%E5%9B%BE%E5%A4%8D%E4%B9%A0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'manacher算法一图复习',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">672</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">468</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">manacher算法一图复习</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">manacher算法一图复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-05T02:57:00.000Z" title="发表于 2022-08-05 10:57:00">2022-08-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-07-01T03:15:40.549Z" title="更新于 2026-07-01 11:15:40">2026-07-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/">2022-2023赛季</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">42</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p><strong>本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhangtingxi/p/16555504.html">https://www.cnblogs.com/zhangtingxi/p/16555504.html</a></strong></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhangtingxi/p/15551651.html">完整版请戳这</a></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.luogu.com.cn/upload/image_hosting/upx5fl9f.png" alt=""></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">zhangxixi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/08/05/%E5%8D%9A%E5%AE%A2%E5%9B%AD-manacher%E7%AE%97%E6%B3%95%E4%B8%80%E5%9B%BE%E5%A4%8D%E4%B9%A0/">http://example.com/2022/08/05/%E5%8D%9A%E5%AE%A2%E5%9B%AD-manacher%E7%AE%97%E6%B3%95%E4%B8%80%E5%9B%BE%E5%A4%8D%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">zhangxixi的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a><a class="post-meta__tags" href="/tags/manacher/">manacher</a></div><div class="post-share"><div class="social-share" data-image="/" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2022/08/09/%E5%8D%9A%E5%AE%A2%E5%9B%AD-2022.8.9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%AE%80%E8%A6%81%E9%A2%98%E8%A7%A3/" title="2022.8.9模拟赛简要题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">2022.8.9模拟赛简要题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16565280.html  2022.8.9模拟赛简要题解 A 做个最小生成树，每当某个并查集与1所在并查集相连的时候，就用当前边乘上这个并查集大小 B 显然前缀并查集。每次把 x−1x-1x−1 与 yyy 并起来，两个点加入在同一个并查集里面说明它们之间的异或和已定 判断是否合法要维护当前点到祖先的异或值，两点到祖先的异或和相当于就是两数之间的异或和 实现过程对并查集进行一些小改动即可 C 由于 n≤105n\leq 10^5n≤105，考虑根号做法，尝试对 kkk 进行根号分治  如果 k≤nk\leq \sqrt nk≤n​，这样的 kkk 必然不超过 n\sqrt nn​ 个，可以预处理，复杂度 O(nn)O(n\sqrt n)O(nn​) 如果 k≥nk\geq \sqrt nk≥n​，这种情况下最多跳 n\sqrt nn​ 步就结束，直接暴力模拟，复杂度 O(nn)O(n\sqrt n)O(nn​)  总复杂度 O(nn)O(...</div></div></div></a><a class="pagination-related" href="/2022/07/31/%E5%8D%9A%E5%AE%A2%E5%9B%AD-ABC262%E6%80%BB%E7%BB%93/" title="ABC262总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">ABC262总结</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16538364.html  比赛地址 比赛情况 RANK：750 AC：4 / 8 题目分析 A 签到题，略 B 显然，n≤100n\leq 100n≤100，直接枚举 a,b,ca,b,ca,b,c 即可 C 对于每对数，分两中情况讨论   ai=i,aj=ja_i=i, a_j=jai​=i,aj​=j，直接求出 ai=ia_i=iai​=i 数 kkk 然后计算 k(k−1)2\frac {k(k-1)} 22k(k−1)​   ai=j,aj=ia_i=j, a_j=iai​=j,aj​=i，对于每个 iii 分别判断即可，记得满足 i&lt;ji&lt;ji&lt;j   D 对于每种长度分别dp 假设当前枚举长度为 kkk 设 dpi,j,sdp_{i,j,s}dpi,j,s​ 代表前 iii 个数，已经选了 jjj 个，他们的和模 kkk 为 sss 的方案。 第一种情况，此数不选 dpi,j,s+=dpi−1,j,s\Lar...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2021/11/14/%E5%8D%9A%E5%AE%A2%E5%9B%AD-manacher%20%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" title="manacher 算法总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-14</div><div class="info-item-2">manacher 算法总结</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15551651.html  测试一下这个博客园的功能（图片好像只能在洛谷上看，有时间就改） manacher 算法总结 题目大意 给定一字符串，求其最长回文串长度 方法对比 暴力效率：O(n3)O(n^3)O(n3)，优化后为O(n2)O(n^2)O(n2) manacher效率：O(n)O(n)O(n) 算法思想 回文串有两种：奇回文与偶回文 分类讨论太麻烦，主要是我不会，于是我们就统一为奇回文 如何统一 例： abbab  偶回文：abba 奇数回文：bab 我们在中间各插入一个符号，例如#号 则原式变为： #a#b#b#a#b#  此时奇回文还是已某个子母为中心的回文，如： bab-&gt;#b#a#b#  此时这个回文仍以a为中心 通过观察可以发现，偶回文变成已#为中心的奇回文，如： abba-&gt;#a#b#b#a#  此时这个回文已第三个#号为中心 我们把原先的串命名为 sss 串，修改后的串命名为 ttt 串，定义数组 pp...</div></div></div></a><a class="pagination-related" href="/2022/06/11/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B28VP%E6%80%BB%E7%BB%93/" title="牛客小白月赛28VP总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-11</div><div class="info-item-2">牛客小白月赛28VP总结</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16366208.html  牛客小白月赛28VP总结 比赛地址 A 数学题，快速幂+逆元即可 B 结论题，判断 xxx 与 yyy 模3余数 C 经典字符串括号题，用栈维护 D 抓住位运算的性质，判断 x−2yx-2yx−2y &amp; yyy 的结果。 E 没做，但感觉应该就是个大线段树 F 也没做，应该就是先求所有一次函数的交点，然后维护最小和次小值 G KMP模板 H 最短路模板 I 把每个格子拆除1e4+7个，然后递推 J 并查集维护同种颜色树大小 </div></div></div></a><a class="pagination-related" href="/2022/01/16/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90P6739%20%5BBalticOI%202014%20Day1%5D%20Three%20Friends%E3%80%91%E9%A2%98%E8%A7%A3/" title="【P6739 [BalticOI 2014 Day1] Three Friends】题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-16</div><div class="info-item-2">【P6739 [BalticOI 2014 Day1] Three Friends】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15809039.html  题目链接 题目 有一个字符串 SSS，对他进行操作：  将 SSS 复制为两份，存在字符串 TTT 中 在 TTT 的某一位置上插入一个字符，得到字符串 UUU  现在给定 UUU，求 SSS。 思路 哈希 先预处理这个字符串的哈希前缀和，然后枚举插入位置，这时候把左右的 SSS 求出来，看看是否相同。 需要注意的是，题目是说 SSS 不是唯一的猜输出 NOT UNIQUE，也就是说如果有多种切断方式但 SSS 一样还是要输出 SSS。 总结 这道题是对哈希前缀和的一个非常好的应用。 在哈希里，如果为了防止出错，可以通过求某段区间哈希值，取模等函数的组合，这是以后在做哈希题时可以用到的。 Code 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859...</div></div></div></a><a class="pagination-related" href="/2021/11/15/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90%E6%B4%9B%E8%B0%B7P1379%20%E5%85%AB%E6%95%B0%E7%A0%81%E9%9A%BE%E9%A2%98%E3%80%91%E9%A2%98%E8%A7%A3/" title="【洛谷P1379 八数码难题】题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-15</div><div class="info-item-2">【洛谷P1379 八数码难题】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15558545.html  题目链接 和atc之前的一道题类似，都是暴力广搜+记录状态。 从开始状态开始广搜，然后直接拿个map或者哈希记录状态即可。 时间复杂度为: O(9!)O(9!)O(9!)，因为最多也只有这么多种状态。 Code 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556// Problem: P1379 八数码难题// Contest: Luogu// URL: https://www.luogu.com.cn/problem/P1379// Memory Limit: 125 MB// Time Limit: 1000 ms// // Powered by CP Editor (https://cpeditor.org)#include&lt;bits/stdc++...</div></div></div></a><a class="pagination-related" href="/2023/12/21/CSDN-OI%E2%80%94%E2%80%94280_%E5%BC%B1%E5%91%A8%E6%9C%9F%E5%AE%9A%E7%90%86WPL%20(Weak%20Periodicity%20Lemma.)/" title="弱周期定理WPL (Weak Periodicity Lemma.)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-21</div><div class="info-item-2">弱周期定理WPL (Weak Periodicity Lemma.)</div></div><div class="info-2"><div class="info-item-1">弱周期定理WPL (Weak Periodicity Lemma.)  本文搬运自本人高中时期CSDN博客，若图片加载不出来，可到原文查看：https://blog.csdn.net/zhangtingxiqwq/article/details/135121712    因为 sis_isi​ 可以去到 si−p,si+q…s_{i-p},s_{i+q}\dotssi−p​,si+q​… ，因此可以表示成 ap−bqap-bqap−bq 的形式。 本质：划分等价类，等价类有一个迭代的过程，怎么都可以走到 gcd⁡(p,q)\gcd(p,q)gcd(p,q) ，但走不到更小的 </div></div></div></a><a class="pagination-related" href="/2022/01/12/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90Loj%20#10051.%20%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%202.3%20%E4%BE%8B%203%E3%80%8DNikitosh%20%E5%92%8C%E5%BC%82%E6%88%96%E3%80%91%E9%A2%98%E8%A7%A3/" title="【Loj #10051. 「一本通 2.3 例 3」Nikitosh 和异或】题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-12</div><div class="info-item-2">【Loj #10051. 「一本通 2.3 例 3」Nikitosh 和异或】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15791222.html  题目链接 题目 给定一个含 NNN 个元素的数组 AAA，下标从 111 开始。请找出下面式子的最大值： (A[l1]⨁A[l1+1]⨁…⨁A[r1])+(A[l2]⨁A[l2+1]…⨁A[r2])(A[l_1]⨁A[l_1+1]⨁…⨁A[r_1])+(A[l_2]⨁A[l_2+1]…⨁A[r_2])(A[l1​]⨁A[l1​+1]⨁…⨁A[r1​])+(A[l2​]⨁A[l2​+1]…⨁A[r2​])，其中 1≤l1≤r1&lt;l2≤r2≤N1≤l_1≤r_1&lt;l_2≤r_2≤N1≤l1​≤r1​&lt;l2​≤r2​≤N，x⨁yx⨁yx⨁y 表示 xxx 和 yyy 的按位异或。 思路 枚举分割点 iii，则此时最大值为左边的最大值 lmxlmxlmx 和右边的最大值 rmxrmxrmx 的和。 至于 lmxlmxlmx 和 rmxrmxrmx 怎么求，以 lmxlmxlmx 为例，lmxi=max⁡...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">zhangxixi</div><div class="author-info-description">你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">672</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">468</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhangxixi2008"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is zhangxixi's Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/01/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%96%87%E7%AB%A0%E5%AF%BC%E5%85%A5Hexo/" title="博客园文章搬运至Hexo">博客园文章搬运至Hexo</a><time datetime="2026-07-01T02:46:32.000Z" title="发表于 2026-07-01 10:46:32">2026-07-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/Hexo%E4%B8%AD%E5%90%AF%E7%94%A8Katex/" title="Hexo中启用Katex">Hexo中启用Katex</a><time datetime="2026-06-30T13:42:11.000Z" title="发表于 2026-06-30 21:42:11">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/Hexo%E5%90%AF%E5%8A%A8%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" title="Hexo启动搜索功能">Hexo启动搜索功能</a><time datetime="2026-06-30T13:04:13.000Z" title="发表于 2026-06-30 21:04:13">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN%E6%96%87%E7%AB%A0%E6%90%AC%E8%BF%90%E8%87%B3Hexo/" title="CSDN文章搬运至Hexo">CSDN文章搬运至Hexo</a><time datetime="2026-06-30T09:35:04.000Z" title="发表于 2026-06-30 17:35:04">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/" title="油猴脚本不能使用？那是因为没有打开开发者模式！">油猴脚本不能使用？那是因为没有打开开发者模式！</a><time datetime="2026-06-30T07:38:52.000Z" title="发表于 2026-06-30 15:38:52">2026-06-30</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="请在此处搜索搜索" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.5-b1"></script></div></div></body></html>

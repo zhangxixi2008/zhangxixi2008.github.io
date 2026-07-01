@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>【CF554A Kyoya and Photobooks】题解 | zhangxixi的博客</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;zhangtingxi&#x2F;p&#x2F;15634024.html  题目链接 暴力是肯定可以的。所以这里讲 O(1)O(1)O(1)。 首先不考虑重复，则有 (∣s∣+1)×26(|s|+1)\times 26(∣s∣+1)×26 种可行方案。 然后重复的就是在一个字母的左右放和这个字母相同的字母">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【CF554A Kyoya and Photobooks】题解">
+<meta property="og:url" content="http://example.com/2021/12/02/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90CF554A%20Kyoya%20and%20Photobooks%E3%80%91%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;zhangtingxi&#x2F;p&#x2F;15634024.html  题目链接 暴力是肯定可以的。所以这里讲 O(1)O(1)O(1)。 首先不考虑重复，则有 (∣s∣+1)×26(|s|+1)\times 26(∣s∣+1)×26 种可行方案。 然后重复的就是在一个字母的左右放和这个字母相同的字母">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-02T00:45:00.000Z">
+<meta property="article:modified_time" content="2026-07-01T03:15:40.560Z">
+<meta property="article:author" content="zhangxixi">
+<meta property="article:tag" content="字符串">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "【CF554A Kyoya and Photobooks】题解",
+  "url": "http://example.com/2021/12/02/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90CF554A%20Kyoya%20and%20Photobooks%E3%80%91%E9%A2%98%E8%A7%A3/",
+  "image": "",
+  "datePublished": "2021-12-02T00:45:00.000Z",
+  "dateModified": "2026-07-01T03:15:40.560Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "zhangxixi",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2021/12/02/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90CF554A%20Kyoya%20and%20Photobooks%E3%80%91%E9%A2%98%E8%A7%A3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【CF554A Kyoya and Photobooks】题解',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">672</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">468</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">【CF554A Kyoya and Photobooks】题解</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">【CF554A Kyoya and Photobooks】题解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-02T00:45:00.000Z" title="发表于 2021-12-02 08:45:00">2021-12-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-07-01T03:15:40.560Z" title="更新于 2026-07-01 11:15:40">2026-07-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">302</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p><strong>本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhangtingxi/p/15634024.html">https://www.cnblogs.com/zhangtingxi/p/15634024.html</a></strong></p>
+</blockquote>
+<h2 id="题目链接"><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF554A">题目链接</a></h2>
+<p>暴力是肯定可以的。所以这里讲 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>。</p>
+<p>首先不考虑重复，则有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">∣</mi><mi>s</mi><mi mathvariant="normal">∣</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>×</mo><mn>26</mn></mrow><annotation encoding="application/x-tex">(|s|+1)\times 26</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">∣</span><span class="mord mathnormal">s</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">26</span></span></span></span> 种可行方案。</p>
+<p>然后重复的就是在一个字母的左右放和这个字母相同的字母，有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>s</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|s|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal">s</span><span class="mord">∣</span></span></span></span> 种可能。</p>
+<p>所以总共有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">∣</mi><mi>s</mi><mi mathvariant="normal">∣</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>×</mo><mn>26</mn><mo>−</mo><mi mathvariant="normal">∣</mi><mi>s</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">(|s|+1)\times 26-|s|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">∣</span><span class="mord mathnormal">s</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">26</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal">s</span><span class="mord">∣</span></span></span></span> 种可能。</p>
+<h3 id="Code">Code</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Problem: CF554A Kyoya and Photobooks</span></span><br><span class="line"><span class="comment">// Contest: Luogu</span></span><br><span class="line"><span class="comment">// URL: https://www.luogu.com.cn/problem/CF554A</span></span><br><span class="line"><span class="comment">// Memory Limit: 250 MB</span></span><br><span class="line"><span class="comment">// Time Limit: 2000 ms</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">// Powered by CP Editor (https://cpeditor.org)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//#define int long long</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;<span class="type">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="type">char</span> ch=<span class="built_in">getchar</span>();</span><br><span class="line"><span class="keyword">while</span>(ch&lt;<span class="string">&#x27;0&#x27;</span>||ch&gt;<span class="string">&#x27;9&#x27;</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">&#x27;-&#x27;</span>)f=<span class="number">-1</span>;</span><br><span class="line">ch=<span class="built_in">getchar</span>();&#125;<span class="keyword">while</span>(ch&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;ch&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;x=(x&lt;&lt;<span class="number">1</span>)+</span><br><span class="line">(x&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>);ch=<span class="built_in">getchar</span>();&#125;<span class="keyword">return</span> x*f;&#125;</span><br><span class="line"><span class="comment">//#define mo</span></span><br><span class="line"><span class="comment">//#define M</span></span><br><span class="line"><span class="comment">//#define M</span></span><br><span class="line"><span class="type">int</span> n, m, i, j, k; </span><br><span class="line"><span class="type">char</span> s[<span class="number">22</span>]; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//	freopen(&quot;tiaoshi.in&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line"><span class="comment">//	freopen(&quot;tiaoshi.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, s<span class="number">+1</span>); n=<span class="built_in">strlen</span>(s<span class="number">+1</span>); </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, (n<span class="number">+1</span>)*<span class="number">26</span>-n); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">zhangxixi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/12/02/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90CF554A%20Kyoya%20and%20Photobooks%E3%80%91%E9%A2%98%E8%A7%A3/">http://example.com/2021/12/02/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90CF554A%20Kyoya%20and%20Photobooks%E3%80%91%E9%A2%98%E8%A7%A3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">zhangxixi的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a><a class="post-meta__tags" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a></div><div class="post-share"><div class="social-share" data-image="/" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2021/12/03/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90CF1110E%20Magic%20Stones%E3%80%91%E9%A2%98%E8%A7%A3/" title="【CF1110E Magic Stones】题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">【CF1110E Magic Stones】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15640116.html  题目链接 我要是在noip前做这道题就好了。 这道题的本质就是noip2021方差中的一个性质，对于每个数进行修改，就是把它左右的差进行交换。 注意的是首项一定要一样。 Code 123456789101112131415161718192021222324252627282930313233343536373839// Problem: CF1110E Magic Stones// Contest: Luogu// URL: https://www.luogu.com.cn/problem/CF1110E// Memory Limit: 250 MB// Time Limit: 1000 ms// // Powered by CP Editor (https://cpeditor.org)#include&lt;bits/stdc++.h&gt;using namespace std;#define int l...</div></div></div></a><a class="pagination-related" href="/2021/12/02/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90CF550B%20Preparing%20Olympiad%E3%80%91%E9%A2%98%E8%A7%A3/" title="【CF550B Preparing Olympiad】题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">【CF550B Preparing Olympiad】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15633892.html  题目链接 由于 n⩽15n\leqslant 15n⩽15，所以我们可以直接枚举每条题目选或不选，最后判断是否合法即可。 时间复杂度：O(2n)O(2^n)O(2n)。 Code 1234567891011121314151617181920212223242526272829303132333435363738394041424344// Problem: CF550B Preparing Olympiad// Contest: Luogu// URL: https://www.luogu.com.cn/problem/CF550B// Memory Limit: 250 MB// Time Limit: 2000 ms// // Powered by CP Editor (https://cpeditor.org)#include&lt;bits/stdc++.h&gt;using namespace std...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2022/01/16/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90P3538%20%5BPOI2012%5DOKR-A%20Horrible%20Poem%E3%80%91%E9%A2%98%E8%A7%A3/" title="【P3538 [POI2012]OKR-A Horrible Poem】题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-16</div><div class="info-item-2">【P3538 [POI2012]OKR-A Horrible Poem】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15810272.html  题目 原题来自：POI 2012 给出一个由小写英文字母组成的字符串 S，再给出 q 个询问，要求回答 S 某个子串的最短循环节。 如果字符串 B 是字符串 A 的循环节，那么 A 可以由 B 重复若干次得到。 思路 首先，我们如果有三点：  一个字符串的循环节必然是字符串长度的约数 循环节的倍数如果长度还是字符串长度的约数，那么他也是循环节 如果一个长度 iii 是字符串循环节长度，那么 [l,r−i][l, r-i][l,r−i] 和 [l+i,r][l+i, r][l+i,r] 必然相等  有了这三点，我们只需要打一个素数筛+哈希即可。 总结 这题是一道很综合的题，要求掌握两个知识点，是对循环节的综合考验：  如下图中，对于字符串 SSS，若红色部分长度为 SSS 长度的因数，且黄色部分等于橙色部分，则红色部分为 SSS 的循环节。  循环节的倍数如果长度还是字符串长度的约数，那么他也是循环节，于是可以从大...</div></div></div></a><a class="pagination-related" href="/2021/12/05/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90P4302%20%5BSCOI2003%5D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8A%98%E5%8F%A0%E3%80%91%E9%A2%98%E8%A7%A3/" title="【P4302 [SCOI2003]字符串折叠】题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-05</div><div class="info-item-2">【P4302 [SCOI2003]字符串折叠】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15646276.html  题目链接 题目 折叠的定义如下：   一个字符串可以看成它自身的折叠。记作S = S X(S)是X(X&gt;1)个S连接在一起的串的折叠。记作X(S) = SSSS…S(X个S)。 如果A = A’, B = B’，则AB = A’B’ 例如，因为3(A) = AAA, 2(B) = BB，所以3(A)C2(B) = AAACBB，而2(3(A)C)2(B) = AAACAAACBB  给一个字符串，求它的最短折叠。例如AAAAAAAAAABABABCCD的最短折叠为：9(A)3(AB)CCD。 思路 区间dp 首先必然枚举中间点，然后左右合并。 也可以枚举循环节，然后暴力判断。 判断之前先看一下是否为长度的因数，如果暴力后是否能使答案更小，然后就不会被卡。 原则上时间复杂度 O(n4)O(n^4)O(n4)，然后必然卡不满，相当于 O(n3)O(n^3)O(n3) 加个小常数，最坏也就 O(n3n)O(n^3...</div></div></div></a><a class="pagination-related" href="/2021/12/11/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90Loj%20#10013.%20%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%201.2%20%E4%BE%8B%203%E3%80%8D%E6%9B%B2%E7%BA%BF%E3%80%91%E9%A2%98%E8%A7%A3/" title="【Loj #10013. 「一本通 1.2 例 3」曲线】题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-11</div><div class="info-item-2">【Loj #10013. 「一本通 1.2 例 3」曲线】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15674711.html  题目链接 题目 明明做作业的时候遇到了 nnn 个二次函数 Si(x)=ax2+bx+cS_i(x)= ax^2 + bx + cS​i​​(x)=ax​2​​+bx+c，他突发奇想设计了一个新的函数 F(x)=max{Si(x)},i=1…nF(x) = max{S_i(x)}, i = 1ldots nF(x)=max{S​i​​(x)},i=1…n。 明明现在想求这个函数在 [0,1000][0,1000][0,1000] 的最小值，要求精确到小数点后四位，四舍五入。 思路 三分模板。 在区间 [0,1000][0, 1000][0,1000] 中进行三分，每次 O(n)O(n)O(n) 算出答案。 显然， 由于 sss 函数满足单调性，fff 函数是 sss 函数中的最大值，必然也满足单调性。 Code 123456789101112131415161718192021222324252627282930...</div></div></div></a><a class="pagination-related" href="/2022/01/17/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90Loj%20#10047.%20%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%202.2%20%E7%BB%83%E4%B9%A0%203%E3%80%8D%E4%BC%BC%E4%B9%8E%E5%9C%A8%E6%A2%A6%E4%B8%AD%E8%A7%81%E8%BF%87%E7%9A%84%E6%A0%B7%E5%AD%90%E3%80%91%E9%A2%98%E8%A7%A3/" title="【Loj #10047. 「一本通 2.2 练习 3」似乎在梦中见过的样子】题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-17</div><div class="info-item-2">【Loj #10047. 「一本通 2.2 练习 3」似乎在梦中见过的样子】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15812840.html  题目 原题来自：2014 年湖北省队互测 Week2 「Madoka，不要相信 QB！」伴随着 Homura 的失望地喊叫，Madoka 与 QB 签订了契约。 这是 Modoka 的一个噩梦，也同时是上个轮回中所发生的事。为了使这一次 Madoka 不再与 QB 签订契约，Homura 决定在刚到学校的第一天就解决 QB。然而，QB 也是有许多替身的（但在第八话中的剧情显示它也有可能是无限重生的），不过，意志坚定的 Homura 是不会放弃的——她决定消灭所有可能是 QB 的东西。现在，她已感受到附近的状态，并且把它转化为一个长度为 nnn 的字符串交给了学 OI 的你。 现在你从她的话中知道，所有形似于 A+B+AA+B+AA+B+A 的字符串都是 QB 或它的替身，且 ∣A∣≥k,∣B∣≥1|A| \geq k, |B| \geq 1∣A∣≥k,∣B∣≥1（位置不同其他性质相同的子串算不同子串，位置相同但拆...</div></div></div></a><a class="pagination-related" href="/2023/09/10/CSDN-OI%E2%80%94%E2%80%94064_%E7%B1%BB%E6%AC%A7%E7%AC%94%E8%AE%B0%E5%AD%98%E6%A1%A3/" title="类欧笔记存档"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-10</div><div class="info-item-2">类欧笔记存档</div></div><div class="info-2"><div class="info-item-1">类欧笔记存档  本文搬运自本人高中时期CSDN博客，若图片加载不出来，可到原文查看：https://blog.csdn.net/zhangtingxiqwq/article/details/132792181  电子版： https://blog.csdn.net/zhangtingxiqwq/article/details/132718582     </div></div></div></a><a class="pagination-related" href="/2021/12/14/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90BZOJ3157%20%E5%9B%BD%E7%8E%8B%E5%A5%87%E9%81%87%E8%AE%B0%E3%80%91+%E3%80%90BZOJ3516%20%E5%9B%BD%E7%8E%8B%E5%A5%87%E9%81%87%E8%AE%B0%E5%8A%A0%E5%BC%BA%E7%89%88%20%E3%80%91%E9%A2%98%E8%A7%A3/" title="【BZOJ3157 国王奇遇记】+【BZOJ3516 国王奇遇记加强版 】题解"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-14</div><div class="info-item-2">【BZOJ3157 国王奇遇记】+【BZOJ3516 国王奇遇记加强版 】题解</div></div><div class="info-2"><div class="info-item-1"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15689484.html  题目链接 由于BZOJ已挂，这里是黑暗爆炸和hydro的备份 黑暗爆炸：  国王奇遇记 国王奇遇记加强版   hydro：  国王奇遇记 国王奇遇记加强版   题目 Katharon 国有着悠久的历史，每个慕名而来的游客都渴望能在 Katharon 国发现一些奇怪的宝藏。而作为国王的 Kanari 君也梦想着有一天发现自己国家的宝藏,从而成为世界上最富有的人。 Kanari 国王和 katherine 皇后凭着 14 年真挚的感情，数十年如一日甜蜜地生活在一起。前几天恰逢劳动节放假， Kanari 国王便和 Katherine 皇后一同前往电影院观看了最新出版的电影《致青春》。看完之后两人对青春又有了更深刻的认识。然而在返程的路上，他们突然在路边的小树林里发现了一块奇怪的石板，上面印着一行小字：“如果你能破解下面表达式的结果，你就可以拥有 Katharon 国最珍贵的财产。”这时 Kanari 国王和 Kathe...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">zhangxixi</div><div class="author-info-description">你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">672</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">468</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhangxixi2008"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is zhangxixi's Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="toc-text">题目链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code"><span class="toc-text">Code</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/01/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%96%87%E7%AB%A0%E5%AF%BC%E5%85%A5Hexo/" title="博客园文章搬运至Hexo">博客园文章搬运至Hexo</a><time datetime="2026-07-01T02:46:32.000Z" title="发表于 2026-07-01 10:46:32">2026-07-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/Hexo%E4%B8%AD%E5%90%AF%E7%94%A8Katex/" title="Hexo中启用Katex">Hexo中启用Katex</a><time datetime="2026-06-30T13:42:11.000Z" title="发表于 2026-06-30 21:42:11">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/Hexo%E5%90%AF%E5%8A%A8%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" title="Hexo启动搜索功能">Hexo启动搜索功能</a><time datetime="2026-06-30T13:04:13.000Z" title="发表于 2026-06-30 21:04:13">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN%E6%96%87%E7%AB%A0%E6%90%AC%E8%BF%90%E8%87%B3Hexo/" title="CSDN文章搬运至Hexo">CSDN文章搬运至Hexo</a><time datetime="2026-06-30T09:35:04.000Z" title="发表于 2026-06-30 17:35:04">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/" title="油猴脚本不能使用？那是因为没有打开开发者模式！">油猴脚本不能使用？那是因为没有打开开发者模式！</a><time datetime="2026-06-30T07:38:52.000Z" title="发表于 2026-06-30 15:38:52">2026-06-30</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="请在此处搜索搜索" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.5-b1"></script></div></div></body></html>

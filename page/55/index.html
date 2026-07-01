@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>zhangxixi的博客 - 你好啊！</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）">
+<meta property="og:type" content="website">
+<meta property="og:title" content="zhangxixi的博客">
+<meta property="og:url" content="http://example.com/page/55/index.html">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="zhangxixi">
+<meta name="twitter:card" content="summary"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/page/55/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'zhangxixi的博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">672</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">468</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">zhangxixi的博客</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/17/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90Loj%20#10047.%20%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%202.2%20%E7%BB%83%E4%B9%A0%203%E3%80%8D%E4%BC%BC%E4%B9%8E%E5%9C%A8%E6%A2%A6%E4%B8%AD%E8%A7%81%E8%BF%87%E7%9A%84%E6%A0%B7%E5%AD%90%E3%80%91%E9%A2%98%E8%A7%A3/" title="【Loj #10047. 「一本通 2.2 练习 3」似乎在梦中见过的样子】题解">【Loj #10047. 「一本通 2.2 练习 3」似乎在梦中见过的样子】题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-16T19:47:00.000Z" title="发表于 2022-01-17 03:47:00">2022-01-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/KMP/">KMP</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15812840.html  题目 原题来自：2014 年湖北省队互测 Week2 「Madoka，不要相信 QB！」伴随着 Homura 的失望地喊叫，Madoka 与 QB 签订了契约。 这是 Modoka 的一个噩梦，也同时是上个轮回中所发生的事。为了使这一次 Madoka 不再与 QB 签订契约，Homura 决定在刚到学校的第一天就解决 QB。然而，QB 也是有许多替身的（但在第八话中的剧情显示它也有可能是无限重生的），不过，意志坚定的 Homura 是不会放弃的——她决定消灭所有可能是 QB 的东西。现在，她已感受到附近的状态，并且把它转化为一个长度为 nnn 的字符串交给了学 OI 的你。 现在你从她的话中知道，所有形似于 A+B+AA+B+AA+B+A 的字符串都是 QB 或它的替身，且 ∣A∣≥k,∣B∣≥1|A| \geq k, |B| \geq 1∣A∣≥k,∣B∣≥1（位置不同其他性质相同的子串算不同子串，位置相同但拆...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/17/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90P4824%20%5BUSACO15FEB%5DCensoring%20S%E3%80%91%E9%A2%98%E8%A7%A3/" title="【P4824 [USACO15FEB]Censoring S】题解">【P4824 [USACO15FEB]Censoring S】题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-16T18:54:00.000Z" title="发表于 2022-01-17 02:54:00">2022-01-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%A0%88/">栈</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/KMP/">KMP</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15812544.html  题目 Farmer John为他的奶牛们订阅了Good Hooveskeeping杂志，因此他们在谷仓等待挤奶期间，可以有足够的文章可供阅读。不幸的是，最新一期的文章包含一篇关于如何烹制完美牛排的不恰当的文章，FJ不愿让他的奶牛们看到这些内容。 FJ已经根据杂志的所有文字，创建了一个字符串  SSS  ( SSS  的长度保证不超过  10610^6106  )，他想删除其中的子串  TTT  ,他将删去  SSS 中第一次出现的子串  TTT  ，然后不断重复这一过程，直到  SSS  中不存在子串  TTT 。 注意：每次删除一个子串后，可能会出现一个新的子串  TTT （说白了就是删除之后，两端的字符串有可能会拼接出来一个新的子串  TTT ）。 输入格式：第一行是字符串  SSS  ，第二行输入字符串  TTT ，保证  SSS  的长度大于等于  TTT  的长度， SSS  和  TTT  都只由小写...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/16/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90P3538%20%5BPOI2012%5DOKR-A%20Horrible%20Poem%E3%80%91%E9%A2%98%E8%A7%A3/" title="【P3538 [POI2012]OKR-A Horrible Poem】题解">【P3538 [POI2012]OKR-A Horrible Poem】题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-15T23:32:00.000Z" title="发表于 2022-01-16 07:32:00">2022-01-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BA%BF%E6%80%A7%E7%AD%9B/">线性筛</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%B0%E8%AE%BA/">数论</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%B4%A8%E6%95%B0/">质数</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%B4%A8%E6%95%B0%E7%AD%9B/">质数筛</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%93%88%E5%B8%8C-hash/">哈希,hash</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15810272.html  题目 原题来自：POI 2012 给出一个由小写英文字母组成的字符串 S，再给出 q 个询问，要求回答 S 某个子串的最短循环节。 如果字符串 B 是字符串 A 的循环节，那么 A 可以由 B 重复若干次得到。 思路 首先，我们如果有三点：  一个字符串的循环节必然是字符串长度的约数 循环节的倍数如果长度还是字符串长度的约数，那么他也是循环节 如果一个长度 iii 是字符串循环节长度，那么 [l,r−i][l, r-i][l,r−i] 和 [l+i,r][l+i, r][l+i,r] 必然相等  有了这三点，我们只需要打一个素数筛+哈希即可。 总结 这题是一道很综合的题，要求掌握两个知识点，是对循环节的综合考验：  如下图中，对于字符串 SSS，若红色部分长度为 SSS 长度的因数，且黄色部分等于橙色部分，则红色部分为 SSS 的循环节。  循环节的倍数如果长度还是字符串长度的约数，那么他也是循环节，于是可以从大...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/16/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90P6739%20%5BBalticOI%202014%20Day1%5D%20Three%20Friends%E3%80%91%E9%A2%98%E8%A7%A3/" title="【P6739 [BalticOI 2014 Day1] Three Friends】题解">【P6739 [BalticOI 2014 Day1] Three Friends】题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-15T19:36:00.000Z" title="发表于 2022-01-16 03:36:00">2022-01-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%93%88%E5%B8%8C-hash/">哈希,hash</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15809039.html  题目链接 题目 有一个字符串 SSS，对他进行操作：  将 SSS 复制为两份，存在字符串 TTT 中 在 TTT 的某一位置上插入一个字符，得到字符串 UUU  现在给定 UUU，求 SSS。 思路 哈希 先预处理这个字符串的哈希前缀和，然后枚举插入位置，这时候把左右的 SSS 求出来，看看是否相同。 需要注意的是，题目是说 SSS 不是唯一的猜输出 NOT UNIQUE，也就是说如果有多种切断方式但 SSS 一样还是要输出 SSS。 总结 这道题是对哈希前缀和的一个非常好的应用。 在哈希里，如果为了防止出错，可以通过求某段区间哈希值，取模等函数的组合，这是以后在做哈希题时可以用到的。 Code 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/16/%E5%8D%9A%E5%AE%A2%E5%9B%AD-ABC235%E6%80%BB%E7%BB%93/" title="ABC235总结">ABC235总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-15T18:10:00.000Z" title="发表于 2022-01-16 02:10:00">2022-01-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15808810.html  成绩  又是4题… 过程 A题看完后直接拆离为乘111，很顺利 B题扫一下，很快过了 C题看完之后想了一下，打了个map，过了。但我感觉正解不是这样，不过后来发现看题解就是这样。 D题想了一下，打了个暴力广搜，过了。 E题没看懂，跳过。 F题看完之后打了个数位dp+状压dp，然后发现要求和，崩溃，不打了。 然后就摸了1小时鱼。 总结 目前我ABC明显处于前4题超快过，后4题没思路的困境。 希望下次ABC能做出E或F题，我认为，按照我的能力，值得一试。 不然的话，想上青，有点难，而且上青之后很难稳定。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/14/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90Loj%20#10155.%20%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%205.2%20%E4%BE%8B%203%E3%80%8D%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E3%80%91%E9%A2%98%E8%A7%A3/" title="【Loj #10155. 「一本通 5.2 例 3」数字转换】题解">【Loj #10155. 「一本通 5.2 例 3」数字转换】题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-14T00:47:00.000Z" title="发表于 2022-01-14 08:47:00">2022-01-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15802558.html  题目链接 题目 如果一个数 xxx 的约数和 yyy （不包括他本身）比他本身小，那么 xxx 可以变成 yyy，yyy 也可以变成 xxx。例如 444 可以变为 333，111 可以变为 777。限定所有数字变换在不超过 nnn 的正整数范围内进行，求不断进行数字变换且不出现重复数字的最多变换步数。 思路 我们发现，通过数字之间的连边，可以构成一个森林。 于是题目就转化为在森林里求最长链。 对于每一棵树，分别求根离根节点最远和次远的点距离根节点的距离，加起来就是最长链。 其实可以证明，这条最长链一定在1号节点所在的那棵树上。 总结 这道题我一开始以为会构成一个图，然后在图上求最长链，嗯… 后来通过手推发现会构成一棵树，其实对于这种你以为会构成图的，有时你会巧妙的发现它变成了一棵树。 另一方面，以前我求树上最长链会用两遍dfs，但其实，利用树形dp，一次即可，以后可以用。 Code 12345678910111...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/14/%E5%8D%9A%E5%AE%A2%E5%9B%AD2-SS%E7%AE%97%E6%B3%95%E8%AE%B2%E8%AF%BE%E5%AE%89%E6%8E%92%E8%AE%A1%E5%88%92/" title="SS算法讲课安排计划">SS算法讲课安排计划</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-14T00:29:00.000Z" title="发表于 2022-01-14 08:29:00">2022-01-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%AE%B2%E8%AF%BE/">讲课</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E4%B8%80%E6%9C%AC%E9%80%9A/">一本通</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15802447.html  一本通讲评任务 要求（旧规则，现在似乎无限制）：  提高一等水平至少负责三个专题 普及一等水平至少负责两个专题 剩余人至少负责一个专题 先到先得  选题方式：  直接和crxis讲 xuanti.php 编号200之后的申请 论坛或评论区留言  目前报名进度：(31/34)\Large(31/34)(31/34) 下表中的转态：  ✔代表已完结，一般是1个月前的就会标注为✔ 🔥代表进行中，一般是crxis讲了相关专题之后就标注为🔥 ✘表示crxis说跳过     基础算法 负责人 状态 字符串算法 负责人 状态 图论 负责人 状态 数据结构 负责人 状态 动态规划 负责人 状态 数学基础 负责人 状态     贪心算法 crxis ✔ 哈希和哈希表 陈君霖 ✔ 最小生成树 panyile  树状数组 沈钊诚  区间类动态规划 张霆希  快速幂 crxis ✔   二分与三分 crxis ✔ KMP 算法 沈钊...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/14/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90P2014%20%5BCTSC1997%5D%E9%80%89%E8%AF%BE%E3%80%91%E9%A2%98%E8%A7%A3/" title="【P2014 [CTSC1997]选课】题解">【P2014 [CTSC1997]选课】题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-13T23:55:00.000Z" title="发表于 2022-01-14 07:55:00">2022-01-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%A0%91/">树</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%A0%91%E5%BD%A2dp/">树形dp</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/DP-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">DP,动态规划</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/DP/">DP</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%90%9C%E7%B4%A2/">搜索</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15802233.html  题目链接 题目 在大学里每个学生，为了达到一定的学分，必须从很多课程里选择一些课程来学习，在课程里有些课程必须在某些课程之前学习，如高等数学总是在其它课程之前学习。现在有 NNN 门功课，每门课有个学分，每门课有一门或没有直接先修课（若课程 a 是课程 b 的先修课即只有学完了课程 a，才能学习课程 b）。一个学生要从这些课程里选择 MMM 门课程学习，问他能获得的最大学分是多少？ 思路 对于没有祖先的，就连向一个虚点，那么这就是在一个连通树上的问题。 于是我们采纳树形dp。 设 dp(x,i)dp(x,i)dp(x,i) 表示在以 xxx 为根的子树里选 iii 们课程的最大学分。 此时我们对于每一个儿子 yyy，枚举在 yyy 里面选 jjj 们课程然后转移即可即可。 总结 对于这种题，如果发现题目中不能构成一课树，我们可以尝试建立虚点，然后变成一棵完整的树。 通过这个方法，我们就可以在树上愉快地做树形dp了...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/14/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90P2015%20%E4%BA%8C%E5%8F%89%E8%8B%B9%E6%9E%9C%E6%A0%91%E3%80%91%E9%A2%98%E8%A7%A3/" title="【P2015 二叉苹果树】题解">【P2015 二叉苹果树】题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-13T23:34:00.000Z" title="发表于 2022-01-14 07:34:00">2022-01-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%A0%91%E5%BD%A2dp/">树形dp</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/DP-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">DP,动态规划</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/DP/">DP</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15802114.html  题目链接 题目 有一棵苹果树，如果树枝有分叉，一定是分二叉（就是说没有只有一个儿子的结点） 这棵树共有 NNN 个结点（叶子点或者树枝分叉点），编号为 1∼N1 \sim N1∼N，树根编号一定是 111。 我们用一根树枝两端连接的结点的编号来描述一根树枝的位置。下面是一颗有 444 个树枝的树： 123452   5 \ /   3   4   \ /    1 现在这颗树枝条太多了，需要剪枝。但是一些树枝上长有苹果。 给定需要保留的树枝数量，求出最多能留住多少苹果。 思路 设 dp(x,i)dp(x,i)dp(x,i) 代表以 xxx 为根的子树里，保留 iii 根树枝的最多苹果数。 则对于 xxx 的子节点 yyy，我们可以枚举它保留多少条边，记为 jjj： dp(x,i)=max⁡y∈xmax⁡j=1i(dp(y,j)+z+dp(x,i−j))dp(x, i)=\max_{y\in x}\max_{j=1...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/13/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E3%80%90CF7A%20Kalevitch%20and%20Chess%E3%80%91%E9%A2%98%E8%A7%A3/" title="【CF7A Kalevitch and Chess】题解">【CF7A Kalevitch and Chess】题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-13T05:53:00.000Z" title="发表于 2022-01-13 13:53:00">2022-01-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/">2021-2022赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%90%9C%E7%B4%A2/">搜索</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%90%9C%E7%B4%A2/">二进制搜索</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/15799836.html  题目链接 题目 famous Berland’s painter Kalevitch likes to shock the public. One of his last obsessions is chess. For more than a thousand years people have been playing this old game on uninteresting, monotonous boards. Kalevitch decided to put an end to this tradition and to introduce a new attitude to chessboards. As before, the chessboard is a square-checkered board with the squares arranged in a 8×8 8×8 8×8 gri...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/54/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/54/#content-inner">54</a><span class="page-number current">55</span><a class="page-number" href="/page/56/#content-inner">56</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/#content-inner">68</a><a class="extend next" rel="next" href="/page/56/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">zhangxixi</div><div class="author-info-description">你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">672</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">468</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhangxixi2008"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is zhangxixi's Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/01/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%96%87%E7%AB%A0%E5%AF%BC%E5%85%A5Hexo/" title="博客园文章搬运至Hexo">博客园文章搬运至Hexo</a><time datetime="2026-07-01T02:46:32.000Z" title="发表于 2026-07-01 10:46:32">2026-07-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/Hexo%E4%B8%AD%E5%90%AF%E7%94%A8Katex/" title="Hexo中启用Katex">Hexo中启用Katex</a><time datetime="2026-06-30T13:42:11.000Z" title="发表于 2026-06-30 21:42:11">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/Hexo%E5%90%AF%E5%8A%A8%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" title="Hexo启动搜索功能">Hexo启动搜索功能</a><time datetime="2026-06-30T13:04:13.000Z" title="发表于 2026-06-30 21:04:13">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN%E6%96%87%E7%AB%A0%E6%90%AC%E8%BF%90%E8%87%B3Hexo/" title="CSDN文章搬运至Hexo">CSDN文章搬运至Hexo</a><time datetime="2026-06-30T09:35:04.000Z" title="发表于 2026-06-30 17:35:04">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/" title="油猴脚本不能使用？那是因为没有打开开发者模式！">油猴脚本不能使用？那是因为没有打开开发者模式！</a><time datetime="2026-06-30T07:38:52.000Z" title="发表于 2026-06-30 15:38:52">2026-06-30</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Haskell/"><span class="card-category-list-name">Haskell</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo-%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">Hexo 教程</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo-%E6%B5%8B%E8%AF%95/"><span class="card-category-list-name">Hexo 测试</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/"><span class="card-category-list-name">OI（初中）</span><span class="card-category-list-count">244</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/"><span class="card-category-list-name">2021-2022赛季</span><span class="card-category-list-count">188</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/"><span class="card-category-list-name">2022-2023赛季</span><span class="card-category-list-count">56</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI%EF%BC%88%E5%A4%A7%E5%AD%A6%EF%BC%89/"><span class="card-category-list-name">OI（大学）</span><span class="card-category-list-count">14</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI%EF%BC%88%E5%A4%A7%E5%AD%A6%EF%BC%89/%E9%AB%98%E8%80%83%E5%A4%8D%E9%94%AE/"><span class="card-category-list-name">高考复键</span><span class="card-category-list-count">14</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E7%BB%84%E5%90%88/" style="font-size: 1.46em; color: #99a8bc">组合</a> <a href="/tags/%E5%A2%9E%E9%87%8F/" style="font-size: 1.1em; color: #999">增量</a> <a href="/tags/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" style="font-size: 1.14em; color: #999a9c">哈夫曼树</a> <a href="/tags/ubuntu/" style="font-size: 1.1em; color: #999">ubuntu</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.5em; color: #99a9bf">算法</a> <a href="/tags/wqs%E4%BC%98%E5%8C%96/" style="font-size: 1.1em; color: #999">wqs优化</a> <a href="/tags/%E6%A0%88/" style="font-size: 1.21em; color: #999da3">栈</a> <a href="/tags/Trie%E6%A0%91%EF%BC%8C%E5%AD%97%E5%85%B8%E6%A0%91/" style="font-size: 1.14em; color: #999a9c">Trie树，字典树</a> <a href="/tags/%E5%AF%B9%E5%81%B6%E5%9B%BE/" style="font-size: 1.1em; color: #999">对偶图</a> <a href="/tags/%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB/" style="font-size: 1.1em; color: #999">曼哈顿距离</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 1.14em; color: #999a9c">总结</a> <a href="/tags/%E5%81%87%E8%AE%BE%E6%B3%95/" style="font-size: 1.1em; color: #999">假设法</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 1.35em; color: #99a3b1">模拟</a> <a href="/tags/%E6%A0%B9/" style="font-size: 1.1em; color: #999">根</a> <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 1.21em; color: #999da3">二次函数</a> <a href="/tags/broder%E5%89%83%E5%A4%B4%E6%88%AA%E5%B0%BE%E6%B3%95/" style="font-size: 1.1em; color: #999">broder剃头截尾法</a> <a href="/tags/%E4%BA%A4%E4%BA%92%E9%A2%98/" style="font-size: 1.1em; color: #999">交互题</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/" style="font-size: 1.21em; color: #999da3">组合数</a> <a href="/tags/python/" style="font-size: 1.14em; color: #999a9c">python</a> <a href="/tags/%E5%AE%B9%E6%96%A5/" style="font-size: 1.28em; color: #99a0aa">容斥</a> <a href="/tags/%E8%8A%AF%E7%89%87/" style="font-size: 1.1em; color: #999">芯片</a> <a href="/tags/%E8%83%8C%E5%8C%85/" style="font-size: 1.39em; color: #99a5b5">背包</a> <a href="/tags/Trie/" style="font-size: 1.1em; color: #999">Trie</a> <a href="/tags/%E6%B1%82%E5%AF%BC/" style="font-size: 1.1em; color: #999">求导</a> <a href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B/" style="font-size: 1.1em; color: #999">欧拉筛</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%8B%86%E5%88%86/" style="font-size: 1.1em; color: #999">二进制拆分</a> <a href="/tags/7k/" style="font-size: 1.14em; color: #999a9c">7k</a> <a href="/tags/bitset/" style="font-size: 1.21em; color: #999da3">bitset</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 1.43em; color: #99a6b8">前缀和</a> <a href="/tags/Dijkstra/" style="font-size: 1.1em; color: #999">Dijkstra</a> <a href="/tags/%E6%A0%B9%E5%8F%B7/" style="font-size: 1.1em; color: #999">根号</a> <a href="/tags/%E6%95%B0%E6%95%B0/" style="font-size: 1.1em; color: #999">数数</a> <a href="/tags/%E5%BE%AA%E7%8E%AF%E5%90%8C%E6%9E%84%E4%B8%B2/" style="font-size: 1.1em; color: #999">循环同构串</a> <a href="/tags/%E8%99%9A%E6%A0%91/" style="font-size: 1.17em; color: #999ca0">虚树</a> <a href="/tags/%E5%B7%A7%E5%A6%99%E5%BB%BA%E5%9B%BE/" style="font-size: 1.1em; color: #999">巧妙建图</a> <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" style="font-size: 1.1em; color: #999">高精度</a> <a href="/tags/lcm/" style="font-size: 1.1em; color: #999">lcm</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 1.25em; color: #999fa7">排序</a> <a href="/tags/%E7%B1%BB%E6%AC%A7/" style="font-size: 1.17em; color: #999ca0">类欧</a> <a href="/tags/dp%E4%BC%98%E5%8C%96/" style="font-size: 1.32em; color: #99a2ae">dp优化</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/06/">
+            <span class="card-archive-list-date">
+              六月 2026
+            </span>
+            <span class="card-archive-list-count">32</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              五月 2026
+            </span>
+            <span class="card-archive-list-count">17</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/04/">
+            <span class="card-archive-list-date">
+              四月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/10/">
+            <span class="card-archive-list-date">
+              十月 2024
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/09/">
+            <span class="card-archive-list-date">
+              九月 2024
+            </span>
+            <span class="card-archive-list-count">16</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/08/">
+            <span class="card-archive-list-date">
+              八月 2024
+            </span>
+            <span class="card-archive-list-count">17</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/05/">
+            <span class="card-archive-list-date">
+              五月 2024
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">672</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">530.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-07-01T03:30:27.856Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="请在此处搜索搜索" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.5-b1"></script></div></div></body></html>

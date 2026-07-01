@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>zhangxixi的博客 - 你好啊！</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）">
+<meta property="og:type" content="website">
+<meta property="og:title" content="zhangxixi的博客">
+<meta property="og:url" content="http://example.com/page/48/index.html">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="zhangxixi">
+<meta name="twitter:card" content="summary"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/page/48/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'zhangxixi的博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">672</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">468</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> 专栏</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">zhangxixi的博客</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/17/%E5%8D%9A%E5%AE%A2%E5%9B%AD-ABC260%E6%80%BB%E7%BB%93/" title="ABC260总结">ABC260总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-17T05:41:00.000Z" title="发表于 2022-07-17 13:41:00">2022-07-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/">2022-2023赛季</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16488501.html  比赛地址 比赛情况 排名：412 / 7225 AC：5 / 8 题目分析 A 签到题 B 模拟题，按题意模拟即可 C 类似dp，从小往大更新，先更新蓝的再更新红的 D 显然，无论每堆卡片如何变化，卡片从前往后始终满足单调性，于是可以二分它在哪堆卡片 如果这堆卡片放完，可以直接跳过，这一步可以用并查集优化 E 枚举左端点 iii，计算右端点最左在哪，假设在 mxmxmx，右端点的取值范围在 [mx,m][mx,m][mx,m] 而 mxmxmx 就是所有 (ai,bi)(a_i, b_i)(ai​,bi​) 中每一对的最小值（且大于 iii）的最大值，即 mx=max⁡j=1n([大于等于 i 的较小值](aj,bj))mx=\max_{j=1}^n( \text{[大于等于 }i\text{ 的较小值]}(a_j,b_j))mx=maxj=1n​([大于等于 i 的较小值](aj​,bj​))，如果 aj,bj...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/17/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E7%89%9B%E5%AE%A2%E7%BD%912022%E6%B2%B3%E5%8D%97%E8%90%8C%E6%96%B0%E8%81%94%E8%B5%9B%E7%AC%AC%EF%BC%88%E4%BA%8C%EF%BC%89%E5%9C%BA%EF%BC%9A%E6%B2%B3%E5%8D%97%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E6%80%BB%E7%BB%93/" title="牛客网2022河南萌新联赛第（二）场：河南理工大学总结">牛客网2022河南萌新联赛第（二）场：河南理工大学总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-17T02:38:00.000Z" title="发表于 2022-07-17 10:38:00">2022-07-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/">2022-2023赛季</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16488033.html  比赛总结 比赛情况 排名：14 / 1393 AC：10 / 12 题目总结 A 首先假如两数 gcd⁡\gcdgcd 不为1，中间有些地方就走不到，所以要求两数 gcd⁡\gcdgcd 为1 注意特判1、1的情况 B 问是否存在多少 xxx 满足 ax=ab×ac×ad    (b,c,d&gt;x)a_x=a_b\times a_c\times a_d\;\;(b,c,d&gt;x)ax​=ab​×ac​×ad​(b,c,d&gt;x) 观察 n⩽1500n\leqslant 1500n⩽1500，考虑 O(n2log⁡n)O(n^2\log n)O(n2logn) 移项：axab=ac×ad\dfrac{a_x}{a_b}=a_c\times a_dab​ax​​=ac​×ad​，然后右边用 mapmapmap 存起来，左边逐个枚举 关于限制问题，用map记录 c,dc,dc,d 中较小值即可 然后发现超时...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/17/%E5%8D%9A%E5%AE%A2%E5%9B%AD-Codeforces%20Round%20#808%20(Div.%202)%E6%80%BB%E7%BB%93/" title="Codeforces Round #808 (Div. 2)总结">Codeforces Round #808 (Div. 2)总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-17T01:30:00.000Z" title="发表于 2022-07-17 09:30:00">2022-07-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/">2022-2023赛季</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16487847.html  比赛地址 比赛情况 排名：1844 / 18910 AC：3 / 6 题目分析 A 假如 a2a_2a2​ 能拆成很多个 a1a_1a1​，a3a_3a3​ 能拆成很多个 a2a_2a2​ 和 a1a_1a1​，则 a3a_3a3​ 必然可以拆成很多个 a1a_1a1​，所以只需要判断 a2a_2a2​ 到 ana_nan​ 是否能整除 a1a_1a1​ 即可 B 显然，我们要使所有 gcd⁡(ai,i)=i\gcd(a_i,i)=igcd(ai​,i)=i，那么我们就找大于等于 lll 的第一个 iii 的倍数 ⌊li⌋×i\left\lfloor\dfrac{l}{i}\right\rfloor\times i⌊il​⌋×i，如果大于 rrr 则无解 C 我的思路 首先，假如你在不符合要求（即 ai&gt;qa_i&gt;qai​&gt;q）里面的选，必然是越后越好，因为这样对结果的影响最小 那么我们从后往前...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/17/%E5%8D%9A%E5%AE%A2%E5%9B%AD-Codeforces%20Round%20#807%20(Div.%202)%20%E6%80%BB%E7%BB%93/" title="Codeforces Round #807 (Div. 2) 总结">Codeforces Round #807 (Div. 2) 总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-17T01:01:00.000Z" title="发表于 2022-07-17 09:01:00">2022-07-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/">2022-2023赛季</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16487746.html  比赛地址 比赛情况 排名：816 / 23280 AC：4 / 6 题目分析 A 先排序，最优策略显然是第1个人和第 n+1n+1n+1 个人，第2个人和第 n+2n+2n+2 个人，一直到第 nnn 个人和第 2n2n2n 个人，然后判断是否存在不符合的情况 B 显然我们希望每一次都 j=1j=1j=1，但因为有0的存在，所以我们需要把0变成1 所以答案为 ∑i=1n−1ai\sum_{i=1}^{n-1}a_i∑i=1n−1​ai​ 加上第一个非0的数的地方开始到 n−1n-1n−1 区间里0的个数 C 先计算出它在哪一段，然后看一下其对应位置，然后重复操作 D 可以发现，无论怎么变，就是把连续的1或0缩短或扩长，不能消灭 既然如此，先判左右端点，然后计算连续1个数是否相等，然后每个连续1都必须移动到对应位置，规则是左端点移+右端点移，要注意的是，如果没空间可移还是不行 赛后总结 总得还行，但D题速度不够快，...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/13/%E5%8D%9A%E5%AE%A2%E5%9B%AD-Codeforces%20Round%20#806%20(Div.%204)%E6%80%BB%E7%BB%93/" title="Codeforces Round #806 (Div. 4)总结">Codeforces Round #806 (Div. 4)总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-12T20:19:00.000Z" title="发表于 2022-07-13 04:19:00">2022-07-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/">2022-2023赛季</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16473092.html  比赛地址 比赛情况 排名：533 / 27864 AC：7 / 7 题目分析 A 语法题 B 看一下出现多少种字母，加上字符长度就是答案 C 因为是倒推，所以 D 就加，U 就减，最后输出模10的余数即可 D string+map 先把所有string放入一个map里 然后对于每一个string枚举分界点，判断是否存在两个字串都在map中 E 每个位置只会与3个位置有关，于是把每个点本身、旋转90，180，270的格子都找出来，看一下最少要变多少个 答案记得除4 F 题目要求 ai&lt;i&lt;aj&lt;ja_i&lt;i&lt;a_j&lt;jai​&lt;i&lt;aj​&lt;j 先把不满足 ai&lt;ia_i&lt;iai​&lt;i 的数筛走 然后从前往后遍历，满足 i&lt;ji&lt;ji&lt;j 现在约束条件只剩下 i&lt;aji&lt;a_ji&lt;aj​，此时只需要看一下有多少个...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/13/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0%E5%85%AC%E5%BC%8F%E6%B3%95/" title="二次函数公式法">二次函数公式法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-12T20:18:00.000Z" title="发表于 2022-07-13 04:18:00">2022-07-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/">2022-2023赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E4%BB%A3%E6%95%B0/">代数</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/">二次函数</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%87%BD%E6%95%B0/">函数</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16473421.html  y=ax2+bx+c\Large y=ax^2+bx+c y=ax2+bx+c y=a(x2+bax+ca)\Large y=a(x^2+\dfrac{b}{a}x+\dfrac{c}{a})  y=a(x2+ab​x+ac​) y=a(x2+2×x×b2a+ca)\Large y=a(x^2+2\times x\times \dfrac b {2a}+\dfrac c a) y=a(x2+2×x×2ab​+ac​) y=a[x2+2xb2a+(b2a)2−(b2a)2+ca]\Large y=a[x^2+2x\dfrac b {2a}+(\dfrac b {2a})^2-(\dfrac b {2a})^2+\dfrac c a] y=a[x2+2x2ab​+(2ab​)2−(2ab​)2+ac​] y=a[(x+b2a)2−b24a2+ca]\Large y=a[(x+\dfrac b {2a})^2-\dfr...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/11/%E5%8D%9A%E5%AE%A2%E5%9B%AD2-%E5%A4%A9%E6%96%87%E4%BB%BB%E5%8A%A1%E5%AE%89%E6%8E%92/" title="天文任务安排">天文任务安排</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-11T05:18:00.000Z" title="发表于 2022-07-11 13:18:00">2022-07-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/">2022-2023赛季</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%A4%A9%E6%96%87/">天文</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16467978.html  空间站任务 观察+拍摄 时间：天文通 拍摄：  借相机 搜图片   可能需要论文  绘制轨迹 抄天文通 论文： 三角视差 论文一大堆 结果推过程 脉动变星观测 了解相关知识 出处≠资料 选择观测目标 过程：  从奇怪网站找一堆星星 筛选太暗 从季节、地点出发筛选合适星 确定（抽签、商讨辩论小许、小张、小李） 出处引用网站  星星分析 目标  光变周期的观测 描绘光变周期曲线  具体 抄百度+瞎编 现在安排 学习  三角视差（学懂会编）3 小张 光变曲线（学懂会编）5 小许 脉动变星+空间站（理解）124 小李  论文  空间站知识 观测天体 三角视差 变星 光变曲线  其它 时间：1个星期 下周二19号汇总，决定下一阶段任务  完全学懂知识（尝试训练） 找齐相关论文（名字+作者+年份+网址）word/pdf文档 相关疑问  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/11/%E5%8D%9A%E5%AE%A2%E5%9B%AD-Codeforces%20Round%20#805%20(Div.%203)%20%E6%80%BB%E7%BB%93/" title="Codeforces Round #805 (Div. 3) 总结">Codeforces Round #805 (Div. 3) 总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-10T17:17:00.000Z" title="发表于 2022-07-11 01:17:00">2022-07-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/">2022-2023赛季</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16465336.html  比赛地址 比赛情况 排名：372 / 25552 AC：7 / 8 一直没留意，开始了才发现expert unrated 题目分析 A 语法题 B 从前往后扫，一旦出现3种以上字母，答案+1 C 用map记录每种数字第一次出现的地方和最后一次出现的地方，然后判断两个车站第一个第一次出现的地方是否早于第二个最后一次出现的地方 D 显然，去掉字母顺序必然是从z到a去掉的，于是按字母顺序倒序排序，只要还没到达要求就继续去 E 敌人并查集 只要两个牌子出现同一数，先判断是否在同一集合，在同一集合直接NO，否则就把它们和敌人并在一起 F 先把 aaa 中的数全部变成奇数，然后 bbb 中的数不断除2，判断在 aaa 中是否存在，不存在继续除2，除到0直接NO G1 O(n×q)O(n\times q)O(n×q) 做法 以一个标记点为根开始搜索，除根以外其它节点只能有一个分叉，根节点允许有两个分叉 G2 O(nlog⁡n)...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/10/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E7%89%9B%E5%AE%A2%E7%BD%912022%E6%B2%B3%E5%8D%97%E8%90%8C%E6%96%B0%E8%81%94%E8%B5%9B%E7%AC%AC%EF%BC%88%E4%B8%80%EF%BC%89%E5%9C%BA%EF%BC%9A%E6%B2%B3%E5%8D%97%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E6%80%BB%E7%BB%93/" title="牛客网2022河南萌新联赛第（一）场：河南工业大学总结">牛客网2022河南萌新联赛第（一）场：河南工业大学总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-10T01:03:00.000Z" title="发表于 2022-07-10 09:03:00">2022-07-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/">2022-2023赛季</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16463496.html  你TM告诉我这是萌新赛？ 比赛地址 比赛情况 排名：34 / 846 AC：6 / 11 题目分析 A 爆搜+记忆化 先 O(n)O(\sqrt n)O(n​) 求出所有 aka^kak，存到一个数组里面。 显然，当 n=1n=1n=1 时为必胜数，所有能走到必败数的数都是必胜数，怎么走都是必胜数的是必败数 然后爆搜+记忆化就行，记忆化可以拿个map来实现 B 统计 s,ts,ts,t 中每个字母出现次数为奇数还是偶数，奇数则剩余字母数量+1，复杂度 O(n)O(n)O(n) C D 链表 一开始按原顺序连起来，l,rl,rl,r 分别代表当前的头和尾 每次操作时就是把这个数删掉它，连到链表尾部 注意维护链表头 E 先对 aaa 排序 假设现在前 i−1i-1i−1  个数可以构造 [1,x][1,x][1,x]，若 ai&gt;x+1a_i&gt;x+1ai​&gt;x+1，就不行了 否则，算上 aia_iai...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/07/09/%E5%8D%9A%E5%AE%A2%E5%9B%AD-ABC259%E6%80%BB%E7%BB%93/" title="ABC259总结">ABC259总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-09T05:52:00.000Z" title="发表于 2022-07-09 13:52:00">2022-07-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/">OI（初中）</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/">2022-2023赛季</a></span></div><div class="content"> 本文搬运自本人初中博客园博客，若图片加载不出来，可到原文查看：https://www.cnblogs.com/zhangtingxi/p/16461974.html  比赛地址 比赛情况 排名：1066 / 7295 AC：5 / 8 题目分析 A 签到题 B 考察：网络资源搜集利用能力 显然数学没学过，然后就搜资料 先把度数转为弧度，然后套三角函数  C 先缩串，把重复的合起来 如果长度不同直接No 某个字母不同，直接No 具体到某个字母，如果长度不到，sss 长度大于 ttt 长度则No，等于直接 YesYesYes，小于判断长度小于2则No，大于1则Yes D 并查集 先 O(n2)O(n^2)O(n2) 把相交的圆并起来，考虑不合法情况（注意不要用double） 情况一：两圆分离  则两圆心之间距离大于两半径之和 代码实现：if(Z(x[i]-x[j])+Z(y[i]-y[j])&gt;Z(r[i]+r[j])) continue;  情况二：两圆包含  则圆心距离小于两半径之差 代码实现：if(Z(x[i]-x[j])+Z(y[i]-y[j])&lt;Z(r[i]-r...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/47/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/#content-inner">47</a><span class="page-number current">48</span><a class="page-number" href="/page/49/#content-inner">49</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/#content-inner">68</a><a class="extend next" rel="next" href="/page/49/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">zhangxixi</div><div class="author-info-description">你好，我是张希希，欢迎来到我的Hexo博客。本博客中有很多文章是从我CSDN（高中时期博客）与博客园（初中时期博客）迁移过来的，图片加载不出来，已附上原文链接，需要可以去原文查看（我自己查以前文章也是去原文查看的）</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">672</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">468</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhangxixi2008"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is zhangxixi's Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/01/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%96%87%E7%AB%A0%E5%AF%BC%E5%85%A5Hexo/" title="博客园文章搬运至Hexo">博客园文章搬运至Hexo</a><time datetime="2026-07-01T02:46:32.000Z" title="发表于 2026-07-01 10:46:32">2026-07-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/Hexo%E4%B8%AD%E5%90%AF%E7%94%A8Katex/" title="Hexo中启用Katex">Hexo中启用Katex</a><time datetime="2026-06-30T13:42:11.000Z" title="发表于 2026-06-30 21:42:11">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/Hexo%E5%90%AF%E5%8A%A8%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" title="Hexo启动搜索功能">Hexo启动搜索功能</a><time datetime="2026-06-30T13:04:13.000Z" title="发表于 2026-06-30 21:04:13">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/CSDN%E6%96%87%E7%AB%A0%E6%90%AC%E8%BF%90%E8%87%B3Hexo/" title="CSDN文章搬运至Hexo">CSDN文章搬运至Hexo</a><time datetime="2026-06-30T09:35:04.000Z" title="发表于 2026-06-30 17:35:04">2026-06-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/30/%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC/" title="油猴脚本不能使用？那是因为没有打开开发者模式！">油猴脚本不能使用？那是因为没有打开开发者模式！</a><time datetime="2026-06-30T07:38:52.000Z" title="发表于 2026-06-30 15:38:52">2026-06-30</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Haskell/"><span class="card-category-list-name">Haskell</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo-%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">Hexo 教程</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo-%E6%B5%8B%E8%AF%95/"><span class="card-category-list-name">Hexo 测试</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/"><span class="card-category-list-name">OI（初中）</span><span class="card-category-list-count">244</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2021-2022%E8%B5%9B%E5%AD%A3/"><span class="card-category-list-name">2021-2022赛季</span><span class="card-category-list-count">188</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI%EF%BC%88%E5%88%9D%E4%B8%AD%EF%BC%89/2022-2023%E8%B5%9B%E5%AD%A3/"><span class="card-category-list-name">2022-2023赛季</span><span class="card-category-list-count">56</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI%EF%BC%88%E5%A4%A7%E5%AD%A6%EF%BC%89/"><span class="card-category-list-name">OI（大学）</span><span class="card-category-list-count">14</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OI%EF%BC%88%E5%A4%A7%E5%AD%A6%EF%BC%89/%E9%AB%98%E8%80%83%E5%A4%8D%E9%94%AE/"><span class="card-category-list-name">高考复键</span><span class="card-category-list-count">14</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E7%BB%84%E5%90%88/" style="font-size: 1.46em; color: #99a8bc">组合</a> <a href="/tags/%E5%A2%9E%E9%87%8F/" style="font-size: 1.1em; color: #999">增量</a> <a href="/tags/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" style="font-size: 1.14em; color: #999a9c">哈夫曼树</a> <a href="/tags/ubuntu/" style="font-size: 1.1em; color: #999">ubuntu</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.5em; color: #99a9bf">算法</a> <a href="/tags/wqs%E4%BC%98%E5%8C%96/" style="font-size: 1.1em; color: #999">wqs优化</a> <a href="/tags/%E6%A0%88/" style="font-size: 1.21em; color: #999da3">栈</a> <a href="/tags/Trie%E6%A0%91%EF%BC%8C%E5%AD%97%E5%85%B8%E6%A0%91/" style="font-size: 1.14em; color: #999a9c">Trie树，字典树</a> <a href="/tags/%E5%AF%B9%E5%81%B6%E5%9B%BE/" style="font-size: 1.1em; color: #999">对偶图</a> <a href="/tags/%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB/" style="font-size: 1.1em; color: #999">曼哈顿距离</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 1.14em; color: #999a9c">总结</a> <a href="/tags/%E5%81%87%E8%AE%BE%E6%B3%95/" style="font-size: 1.1em; color: #999">假设法</a> <a href="/tags/%E6%A8%A1%E6%8B%9F/" style="font-size: 1.35em; color: #99a3b1">模拟</a> <a href="/tags/%E6%A0%B9/" style="font-size: 1.1em; color: #999">根</a> <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 1.21em; color: #999da3">二次函数</a> <a href="/tags/broder%E5%89%83%E5%A4%B4%E6%88%AA%E5%B0%BE%E6%B3%95/" style="font-size: 1.1em; color: #999">broder剃头截尾法</a> <a href="/tags/%E4%BA%A4%E4%BA%92%E9%A2%98/" style="font-size: 1.1em; color: #999">交互题</a> <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/" style="font-size: 1.21em; color: #999da3">组合数</a> <a href="/tags/python/" style="font-size: 1.14em; color: #999a9c">python</a> <a href="/tags/%E5%AE%B9%E6%96%A5/" style="font-size: 1.28em; color: #99a0aa">容斥</a> <a href="/tags/%E8%8A%AF%E7%89%87/" style="font-size: 1.1em; color: #999">芯片</a> <a href="/tags/%E8%83%8C%E5%8C%85/" style="font-size: 1.39em; color: #99a5b5">背包</a> <a href="/tags/Trie/" style="font-size: 1.1em; color: #999">Trie</a> <a href="/tags/%E6%B1%82%E5%AF%BC/" style="font-size: 1.1em; color: #999">求导</a> <a href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B/" style="font-size: 1.1em; color: #999">欧拉筛</a> <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%8B%86%E5%88%86/" style="font-size: 1.1em; color: #999">二进制拆分</a> <a href="/tags/7k/" style="font-size: 1.14em; color: #999a9c">7k</a> <a href="/tags/bitset/" style="font-size: 1.21em; color: #999da3">bitset</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 1.43em; color: #99a6b8">前缀和</a> <a href="/tags/Dijkstra/" style="font-size: 1.1em; color: #999">Dijkstra</a> <a href="/tags/%E6%A0%B9%E5%8F%B7/" style="font-size: 1.1em; color: #999">根号</a> <a href="/tags/%E6%95%B0%E6%95%B0/" style="font-size: 1.1em; color: #999">数数</a> <a href="/tags/%E5%BE%AA%E7%8E%AF%E5%90%8C%E6%9E%84%E4%B8%B2/" style="font-size: 1.1em; color: #999">循环同构串</a> <a href="/tags/%E8%99%9A%E6%A0%91/" style="font-size: 1.17em; color: #999ca0">虚树</a> <a href="/tags/%E5%B7%A7%E5%A6%99%E5%BB%BA%E5%9B%BE/" style="font-size: 1.1em; color: #999">巧妙建图</a> <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" style="font-size: 1.1em; color: #999">高精度</a> <a href="/tags/lcm/" style="font-size: 1.1em; color: #999">lcm</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 1.25em; color: #999fa7">排序</a> <a href="/tags/%E7%B1%BB%E6%AC%A7/" style="font-size: 1.17em; color: #999ca0">类欧</a> <a href="/tags/dp%E4%BC%98%E5%8C%96/" style="font-size: 1.32em; color: #99a2ae">dp优化</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/06/">
+            <span class="card-archive-list-date">
+              六月 2026
+            </span>
+            <span class="card-archive-list-count">32</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/05/">
+            <span class="card-archive-list-date">
+              五月 2026
+            </span>
+            <span class="card-archive-list-count">17</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/04/">
+            <span class="card-archive-list-date">
+              四月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/10/">
+            <span class="card-archive-list-date">
+              十月 2024
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/09/">
+            <span class="card-archive-list-date">
+              九月 2024
+            </span>
+            <span class="card-archive-list-count">16</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/08/">
+            <span class="card-archive-list-date">
+              八月 2024
+            </span>
+            <span class="card-archive-list-count">17</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/05/">
+            <span class="card-archive-list-date">
+              五月 2024
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">672</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">530.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-07-01T03:30:27.856Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="请在此处搜索搜索" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.5-b1"></script></div></div></body></html>
