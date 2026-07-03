@@ -1,0 +1,814 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Statistic 数据统计 | zhangxixi的博客</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Statistic &#x6570;&#x636E;&#x7EDF;&#x8BA1;">
+<meta property="og:url" content="http://zhangxixi2008.github.io/charts/index%20-%20Copy">
+<meta property="og:site_name" content="zhangxixi&#x7684;&#x535A;&#x5BA2;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zhangxixi2008.github.io/img/avatar.png">
+<meta property="article:published_time" content="2026-07-01T11:52:45.000Z">
+<meta property="article:modified_time" content="2026-07-03T09:55:08.446Z">
+<meta property="article:author" content="zhangxixi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zhangxixi2008.github.io/img/avatar.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="http://zhangxixi2008.github.io/charts/index%20-%20Copy"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.clarity.ms"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media=&apos;all&apos;"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.min.css" media="print" onload="this.media=&apos;all&apos;"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xfiga2r6c8");
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":350,"highlightFullpage":true,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Statistic 数据统计',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/custom.css"><script src="https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.min.js"></script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div class="bg-animation" id="web_bg" style="background-image: url(https://i.loli.net/2019/09/09/5oDRkWVKctx2b6A.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="this.onerror=null;this.src=&apos;/img/friend_404.gif&apos;" alt="avatar" loading="lazy"></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">679</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">474</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fa fa-chart-bar"></i><span> Statistic</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/background5.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fa fa-chart-bar"></i><span> Statistic</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">Statistic 数据统计</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="page"><div class="container" id="article-container"><!-- 文章发布时间统计图 -->
+<div id="posts-chart" data-start="2021-10" style="border-radius: 8px; height: 400px; padding: 10px;"></div>
+  <script id="postsChart">
+    // 根据当前主题（light/dark）动态设置文字颜色
+    var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : 'rgba(255,255,255,0.7)'
+    // 初始化 ECharts 实例，绑定到 id 为 posts-chart 的容器
+    var postsChart = echarts.init(document.getElementById('posts-chart'), 'light');
+    // 配置文章统计图选项
+    var postsOption = {
+      title: {
+        text: '文章发布统计图',
+        x: 'center',
+        textStyle: {
+          color: color
+        }
+      },
+	  animation : true, 
+	  animationDuration : 5000, 
+      tooltip: {
+        trigger: 'axis'
+      },
+      // 工具箱配置，提供保存图片、数据视图、类型切换、区域缩放和还原功能
+      toolbox: {
+        show: true,
+        right: '5%',
+        // 工具箱图标颜色适配当前主题
+        iconStyle: {
+          borderColor: color
+        },
+        feature: {
+          // 保存为图片
+          saveAsImage: {
+            show: true,
+            title: '保存为图片',
+            pixelRatio: 2
+          },
+          // 数据视图，可查看原始数据
+          dataView: {
+            show: true,
+            title: '数据视图',
+            readOnly: true,
+            lang: ['数据视图', '关闭', '刷新']
+          },
+          // 动态类型切换，支持折线图与柱状图互换
+          magicType: {
+            show: true,
+            title: {
+              line: '切换为折线图',
+              bar: '切换为柱状图'
+            },
+            type: ['line', 'bar']
+          },
+          // 数据区域缩放，便于聚焦特定时间段
+          dataZoom: {
+            show: true,
+            title: {
+              zoom: '区域缩放',
+              back: '缩放还原'
+            }
+          },
+          // 还原初始状态
+          restore: {
+            show: true,
+            title: '还原'
+          }
+        }
+      },
+      xAxis: {
+        name: '日期',
+        type: 'category',
+        boundaryGap: false,
+        nameTextStyle: {
+          color: color
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+          show: true,
+          color: color
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: color
+          }
+        },
+        data: ["2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08","2022-09","2022-10","2022-11","2022-12","2023-01","2023-02","2023-03","2023-04","2023-05","2023-06","2023-07","2023-08","2023-09","2023-10","2023-11","2023-12","2024-01","2024-02","2024-03","2024-04","2024-05","2024-06","2024-07","2024-08","2024-09","2024-10","2024-11","2024-12","2025-01","2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05","2026-06","2026-07"]
+      },
+      yAxis: {
+        name: '文章篇数',
+        type: 'value',
+        nameTextStyle: {
+          color: color
+        },
+        splitLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+          show: true,
+          color: color
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: color
+          }
+        }
+      },
+      series: [{
+        name: '文章篇数',
+        type: 'line',
+        smooth: true,
+        lineStyle: {
+            width: 0
+        },
+        showSymbol: false,
+        itemStyle: {
+          opacity: 1,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            offset: 0,
+            color: 'rgba(128, 255, 165)'
+          },
+          {
+            offset: 1,
+            color: 'rgba(1, 191, 236)'
+          }])
+        },
+        areaStyle: {
+          opacity: 1,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            offset: 0,
+            color: 'rgba(128, 255, 165)'
+          }, {
+            offset: 1,
+            color: 'rgba(1, 191, 236)'
+          }])
+        },
+        data: [0,41,61,48,5,4,15,10,5,33,3,13,2,1,0,0,0,1,1,0,1,0,50,74,72,41,74,22,0,0,3,3,0,0,17,16,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,17,32,8],
+        markLine: {
+          data: [{
+            name: '平均值',
+            type: 'average',
+            label: {
+              color: color
+            }
+          }]
+        }
+      }]
+    };
+    postsChart.setOption(postsOption);
+    // 监听窗口大小变化，自动调整图表尺寸
+    window.addEventListener('resize', () => { 
+      postsChart.resize();
+    });
+    // 监听图表点击事件，点击后跳转到对应月份的归档页面
+    postsChart.on('click', 'series', (event) => {
+      if (event.componentType === 'series') window.location.href = '/archives/' + event.name.replace('-', '/');
+    });
+  </script>
+<!-- 文章标签统计图 -->
+<div id="tags-chart" data-length="15" style="border-radius: 8px; height: 500px; padding: 10px;"></div>
+  <script id="tagsChart">
+    // 根据当前主题（light/dark）动态设置文字颜色
+    var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : 'rgba(255,255,255,0.7)'
+    // 初始化 ECharts 实例，绑定到 id 为 tags-chart 的容器
+    var tagsChart = echarts.init(document.getElementById('tags-chart'), 'light');
+    // 配置标签统计图选项
+    var tagsOption = {
+      title: {
+        text: 'Top 15 标签统计图',
+        x: 'center',
+        textStyle: {
+          color: color
+        }
+      },
+	  animation : true, 
+	  animationDuration : 5000, 
+      tooltip: {},
+      // 工具箱配置，提供保存图片、数据视图、类型切换和还原功能
+      toolbox: {
+        show: true,
+        right: '5%',
+        // 工具箱图标颜色适配当前主题
+        iconStyle: {
+          borderColor: color
+        },
+        feature: {
+          // 保存为图片
+          saveAsImage: {
+            show: true,
+            title: '保存为图片',
+            pixelRatio: 2
+          },
+          // 数据视图，可查看原始数据
+          dataView: {
+            show: true,
+            title: '数据视图',
+            readOnly: true,
+            lang: ['数据视图', '关闭', '刷新']
+          },
+          // 动态类型切换，支持柱状图与折线图互换
+          magicType: {
+            show: true,
+            title: {
+              bar: '切换为柱状图',
+              line: '切换为折线图'
+            },
+            type: ['bar', 'line']
+          },
+          // 还原初始状态
+          restore: {
+            show: true,
+            title: '还原'
+          }
+        }
+      },
+      xAxis: {
+        name: '标签',
+        type: 'category',
+        nameTextStyle: {
+          color: color
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+          show: true,
+          color: color,
+          interval: 0
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: color
+          }
+        },
+        data: ["DP","算法","数学","数据结构","图论","贪心","搜索","字符串","树","组合","数论","计数","线段树","二分","前缀和"]
+      },
+      yAxis: {
+        name: '文章篇数',
+        type: 'value',
+        splitLine: {
+          show: false
+        },
+        nameTextStyle: {
+          color: color
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+          show: true,
+          color: color
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: color
+          }
+        }
+      },
+      series: [{
+        name: '文章篇数',
+        type: 'bar',
+        data: [{"name":"DP","value":111,"path":"tags/DP/"},{"name":"算法","value":91,"path":"tags/算法/"},{"name":"数学","value":67,"path":"tags/数学/"},{"name":"数据结构","value":62,"path":"tags/数据结构/"},{"name":"图论","value":59,"path":"tags/图论/"},{"name":"贪心","value":49,"path":"tags/贪心/"},{"name":"搜索","value":32,"path":"tags/搜索/"},{"name":"字符串","value":30,"path":"tags/字符串/"},{"name":"树","value":28,"path":"tags/树/"},{"name":"组合","value":23,"path":"tags/组合/"},{"name":"数论","value":23,"path":"tags/数论/"},{"name":"计数","value":20,"path":"tags/计数/"},{"name":"线段树","value":18,"path":"tags/线段树/"},{"name":"二分","value":17,"path":"tags/二分/"},{"name":"前缀和","value":17,"path":"tags/前缀和/"},{"name":"组合数学","value":17,"path":"tags/组合数学/"},{"name":"计数类","value":17,"path":"tags/计数类/"},{"name":"网络流","value":16,"path":"tags/网络流/"},{"name":"背包","value":14,"path":"tags/背包/"},{"name":"缩点","value":14,"path":"tags/缩点/"},{"name":"计算几何","value":13,"path":"tags/计算几何/"},{"name":"多项式","value":12,"path":"tags/多项式/"},{"name":"树形DP","value":12,"path":"tags/树形DP/"},{"name":"线性代数","value":12,"path":"tags/线性代数/"},{"name":"最短路","value":12,"path":"tags/最短路/"},{"name":"构造","value":12,"path":"tags/构造/"},{"name":"模拟","value":12,"path":"tags/模拟/"},{"name":"DP优化","value":11,"path":"tags/DP优化/"},{"name":"逆元","value":11,"path":"tags/逆元/"},{"name":"并查集","value":11,"path":"tags/并查集/"},{"name":"质数","value":11,"path":"tags/质数/"},{"name":"分治","value":10,"path":"tags/分治/"},{"name":"记忆化搜索","value":10,"path":"tags/记忆化搜索/"},{"name":"强连通分量","value":10,"path":"tags/强连通分量/"},{"name":"二分图","value":9,"path":"tags/二分图/"},{"name":"数位DP","value":9,"path":"tags/数位DP/"},{"name":"容斥","value":9,"path":"tags/容斥/"},{"name":"最小割","value":9,"path":"tags/最小割/"},{"name":"最小生成树","value":9,"path":"tags/最小生成树/"},{"name":"hexo","value":9,"path":"tags/hexo/"},{"name":"STL","value":9,"path":"tags/STL/"},{"name":"NTT","value":8,"path":"tags/NTT/"},{"name":"差分","value":8,"path":"tags/差分/"},{"name":"二进制","value":8,"path":"tags/二进制/"},{"name":"矩阵","value":8,"path":"tags/矩阵/"},{"name":"哈希","value":8,"path":"tags/哈希/"},{"name":"拆贡献","value":8,"path":"tags/拆贡献/"},{"name":"区间DP","value":8,"path":"tags/区间DP/"},{"name":"期望","value":7,"path":"tags/期望/"},{"name":"笔记","value":7,"path":"tags/笔记/"},{"name":"set","value":7,"path":"tags/set/"},{"name":"博弈论","value":7,"path":"tags/博弈论/"},{"name":"状压DP","value":7,"path":"tags/状压DP/"},{"name":"计数DP","value":7,"path":"tags/计数DP/"},{"name":"双强连通分量","value":7,"path":"tags/双强连通分量/"},{"name":"日记","value":7,"path":"tags/日记/"},{"name":"网络","value":6,"path":"tags/网络/"},{"name":"坐标系","value":6,"path":"tags/坐标系/"},{"name":"树状数组","value":6,"path":"tags/树状数组/"},{"name":"单调队列","value":6,"path":"tags/单调队列/"},{"name":"欧拉函数","value":6,"path":"tags/欧拉函数/"},{"name":"pht","value":6,"path":"tags/pht/"},{"name":"游记","value":6,"path":"tags/游记/"},{"name":"阶乘","value":6,"path":"tags/阶乘/"},{"name":"堆、优先队列","value":6,"path":"tags/堆、优先队列/"},{"name":"因数","value":6,"path":"tags/因数/"},{"name":"质数筛","value":6,"path":"tags/质数筛/"},{"name":"割点","value":6,"path":"tags/割点/"},{"name":"快速幂","value":6,"path":"tags/快速幂/"},{"name":"代数","value":6,"path":"tags/代数/"},{"name":"数论分块","value":6,"path":"tags/数论分块/"},{"name":"拓展欧几里得定理/exgcd","value":6,"path":"tags/拓展欧几里得定理-exgcd/"},{"name":"扫描线","value":5,"path":"tags/扫描线/"},{"name":"线性筛","value":5,"path":"tags/线性筛/"},{"name":"AC自动机","value":5,"path":"tags/AC自动机/"},{"name":"连通块","value":5,"path":"tags/连通块/"},{"name":"位运算","value":5,"path":"tags/位运算/"},{"name":"直径","value":5,"path":"tags/直径/"},{"name":"分块","value":5,"path":"tags/分块/"},{"name":"二项式定理","value":5,"path":"tags/二项式定理/"},{"name":"推式子","value":5,"path":"tags/推式子/"},{"name":"博弈","value":5,"path":"tags/博弈/"},{"name":"费用流","value":5,"path":"tags/费用流/"},{"name":"ds","value":5,"path":"tags/ds/"},{"name":"学习","value":5,"path":"tags/学习/"},{"name":"排序","value":5,"path":"tags/排序/"},{"name":"其它","value":5,"path":"tags/其它/"},{"name":"kruskal","value":5,"path":"tags/kruskal/"},{"name":"函数","value":5,"path":"tags/函数/"},{"name":"欧几里得定理/gcd","value":5,"path":"tags/欧几里得定理-gcd/"},{"name":"c++","value":4,"path":"tags/c/"},{"name":"倍增","value":4,"path":"tags/倍增/"},{"name":"状压","value":4,"path":"tags/状压/"},{"name":"bitset","value":4,"path":"tags/bitset/"},{"name":"根号分治","value":4,"path":"tags/根号分治/"},{"name":"生成树","value":4,"path":"tags/生成树/"},{"name":"组合数","value":4,"path":"tags/组合数/"},{"name":"FWT","value":4,"path":"tags/FWT/"},{"name":"概率","value":4,"path":"tags/概率/"},{"name":"竞赛图","value":4,"path":"tags/竞赛图/"},{"name":"ST表","value":4,"path":"tags/ST表/"},{"name":"平衡树","value":4,"path":"tags/平衡树/"},{"name":"树剖","value":4,"path":"tags/树剖/"},{"name":"置换环","value":4,"path":"tags/置换环/"},{"name":"LCT","value":4,"path":"tags/LCT/"},{"name":"git","value":4,"path":"tags/git/"},{"name":"线性DP","value":4,"path":"tags/线性DP/"},{"name":"双指针","value":4,"path":"tags/双指针/"},{"name":"剪枝","value":4,"path":"tags/剪枝/"},{"name":"栈","value":4,"path":"tags/栈/"},{"name":"01背包","value":4,"path":"tags/01背包/"},{"name":"KMP","value":4,"path":"tags/KMP/"},{"name":"桥","value":4,"path":"tags/桥/"},{"name":"二次函数","value":4,"path":"tags/二次函数/"},{"name":"三分","value":4,"path":"tags/三分/"},{"name":"决策单调性","value":3,"path":"tags/决策单调性/"},{"name":"FFT","value":3,"path":"tags/FFT/"},{"name":"圆方树","value":3,"path":"tags/圆方树/"},{"name":"类欧","value":3,"path":"tags/类欧/"},{"name":"异或","value":3,"path":"tags/异或/"},{"name":"范德蒙德卷积","value":3,"path":"tags/范德蒙德卷积/"},{"name":"拓扑排序","value":3,"path":"tags/拓扑排序/"},{"name":"RMQ","value":3,"path":"tags/RMQ/"},{"name":"笛卡尔树","value":3,"path":"tags/笛卡尔树/"},{"name":"高维前缀和","value":3,"path":"tags/高维前缀和/"},{"name":"分类讨论","value":3,"path":"tags/分类讨论/"},{"name":"猜结论","value":3,"path":"tags/猜结论/"},{"name":"杨辉三角","value":3,"path":"tags/杨辉三角/"},{"name":"线性基","value":3,"path":"tags/线性基/"},{"name":"高斯消元","value":3,"path":"tags/高斯消元/"},{"name":"斜率优化","value":3,"path":"tags/斜率优化/"},{"name":"投稿","value":3,"path":"tags/投稿/"},{"name":"模拟网络流","value":3,"path":"tags/模拟网络流/"},{"name":"离线","value":3,"path":"tags/离线/"},{"name":"虚树","value":3,"path":"tags/虚树/"},{"name":"边分治","value":3,"path":"tags/边分治/"},{"name":"脚本","value":3,"path":"tags/脚本/"},{"name":"Python","value":3,"path":"tags/Python/"},{"name":"高考","value":3,"path":"tags/高考/"},{"name":"Hexo","value":3,"path":"tags/Hexo/"},{"name":"Nim游戏","value":3,"path":"tags/Nim游戏/"},{"name":"坐标DP","value":3,"path":"tags/坐标DP/"},{"name":"可撤销贪心","value":3,"path":"tags/可撤销贪心/"},{"name":"Lucas / 卢卡斯定理","value":3,"path":"tags/Lucas-卢卡斯定理/"},{"name":"约数和","value":3,"path":"tags/约数和/"},{"name":"三角形","value":3,"path":"tags/三角形/"},{"name":"深度优先","value":2,"path":"tags/深度优先/"},{"name":"数学建模","value":2,"path":"tags/数学建模/"},{"name":"匈牙利算法","value":2,"path":"tags/匈牙利算法/"},{"name":"二分队列","value":2,"path":"tags/二分队列/"},{"name":"欧拉环游序","value":2,"path":"tags/欧拉环游序/"},{"name":"DP状态设计","value":2,"path":"tags/DP状态设计/"},{"name":"分数规划","value":2,"path":"tags/分数规划/"},{"name":"分治NTT","value":2,"path":"tags/分治NTT/"},{"name":"库","value":2,"path":"tags/库/"},{"name":"思维","value":2,"path":"tags/思维/"},{"name":"Kruskal重构树","value":2,"path":"tags/Kruskal重构树/"},{"name":"哈夫曼树","value":2,"path":"tags/哈夫曼树/"},{"name":"反射容斥","value":2,"path":"tags/反射容斥/"},{"name":"树链剖分","value":2,"path":"tags/树链剖分/"},{"name":"性质","value":2,"path":"tags/性质/"},{"name":"树哈希","value":2,"path":"tags/树哈希/"},{"name":"生成函数","value":2,"path":"tags/生成函数/"},{"name":"中间相遇法","value":2,"path":"tags/中间相遇法/"},{"name":"启发式分裂","value":2,"path":"tags/启发式分裂/"},{"name":"递归","value":2,"path":"tags/递归/"},{"name":"结论","value":2,"path":"tags/结论/"},{"name":"莫队","value":2,"path":"tags/莫队/"},{"name":"打表","value":2,"path":"tags/打表/"},{"name":"珂朵莉树","value":2,"path":"tags/珂朵莉树/"},{"name":"折半","value":2,"path":"tags/折半/"},{"name":"排列","value":2,"path":"tags/排列/"},{"name":"min-max容斥","value":2,"path":"tags/min-max容斥/"},{"name":"gcd","value":2,"path":"tags/gcd/"},{"name":"整数划分","value":2,"path":"tags/整数划分/"},{"name":"启发式合并","value":2,"path":"tags/启发式合并/"},{"name":"dfs序","value":2,"path":"tags/dfs序/"},{"name":"二分图博弈","value":2,"path":"tags/二分图博弈/"},{"name":"子序列","value":2,"path":"tags/子序列/"},{"name":"1024程序员节","value":2,"path":"tags/1024程序员节/"},{"name":"sa","value":2,"path":"tags/sa/"},{"name":"欧拉公式","value":2,"path":"tags/欧拉公式/"},{"name":"python","value":2,"path":"tags/python/"},{"name":"轮廓线DP","value":2,"path":"tags/轮廓线DP/"},{"name":"主席树","value":2,"path":"tags/主席树/"},{"name":"兔队线段树","value":2,"path":"tags/兔队线段树/"},{"name":"欧拉路径","value":2,"path":"tags/欧拉路径/"},{"name":"期望DP","value":2,"path":"tags/期望DP/"},{"name":"李超线段树","value":2,"path":"tags/李超线段树/"},{"name":"欧拉回路","value":2,"path":"tags/欧拉回路/"},{"name":"调整法","value":2,"path":"tags/调整法/"},{"name":"7k","value":2,"path":"tags/7k/"},{"name":"传递闭包","value":2,"path":"tags/传递闭包/"},{"name":"BEST定理","value":2,"path":"tags/BEST定理/"},{"name":"矩阵快速幂","value":2,"path":"tags/矩阵快速幂/"},{"name":"欧拉定理","value":2,"path":"tags/欧拉定理/"},{"name":"Splay","value":2,"path":"tags/Splay/"},{"name":"Haskell","value":2,"path":"tags/Haskell/"},{"name":"函数式编程","value":2,"path":"tags/函数式编程/"},{"name":"读书札记","value":2,"path":"tags/读书札记/"},{"name":"atcoder","value":2,"path":"tags/atcoder/"},{"name":"priority_queue","value":2,"path":"tags/priority-queue/"},{"name":"lambda","value":2,"path":"tags/lambda/"},{"name":"优先队列","value":2,"path":"tags/优先队列/"},{"name":"windows","value":2,"path":"tags/windows/"},{"name":"PicGo","value":2,"path":"tags/PicGo/"},{"name":"SG函数","value":2,"path":"tags/SG函数/"},{"name":"manacher","value":2,"path":"tags/manacher/"},{"name":"广搜","value":2,"path":"tags/广搜/"},{"name":"题型","value":2,"path":"tags/题型/"},{"name":"LIS","value":2,"path":"tags/LIS/"},{"name":"链表","value":2,"path":"tags/链表/"},{"name":"费马小定理","value":2,"path":"tags/费马小定理/"},{"name":"质因数分解","value":2,"path":"tags/质因数分解/"},{"name":"二维费用背包","value":2,"path":"tags/二维费用背包/"},{"name":"01trie","value":2,"path":"tags/01trie/"},{"name":"Trie树，字典树","value":2,"path":"tags/Trie树，字典树/"},{"name":"多重背包","value":2,"path":"tags/多重背包/"},{"name":"中国剩余定理","value":2,"path":"tags/中国剩余定理/"},{"name":"总结","value":2,"path":"tags/总结/"},{"name":"莫比乌斯函数","value":1,"path":"tags/莫比乌斯函数/"},{"name":"式子化简","value":1,"path":"tags/式子化简/"},{"name":"树套树","value":1,"path":"tags/树套树/"},{"name":"霍尔定理","value":1,"path":"tags/霍尔定理/"},{"name":"巧妙建图","value":1,"path":"tags/巧妙建图/"},{"name":"左偏树","value":1,"path":"tags/左偏树/"},{"name":"可并堆","value":1,"path":"tags/可并堆/"},{"name":"堆","value":1,"path":"tags/堆/"},{"name":"满二叉树","value":1,"path":"tags/满二叉树/"},{"name":"wqs优化","value":1,"path":"tags/wqs优化/"},{"name":"cdq","value":1,"path":"tags/cdq/"},{"name":"sam","value":1,"path":"tags/sam/"},{"name":"后缀自动机","value":1,"path":"tags/后缀自动机/"},{"name":"多项式求逆","value":1,"path":"tags/多项式求逆/"},{"name":"整除分块","value":1,"path":"tags/整除分块/"},{"name":"在线卷积","value":1,"path":"tags/在线卷积/"},{"name":"基环树","value":1,"path":"tags/基环树/"},{"name":"atcoder库","value":1,"path":"tags/atcoder库/"},{"name":"floor_sum","value":1,"path":"tags/floor-sum/"},{"name":"类欧几里得算法","value":1,"path":"tags/类欧几里得算法/"},{"name":"根号","value":1,"path":"tags/根号/"},{"name":"Cayley公式","value":1,"path":"tags/Cayley公式/"},{"name":"Prufer序列","value":1,"path":"tags/Prufer序列/"},{"name":"Prufer","value":1,"path":"tags/Prufer/"},{"name":"卷积","value":1,"path":"tags/卷积/"},{"name":"哈密顿回路","value":1,"path":"tags/哈密顿回路/"},{"name":"多项式快速幂","value":1,"path":"tags/多项式快速幂/"},{"name":"zkw线段树","value":1,"path":"tags/zkw线段树/"},{"name":"广义线段树","value":1,"path":"tags/广义线段树/"},{"name":"增量","value":1,"path":"tags/增量/"},{"name":"换根","value":1,"path":"tags/换根/"},{"name":"Lucas","value":1,"path":"tags/Lucas/"},{"name":"点分治","value":1,"path":"tags/点分治/"},{"name":"因数倍数","value":1,"path":"tags/因数倍数/"},{"name":"交互","value":1,"path":"tags/交互/"},{"name":"sperner定理","value":1,"path":"tags/sperner定理/"},{"name":"组合数前缀和","value":1,"path":"tags/组合数前缀和/"},{"name":"求导","value":1,"path":"tags/求导/"},{"name":"长剖","value":1,"path":"tags/长剖/"},{"name":"限制转状态","value":1,"path":"tags/限制转状态/"},{"name":"构造二分图","value":1,"path":"tags/构造二分图/"},{"name":"树上游走","value":1,"path":"tags/树上游走/"},{"name":"长链贪心","value":1,"path":"tags/长链贪心/"},{"name":"序树","value":1,"path":"tags/序树/"},{"name":"枚举子集","value":1,"path":"tags/枚举子集/"},{"name":"全序关系","value":1,"path":"tags/全序关系/"},{"name":"gcd与lcm","value":1,"path":"tags/gcd与lcm/"},{"name":"莫反","value":1,"path":"tags/莫反/"},{"name":"树上启发式合并","value":1,"path":"tags/树上启发式合并/"},{"name":"奇偶","value":1,"path":"tags/奇偶/"},{"name":"逆序对","value":1,"path":"tags/逆序对/"},{"name":"必有解构造","value":1,"path":"tags/必有解构造/"},{"name":"假设法","value":1,"path":"tags/假设法/"},{"name":"奇偶博弈","value":1,"path":"tags/奇偶博弈/"},{"name":"自动机","value":1,"path":"tags/自动机/"},{"name":"主元","value":1,"path":"tags/主元/"},{"name":"二分套二分","value":1,"path":"tags/二分套二分/"},{"name":"2-sat","value":1,"path":"tags/2-sat/"},{"name":"wqs二分","value":1,"path":"tags/wqs二分/"},{"name":"组合计数","value":1,"path":"tags/组合计数/"},{"name":"后缀数组","value":1,"path":"tags/后缀数组/"},{"name":"st表","value":1,"path":"tags/st表/"},{"name":"连通","value":1,"path":"tags/连通/"},{"name":"数数","value":1,"path":"tags/数数/"},{"name":"最值维护","value":1,"path":"tags/最值维护/"},{"name":"斐波那契数列","value":1,"path":"tags/斐波那契数列/"},{"name":"lcm","value":1,"path":"tags/lcm/"},{"name":"数据分析","value":1,"path":"tags/数据分析/"},{"name":"人工智能","value":1,"path":"tags/人工智能/"},{"name":"优化建图","value":1,"path":"tags/优化建图/"},{"name":"虚点","value":1,"path":"tags/虚点/"},{"name":"循环节","value":1,"path":"tags/循环节/"},{"name":"括号序列","value":1,"path":"tags/括号序列/"},{"name":"高精度","value":1,"path":"tags/高精度/"},{"name":"曼哈顿距离","value":1,"path":"tags/曼哈顿距离/"},{"name":"切比雪夫距离","value":1,"path":"tags/切比雪夫距离/"},{"name":"充斥","value":1,"path":"tags/充斥/"},{"name":"集合","value":1,"path":"tags/集合/"},{"name":"压缩状态","value":1,"path":"tags/压缩状态/"},{"name":"拆点","value":1,"path":"tags/拆点/"},{"name":"NOIP","value":1,"path":"tags/NOIP/"},{"name":"树上差分","value":1,"path":"tags/树上差分/"},{"name":"行列式","value":1,"path":"tags/行列式/"},{"name":"最小割树","value":1,"path":"tags/最小割树/"},{"name":"保序回归","value":1,"path":"tags/保序回归/"},{"name":"上下界网络流","value":1,"path":"tags/上下界网络流/"},{"name":"ODT","value":1,"path":"tags/ODT/"},{"name":"加减交错法","value":1,"path":"tags/加减交错法/"},{"name":"斐波那契","value":1,"path":"tags/斐波那契/"},{"name":"强联通分量","value":1,"path":"tags/强联通分量/"},{"name":"四边形不等式","value":1,"path":"tags/四边形不等式/"},{"name":"对偶图","value":1,"path":"tags/对偶图/"},{"name":"弱周期定理","value":1,"path":"tags/弱周期定理/"},{"name":"PL","value":1,"path":"tags/PL/"},{"name":"周期引理","value":1,"path":"tags/周期引理/"},{"name":"增量构造","value":1,"path":"tags/增量构造/"},{"name":"broder","value":1,"path":"tags/broder/"},{"name":"最大流","value":1,"path":"tags/最大流/"},{"name":"循环同构串","value":1,"path":"tags/循环同构串/"},{"name":"broder剃头截尾法","value":1,"path":"tags/broder剃头截尾法/"},{"name":"析合树","value":1,"path":"tags/析合树/"},{"name":"欧拉回来","value":1,"path":"tags/欧拉回来/"},{"name":"平面几何","value":1,"path":"tags/平面几何/"},{"name":"斯特林数","value":1,"path":"tags/斯特林数/"},{"name":"括号匹配","value":1,"path":"tags/括号匹配/"},{"name":"建图","value":1,"path":"tags/建图/"},{"name":"移轴不移图","value":1,"path":"tags/移轴不移图/"},{"name":"重构","value":1,"path":"tags/重构/"},{"name":"二进制分组","value":1,"path":"tags/二进制分组/"},{"name":"kd-tree","value":1,"path":"tags/kd-tree/"},{"name":"线段树分治","value":1,"path":"tags/线段树分治/"},{"name":"整体二分","value":1,"path":"tags/整体二分/"},{"name":"闵可夫斯基和","value":1,"path":"tags/闵可夫斯基和/"},{"name":"随机","value":1,"path":"tags/随机/"},{"name":"统计学","value":1,"path":"tags/统计学/"},{"name":"Hall定理","value":1,"path":"tags/Hall定理/"},{"name":"min - max容斥","value":1,"path":"tags/min-max容斥/"},{"name":"斜率","value":1,"path":"tags/斜率/"},{"name":"dilworth定理","value":1,"path":"tags/dilworth定理/"},{"name":"模拟匈牙利","value":1,"path":"tags/模拟匈牙利/"},{"name":"质因数","value":1,"path":"tags/质因数/"},{"name":"原根","value":1,"path":"tags/原根/"},{"name":"背包优化","value":1,"path":"tags/背包优化/"},{"name":"贝祖定理","value":1,"path":"tags/贝祖定理/"},{"name":"同余最短路","value":1,"path":"tags/同余最短路/"},{"name":"限制","value":1,"path":"tags/限制/"},{"name":"条件","value":1,"path":"tags/条件/"},{"name":"暴力卷积","value":1,"path":"tags/暴力卷积/"},{"name":"函数处理","value":1,"path":"tags/函数处理/"},{"name":"矩阵树定理","value":1,"path":"tags/矩阵树定理/"},{"name":"拆max","value":1,"path":"tags/拆max/"},{"name":"权值线段树","value":1,"path":"tags/权值线段树/"},{"name":"LGV","value":1,"path":"tags/LGV/"},{"name":"吉司机线段树","value":1,"path":"tags/吉司机线段树/"},{"name":"SAM","value":1,"path":"tags/SAM/"},{"name":"Trie","value":1,"path":"tags/Trie/"},{"name":"2次幂","value":1,"path":"tags/2次幂/"},{"name":"dDP","value":1,"path":"tags/dDP/"},{"name":"fhq","value":1,"path":"tags/fhq/"},{"name":"kmp","value":1,"path":"tags/kmp/"},{"name":"二分图匹配","value":1,"path":"tags/二分图匹配/"},{"name":"最小链覆盖","value":1,"path":"tags/最小链覆盖/"},{"name":"补图","value":1,"path":"tags/补图/"},{"name":"区间线性基","value":1,"path":"tags/区间线性基/"},{"name":"二维数点","value":1,"path":"tags/二维数点/"},{"name":"splay","value":1,"path":"tags/splay/"},{"name":"fhq-treap","value":1,"path":"tags/fhq-treap/"},{"name":"MST","value":1,"path":"tags/MST/"},{"name":"二维偏序","value":1,"path":"tags/二维偏序/"},{"name":"边双","value":1,"path":"tags/边双/"},{"name":"杜教筛","value":1,"path":"tags/杜教筛/"},{"name":"映射","value":1,"path":"tags/映射/"},{"name":"具体数学","value":1,"path":"tags/具体数学/"},{"name":"进制","value":1,"path":"tags/进制/"},{"name":"通项公式","value":1,"path":"tags/通项公式/"},{"name":"传统文化","value":1,"path":"tags/传统文化/"},{"name":"操作","value":1,"path":"tags/操作/"},{"name":"截图","value":1,"path":"tags/截图/"},{"name":"图片","value":1,"path":"tags/图片/"},{"name":"综评","value":1,"path":"tags/综评/"},{"name":"未来学","value":1,"path":"tags/未来学/"},{"name":"html","value":1,"path":"tags/html/"},{"name":"服务器","value":1,"path":"tags/服务器/"},{"name":"ngrok","value":1,"path":"tags/ngrok/"},{"name":"科技","value":1,"path":"tags/科技/"},{"name":"信息科技","value":1,"path":"tags/信息科技/"},{"name":"芯片","value":1,"path":"tags/芯片/"},{"name":"硅基芯片","value":1,"path":"tags/硅基芯片/"},{"name":"FN键","value":1,"path":"tags/FN键/"},{"name":"命题","value":1,"path":"tags/命题/"},{"name":"类型","value":1,"path":"tags/类型/"},{"name":"pandoc","value":1,"path":"tags/pandoc/"},{"name":"TinyTex","value":1,"path":"tags/TinyTex/"},{"name":"文件转换","value":1,"path":"tags/文件转换/"},{"name":"软件安装","value":1,"path":"tags/软件安装/"},{"name":"markdown转pdf","value":1,"path":"tags/markdown转pdf/"},{"name":"editplus","value":1,"path":"tags/editplus/"},{"name":"前端","value":1,"path":"tags/前端/"},{"name":"博客","value":1,"path":"tags/博客/"},{"name":"图片上传","value":1,"path":"tags/图片上传/"},{"name":"github","value":1,"path":"tags/github/"},{"name":"wt","value":1,"path":"tags/wt/"},{"name":"Terminal","value":1,"path":"tags/Terminal/"},{"name":"终端","value":1,"path":"tags/终端/"},{"name":"docker","value":1,"path":"tags/docker/"},{"name":"ubuntu","value":1,"path":"tags/ubuntu/"},{"name":"容器","value":1,"path":"tags/容器/"},{"name":"wsl","value":1,"path":"tags/wsl/"},{"name":"MinGW64","value":1,"path":"tags/MinGW64/"},{"name":"nodejs","value":1,"path":"tags/nodejs/"},{"name":"后端","value":1,"path":"tags/后端/"},{"name":"重装系统","value":1,"path":"tags/重装系统/"},{"name":"win10","value":1,"path":"tags/win10/"},{"name":"最大独立集","value":1,"path":"tags/最大独立集/"},{"name":"容斥原理","value":1,"path":"tags/容斥原理/"},{"name":"哈夫曼","value":1,"path":"tags/哈夫曼/"},{"name":"环境变量","value":1,"path":"tags/环境变量/"},{"name":"反悔贪心","value":1,"path":"tags/反悔贪心/"},{"name":"条件语句","value":1,"path":"tags/条件语句/"},{"name":"Katex","value":1,"path":"tags/Katex/"},{"name":"URL","value":1,"path":"tags/URL/"},{"name":"Powershell","value":1,"path":"tags/Powershell/"},{"name":"vpn","value":1,"path":"tags/vpn/"},{"name":"数据统计","value":1,"path":"tags/数据统计/"},{"name":"CSS","value":1,"path":"tags/CSS/"},{"name":"测试","value":1,"path":"tags/测试/"},{"name":"ECharts","value":1,"path":"tags/ECharts/"},{"name":"图表","value":1,"path":"tags/图表/"},{"name":"统计","value":1,"path":"tags/统计/"},{"name":"有向图博弈","value":1,"path":"tags/有向图博弈/"},{"name":"交互题","value":1,"path":"tags/交互题/"},{"name":"构造题","value":1,"path":"tags/构造题/"},{"name":"倒搜","value":1,"path":"tags/倒搜/"},{"name":"离散化","value":1,"path":"tags/离散化/"},{"name":"抽屉原理","value":1,"path":"tags/抽屉原理/"},{"name":"map","value":1,"path":"tags/map/"},{"name":"string","value":1,"path":"tags/string/"},{"name":"桶","value":1,"path":"tags/桶/"},{"name":"字符串匹配","value":1,"path":"tags/字符串匹配/"},{"name":"二进制搜索","value":1,"path":"tags/二进制搜索/"},{"name":"等差数列","value":1,"path":"tags/等差数列/"},{"name":"序列自动机","value":1,"path":"tags/序列自动机/"},{"name":"树的遍历","value":1,"path":"tags/树的遍历/"},{"name":"迭代加深搜索","value":1,"path":"tags/迭代加深搜索/"},{"name":"SPFA","value":1,"path":"tags/SPFA/"},{"name":"二次和公式","value":1,"path":"tags/二次和公式/"},{"name":"树分块","value":1,"path":"tags/树分块/"},{"name":"相似三角形","value":1,"path":"tags/相似三角形/"},{"name":"等比数列","value":1,"path":"tags/等比数列/"},{"name":"算术基本定理","value":1,"path":"tags/算术基本定理/"},{"name":"Prim","value":1,"path":"tags/Prim/"},{"name":"Dijkstra","value":1,"path":"tags/Dijkstra/"},{"name":"二进制拆分","value":1,"path":"tags/二进制拆分/"},{"name":"FLoyd","value":1,"path":"tags/FLoyd/"},{"name":"最小环","value":1,"path":"tags/最小环/"},{"name":"二次方程","value":1,"path":"tags/二次方程/"},{"name":"方程","value":1,"path":"tags/方程/"},{"name":"根","value":1,"path":"tags/根/"},{"name":"一元二次方程","value":1,"path":"tags/一元二次方程/"},{"name":"卡特兰数","value":1,"path":"tags/卡特兰数/"},{"name":"拓展中国定理","value":1,"path":"tags/拓展中国定理/"},{"name":"欧拉图","value":1,"path":"tags/欧拉图/"},{"name":"范德蒙定理","value":1,"path":"tags/范德蒙定理/"},{"name":"欧拉筛","value":1,"path":"tags/欧拉筛/"},{"name":"订正","value":1,"path":"tags/订正/"},{"name":"省选","value":1,"path":"tags/省选/"},{"name":"讲课","value":1,"path":"tags/讲课/"},{"name":"一本通","value":1,"path":"tags/一本通/"},{"name":"道法","value":1,"path":"tags/道法/"},{"name":"文化课","value":1,"path":"tags/文化课/"},{"name":"天文","value":1,"path":"tags/天文/"},{"name":"紫题","value":1,"path":"tags/紫题/"},{"name":"油猴","value":1,"path":"tags/油猴/"},{"name":"博客园","value":1,"path":"tags/博客园/"}],
+        itemStyle: {
+          borderRadius: [5, 5, 0, 0],
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            offset: 0,
+            color: 'rgba(128, 255, 165)'
+          },
+          {
+            offset: 1,
+            color: 'rgba(1, 191, 236)'
+          }])
+        },
+        emphasis: {
+          itemStyle: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+              offset: 0,
+              color: 'rgba(128, 255, 195)'
+            },
+            {
+              offset: 1,
+              color: 'rgba(1, 211, 255)'
+            }])
+          }
+        },
+        markLine: {
+          data: [{
+            name: '平均值',
+            type: 'average',
+            label: {
+              color: color
+            }
+          }]
+        }
+      }]
+    };
+    tagsChart.setOption(tagsOption);
+    // 监听窗口大小变化，自动调整图表尺寸
+    window.addEventListener('resize', () => { 
+      tagsChart.resize();
+    });
+    // 监听图表点击事件，点击后跳转到对应标签页面
+    tagsChart.on('click', 'series', (event) => {
+      if(event.data.path) window.location.href = '/' + event.data.path;
+    });
+  </script>
+<!-- 文章分类统计图 -->
+<div id="categories-chart" data-parent="true" style="border-radius: 8px; height: 850px; width:100%; padding:10px 0;"></div>
+  <script id="categoriesChart">
+    // 根据当前主题（light/dark）动态设置文字颜色
+    var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : 'rgba(255,255,255,0.7)'
+    // 初始化 ECharts 实例，绑定到 id 为 categories-chart 的容器
+    var categoriesChart = echarts.init(document.getElementById('categories-chart'), 'light');
+    // 标记是否启用父级分类（旭日图）展示
+    var categoryParentFlag = true
+    // 配置分类统计图选项
+    var categoriesOption = {
+      title: {
+        text: '文章分类统计图',
+        x: 'center',
+        textStyle: {
+          color: color
+        }
+      },
+	  animation : true, 
+	  animationDuration : 5000, 
+      legend: {
+        top: 'bottom',
+        data: ["OI（高中）","2023-2024赛季","OI（初中）","2021-2022赛季","2022-2023赛季","2024秋一本通省选篇题目选做","OI（大学）","高考复键","Hexo","Hexo 教程","算法","软件安装","2024春PHT题单","杂项","高中文化课","语法","读书札记","项目测试","Haskell","线性代数","项目/工程 技巧","具体数学","Hexo 测试"],
+        textStyle: {
+          color: color
+        }
+      },
+      tooltip: {
+        trigger: 'item'
+      },
+      // 工具箱配置，提供保存图片、数据视图和还原功能（饼图/旭日图不支持类型切换和区域缩放）
+      toolbox: {
+        show: true,
+        right: '5%',
+        // 工具箱图标颜色适配当前主题
+        iconStyle: {
+          borderColor: color
+        },
+        feature: {
+          // 保存为图片
+          saveAsImage: {
+            show: true,
+            title: '保存为图片',
+            pixelRatio: 2
+          },
+          // 数据视图，可查看原始数据
+          dataView: {
+            show: true,
+            title: '数据视图',
+            readOnly: true,
+            lang: ['数据视图', '关闭', '刷新']
+          },
+          // 还原初始状态
+          restore: {
+            show: true,
+            title: '还原'
+          }
+        }
+      },
+      series: []
+    };
+    // 根据是否启用父级分类，选择插入旭日图或饼图配置
+    categoriesOption.series.push(
+      categoryParentFlag ? 
+      {
+        nodeClick : false,
+        name: '文章篇数',
+        type: 'sunburst', 
+        // radius: ['0%', '130%'],
+        center: ['50%', '50%'],
+        data: [{"name":"OI（高中）","value":376,"path":"categories/OI（高中）/","id":"cuidWuzHtkpPPftJ8wqJQxHjZ","parentId":"0","children":[{"name":"2023-2024赛季","value":354,"path":"categories/OI（高中）/2023-2024赛季/","id":"cuid7tVjPqBRT2bcPNRvplax7","parentId":"cuidWuzHtkpPPftJ8wqJQxHjZ"},{"name":"2024秋一本通省选篇题目选做","value":16,"path":"categories/OI（高中）/2024秋一本通省选篇题目选做/","id":"cuidVFPCQzeV0vg5IrkzVQ7DR","parentId":"cuidWuzHtkpPPftJ8wqJQxHjZ"},{"name":"2024春PHT题单","value":6,"path":"categories/OI（高中）/2024春PHT题单/","id":"cuidahJaAF8wAqX_ZGDkBEelZ","parentId":"cuidWuzHtkpPPftJ8wqJQxHjZ"}]},{"name":"OI（初中）","value":245,"path":"categories/OI（初中）/","id":"cuidxRmaQRyqHn9907a4tX5dl","parentId":"0","children":[{"name":"2021-2022赛季","value":189,"path":"categories/OI（初中）/2021-2022赛季/","id":"cuid6AIQtrxRcnboMrzR_dajh","parentId":"cuidxRmaQRyqHn9907a4tX5dl"},{"name":"2022-2023赛季","value":56,"path":"categories/OI（初中）/2022-2023赛季/","id":"cuidGPuSFsUJL2v-XYtLRajU0","parentId":"cuidxRmaQRyqHn9907a4tX5dl"}]},{"name":"OI（大学）","value":15,"path":"categories/OI（大学）/","id":"cuidlTn5JXdkEki5uwfpVMqQP","parentId":"0","children":[{"name":"高考复键","value":15,"path":"categories/OI（大学）/高考复键/","id":"cuidpW2Ke4HF1u38ANCW_b_4f","parentId":"cuidlTn5JXdkEki5uwfpVMqQP","children":[{"name":"算法","value":11,"path":"categories/OI（大学）/高考复键/算法/","id":"cuideZ3B5WfU2iGuUeQqNdG1A","parentId":"cuidpW2Ke4HF1u38ANCW_b_4f"},{"name":"语法","value":4,"path":"categories/OI（大学）/高考复键/语法/","id":"cuid2dbsd9asNBjFKXK-1W3N8","parentId":"cuidpW2Ke4HF1u38ANCW_b_4f"}]}]},{"name":"Hexo","value":13,"path":"categories/Hexo/","id":"cuid745rwbP_qQWyPEV6LTu_4","parentId":"0","children":[{"name":"Hexo 教程","value":12,"path":"categories/Hexo/Hexo-教程/","id":"cuiddSFp6KUOQkeNHDpC8hhBD","parentId":"cuid745rwbP_qQWyPEV6LTu_4"},{"name":"Hexo 测试","value":1,"path":"categories/Hexo/Hexo-测试/","id":"cuidO-iaxoObhubyg6vISSm3N","parentId":"cuid745rwbP_qQWyPEV6LTu_4"}]},{"name":"软件安装","value":10,"path":"categories/软件安装/","id":"cuidgu9UKjuWAsaTsuTHk045_","parentId":"0"},{"name":"杂项","value":5,"path":"categories/杂项/","id":"cuidWQ5KX3dFdoZeJWJ7aFyx1","parentId":"0"},{"name":"高中文化课","value":4,"path":"categories/高中文化课/","id":"cuidlOSv8vCBpX_TVDqM9BzA7","parentId":"0"},{"name":"读书札记","value":3,"path":"categories/读书札记/","id":"cuidIOS-I5cx6x4ITrqWQyexj","parentId":"0"},{"name":"项目测试","value":2,"path":"categories/项目测试/","id":"cuidRCA51NMkv9HM_IVlzPSVY","parentId":"0"},{"name":"Haskell","value":2,"path":"categories/Haskell/","id":"cuidXQ3YxnCTPxkPtTw2mYDyl","parentId":"0"},{"name":"线性代数","value":2,"path":"categories/线性代数/","id":"cuidExnDTKECQUtpZ-FTROpnd","parentId":"0"},{"name":"项目/工程 技巧","value":1,"path":"categories/项目-工程-技巧/","id":"cuidTKIgcpvfep0EUI393Xuys","parentId":"0"},{"name":"具体数学","value":1,"path":"categories/具体数学/","id":"cuidXfOoBtjVbJr2XEplHmlG6","parentId":"0"}],
+        levels: [
+          {},
+          {
+            r0: '15%',
+            r: '35%',
+            itemStyle: {
+              borderWidth: 2
+            },
+            label: {
+              align: 'center', 
+              rotate: 'radial', 
+              fontWeight: 'bolder', 
+              minAngle: 5, // 扇区小于该角度不显示文字，避免拥挤
+              width: 100, // 文字宽度
+              overflow: 'truncate' // 文字过长截断
+            }
+          },
+          {
+            r0: '35%',
+            r: '70%',
+            label: {
+              align: 'center', 
+              fontWeight: 'bold', 
+              minAngle: 4, // 扇区小于该角度不显示文字，避免拥挤
+              width: 150, // 文字宽度
+              overflow: 'truncate' // 文字过长截断
+            }
+          },
+          {
+            r0: '70%',
+            r: '72%',
+            label: {
+              position: 'outside',
+              padding: 3,
+              silent: false, 
+              minAngle: 1, // 扇区小于该角度不显示文字，避免拥挤
+              width: 100, // 文字宽度
+              overflow: 'truncate' // 文字过长截断
+            },
+            itemStyle: {
+              borderWidth: 3
+            }
+          }
+        ], 
+        sort: 'desc'
+        // itemStyle: {
+        //   borderColor: '#fff',
+        //   borderWidth: 2,
+        //   emphasis: {
+        //     focus: 'ancestor',
+        //     shadowBlur: 10,
+        //     shadowOffsetX: 0,
+        //     shadowColor: 'rgba(255, 255, 255, 0.5)'
+        //   }
+        // }, 
+        // label: {
+        //   show: true, // 是否显示文字
+        //   rotate: 'radial', // radial径向/ tangential切向/ 0不旋转
+        //   fontSize: 12,
+        //   color: '#333',
+        //   minAngle: 4, // 扇区小于该角度不显示文字，避免拥挤
+        //   width: 100, // 文字宽度
+        //   overflow: 'truncate', // 文字过长截断
+        //   align: 'center'
+        // }
+      }
+      :
+      {
+        // name: '文章篇数',
+        // type: 'pie',
+        // radius: [30, 80],
+        // roseType: 'area',
+        // label: {
+        //   color: color,
+        //   formatter: '{b} : {c} ({d}%)'
+        // },
+        // data: [{"name":"OI（高中）","value":376,"path":"categories/OI（高中）/","id":"cuidWuzHtkpPPftJ8wqJQxHjZ","parentId":"0"},{"name":"2023-2024赛季","value":354,"path":"categories/OI（高中）/2023-2024赛季/","id":"cuid7tVjPqBRT2bcPNRvplax7","parentId":"cuidWuzHtkpPPftJ8wqJQxHjZ"},{"name":"OI（初中）","value":245,"path":"categories/OI（初中）/","id":"cuidxRmaQRyqHn9907a4tX5dl","parentId":"0"},{"name":"2021-2022赛季","value":189,"path":"categories/OI（初中）/2021-2022赛季/","id":"cuid6AIQtrxRcnboMrzR_dajh","parentId":"cuidxRmaQRyqHn9907a4tX5dl"},{"name":"2022-2023赛季","value":56,"path":"categories/OI（初中）/2022-2023赛季/","id":"cuidGPuSFsUJL2v-XYtLRajU0","parentId":"cuidxRmaQRyqHn9907a4tX5dl"},{"name":"2024秋一本通省选篇题目选做","value":16,"path":"categories/OI（高中）/2024秋一本通省选篇题目选做/","id":"cuidVFPCQzeV0vg5IrkzVQ7DR","parentId":"cuidWuzHtkpPPftJ8wqJQxHjZ"},{"name":"OI（大学）","value":15,"path":"categories/OI（大学）/","id":"cuidlTn5JXdkEki5uwfpVMqQP","parentId":"0"},{"name":"高考复键","value":15,"path":"categories/OI（大学）/高考复键/","id":"cuidpW2Ke4HF1u38ANCW_b_4f","parentId":"cuidlTn5JXdkEki5uwfpVMqQP"},{"name":"Hexo","value":13,"path":"categories/Hexo/","id":"cuid745rwbP_qQWyPEV6LTu_4","parentId":"0"},{"name":"Hexo 教程","value":12,"path":"categories/Hexo/Hexo-教程/","id":"cuiddSFp6KUOQkeNHDpC8hhBD","parentId":"cuid745rwbP_qQWyPEV6LTu_4"},{"name":"算法","value":11,"path":"categories/OI（大学）/高考复键/算法/","id":"cuideZ3B5WfU2iGuUeQqNdG1A","parentId":"cuidpW2Ke4HF1u38ANCW_b_4f"},{"name":"软件安装","value":10,"path":"categories/软件安装/","id":"cuidgu9UKjuWAsaTsuTHk045_","parentId":"0"},{"name":"2024春PHT题单","value":6,"path":"categories/OI（高中）/2024春PHT题单/","id":"cuidahJaAF8wAqX_ZGDkBEelZ","parentId":"cuidWuzHtkpPPftJ8wqJQxHjZ"},{"name":"杂项","value":5,"path":"categories/杂项/","id":"cuidWQ5KX3dFdoZeJWJ7aFyx1","parentId":"0"},{"name":"高中文化课","value":4,"path":"categories/高中文化课/","id":"cuidlOSv8vCBpX_TVDqM9BzA7","parentId":"0"},{"name":"语法","value":4,"path":"categories/OI（大学）/高考复键/语法/","id":"cuid2dbsd9asNBjFKXK-1W3N8","parentId":"cuidpW2Ke4HF1u38ANCW_b_4f"},{"name":"读书札记","value":3,"path":"categories/读书札记/","id":"cuidIOS-I5cx6x4ITrqWQyexj","parentId":"0"},{"name":"项目测试","value":2,"path":"categories/项目测试/","id":"cuidRCA51NMkv9HM_IVlzPSVY","parentId":"0"},{"name":"Haskell","value":2,"path":"categories/Haskell/","id":"cuidXQ3YxnCTPxkPtTw2mYDyl","parentId":"0"},{"name":"线性代数","value":2,"path":"categories/线性代数/","id":"cuidExnDTKECQUtpZ-FTROpnd","parentId":"0"},{"name":"项目/工程 技巧","value":1,"path":"categories/项目-工程-技巧/","id":"cuidTKIgcpvfep0EUI393Xuys","parentId":"0"},{"name":"具体数学","value":1,"path":"categories/具体数学/","id":"cuidXfOoBtjVbJr2XEplHmlG6","parentId":"0"},{"name":"Hexo 测试","value":1,"path":"categories/Hexo/Hexo-测试/","id":"cuidO-iaxoObhubyg6vISSm3N","parentId":"cuid745rwbP_qQWyPEV6LTu_4"}],
+        // itemStyle: {
+        //   emphasis: {
+        //     shadowBlur: 10,
+        //     shadowOffsetX: 0,
+        //     shadowColor: 'rgba(255, 255, 255, 0.5)'
+        //   }
+        // }
+      }
+    )
+    categoriesChart.setOption(categoriesOption);
+    // 监听窗口大小变化，自动调整图表尺寸
+    window.addEventListener('resize', () => {
+      categoriesChart.resize();
+    });
+    // 监听图表点击事件，点击后跳转到对应分类页面
+    categoriesChart.on('click', 'series', (event) => {
+      if(event.data.path) window.location.href = '/' + event.data.path;
+    });
+  </script>
+<!-- 文章热力图 -->
+<div id="calendar-chart" style="border-radius: 8px; height: 1020px; padding: 10px;"></div>
+  <script id="calendarChart">
+    // 根据当前主题（light/dark）动态设置文字颜色
+    var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : 'rgba(255,255,255,0.7)'
+    // 根据当前主题动态设置背景色，用于 calendar 分隔线
+    var bgColor = document.documentElement.getAttribute('data-theme') === 'light' ? '#fff' : '#1e1e1e'
+
+    // 注入的年份列表和对应数据
+    var years = ["2026","2024","2023","2022","2021"];
+    var yearData = {"2021":[["2021-12-04",5],["2021-12-09",4],["2021-12-25",2],["2021-12-21",8],["2021-11-20",1],["2021-11-24",4],["2021-11-14",10],["2021-11-15",5],["2021-12-15",2],["2021-12-14",3],["2021-12-03",1],["2021-12-20",1],["2021-12-22",2],["2021-12-24",2],["2021-12-02",4],["2021-12-08",3],["2021-12-23",2],["2021-12-07",2],["2021-11-29",3],["2021-11-30",1],["2021-12-01",3],["2021-11-28",1],["2021-11-22",1],["2021-12-18",2],["2021-12-11",4],["2021-11-21",2],["2021-12-05",5],["2021-11-16",2],["2021-11-17",5],["2021-11-27",1],["2021-11-18",4],["2021-11-19",1],["2021-12-06",1],["2021-12-16",1],["2021-12-10",1],["2021-12-13",2],["2021-12-12",1]],"2022":[["2022-08-09",1],["2022-07-29",9],["2022-09-19",1],["2022-01-16",3],["2022-05-31",1],["2022-01-09",2],["2022-07-09",3],["2022-07-17",4],["2022-07-31",1],["2022-07-23",2],["2022-08-27",1],["2022-09-10",2],["2022-09-03",1],["2022-09-11",2],["2022-10-30",1],["2022-07-30",1],["2022-09-27",1],["2022-07-13",2],["2022-09-18",3],["2022-07-11",2],["2022-07-20",1],["2022-07-22",1],["2022-03-14",1],["2022-04-25",5],["2022-08-05",1],["2022-01-24",4],["2022-03-16",1],["2022-05-22",1],["2022-03-17",1],["2022-05-23",1],["2022-01-20",2],["2022-06-11",2],["2022-04-29",1],["2022-01-25",2],["2022-04-27",1],["2022-04-26",2],["2022-04-28",1],["2022-01-10",4],["2022-01-13",4],["2022-04-22",4],["2022-05-24",1],["2022-01-17",3],["2022-01-14",4],["2022-01-12",6],["2022-01-11",1],["2022-01-07",2],["2022-05-19",1],["2022-07-28",3],["2022-02-17",2],["2022-01-18",5],["2022-01-08",2],["2022-05-13",1],["2022-02-15",1],["2022-05-10",1],["2022-05-18",1],["2022-05-09",1],["2022-02-16",1],["2022-07-25",2],["2022-05-29",1],["2022-09-02",1],["2022-03-10",1],["2022-10-23",1],["2022-11-18",1],["2022-06-07",2],["2022-06-04",1],["2022-07-08",1],["2022-07-10",1],["2022-01-21",1],["2022-01-23",1],["2022-01-22",1],["2022-09-25",1],["2022-09-24",1],["2022-01-26",1],["2022-04-15",1],["2022-02-20",1]],"2023":[["2023-08-03",6],["2023-08-05",2],["2023-08-06",4],["2023-08-04",1],["2023-08-07",1],["2023-08-08",2],["2023-08-10",6],["2023-08-11",1],["2023-08-12",1],["2023-08-14",1],["2023-08-13",1],["2023-08-15",1],["2023-08-18",1],["2023-08-19",1],["2023-08-24",4],["2023-08-16",2],["2023-08-25",1],["2023-08-27",4],["2023-08-26",1],["2023-08-29",3],["2023-08-28",1],["2023-08-30",4],["2023-09-01",1],["2023-08-31",1],["2023-09-02",2],["2023-09-03",5],["2023-09-04",1],["2023-09-05",2],["2023-09-07",2],["2023-09-06",1],["2023-09-10",3],["2023-09-11",4],["2023-09-12",5],["2023-09-13",3],["2023-09-15",4],["2023-09-16",6],["2023-09-17",1],["2023-09-18",4],["2023-09-20",2],["2023-09-19",2],["2023-09-21",4],["2023-09-22",3],["2023-09-23",2],["2023-09-24",3],["2023-09-25",3],["2023-09-26",4],["2023-09-27",6],["2023-09-30",1],["2023-10-03",2],["2023-10-06",8],["2023-10-04",3],["2023-10-05",1],["2023-10-07",2],["2023-10-08",3],["2023-10-09",8],["2023-10-10",5],["2023-10-11",4],["2023-10-12",1],["2023-10-13",2],["2023-10-14",3],["2023-10-15",5],["2023-10-17",4],["2023-10-16",1],["2023-10-18",2],["2023-10-19",2],["2023-10-20",4],["2023-10-23",2],["2023-10-24",3],["2023-10-25",4],["2023-10-26",3],["2023-11-01",2],["2023-11-02",1],["2023-11-03",1],["2023-11-05",1],["2023-11-04",1],["2023-11-06",9],["2023-11-07",5],["2023-11-09",3],["2023-11-08",2],["2023-11-12",2],["2023-11-13",5],["2023-11-10",1],["2023-11-14",2],["2023-11-16",3],["2023-11-17",3],["2023-12-02",5],["2023-12-11",2],["2023-12-16",8],["2023-12-17",1],["2023-12-18",9],["2023-12-13",1],["2023-12-19",9],["2023-12-20",8],["2023-12-21",10],["2023-12-22",2],["2023-12-25",3],["2023-12-23",3],["2023-12-26",4],["2023-12-27",4],["2023-12-28",4],["2023-12-29",1],["2023-06-27",1],["2023-03-23",1],["2023-04-28",1]],"2024":[["2024-01-01",2],["2024-01-02",4],["2024-01-04",1],["2024-01-05",1],["2024-01-03",1],["2024-01-11",2],["2024-01-15",3],["2024-01-09",1],["2024-01-17",4],["2024-01-16",1],["2024-01-18",2],["2024-08-20",2],["2024-08-21",3],["2024-08-22",3],["2024-08-26",2],["2024-08-27",3],["2024-08-29",2],["2024-09-25",1],["2024-09-18",1],["2024-09-29",2],["2024-10-07",4],["2024-05-22",1],["2024-04-24",3],["2024-05-15",1],["2024-08-14",2],["2024-05-10",1],["2024-09-03",2],["2024-09-04",1],["2024-09-05",2],["2024-09-09",1],["2024-09-24",1],["2024-09-10",1],["2024-09-11",2],["2024-09-13",1],["2024-09-23",1],["2024-10-14",1]],"2026":[["2026-05-23",3],["2026-06-30",8],["2026-05-01",3],["2026-06-28",2],["2026-05-10",1],["2026-05-17",3],["2026-05-16",1],["2026-04-24",1],["2026-06-19",2],["2026-05-30",4],["2026-05-31",2],["2026-06-14",6],["2026-06-18",8],["2026-06-17",2],["2026-06-16",2],["2026-06-29",2],["2026-07-01",5],["2026-07-02",2],["2026-07-03",1]]};
+    var maxCount = 10;
+
+    // 根据年份数量动态调整容器高度（每个年份约需 180px 空间）
+    var container = document.getElementById('calendar-chart');
+    var neededHeight = 80 + years.length * 180 + (years.length > 1 ? 70 : 50);
+    container.style.height = Math.max(neededHeight, 320) + 'px';
+
+    // 初始化 ECharts 实例，变量名避免与 script id 冲突
+    var calChart = echarts.init(container, 'light');
+
+    // 动态构建 calendar 组件数组和 series 数组（每个年份一个）
+    var calendars = [];
+    var seriesList = [];
+    years.forEach(function(year, index) {
+      calendars.push({
+        top: index === 0 ? 80 : 80 + index * 180,
+        left: 50,
+        right: 50,
+        cellSize: ['auto', 16],
+        range: year, // 单一年份字符串，ECharts 支持
+        itemStyle: {
+          borderWidth: 0.5,
+          // borderColor: bgColor
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            color: '#cbd2ec',
+            width: 2
+          }
+        },
+        // 星期标签，使用中文缩写
+        dayLabel: {
+          color: color,
+          nameMap: 'cn'
+        },
+        // 月份标签，使用中文缩写
+        monthLabel: {
+          color: color,
+          nameMap: 'cn'
+        },
+        // 年份标签
+        yearLabel: {
+          color: color,
+          show: true
+        }
+      });
+
+      seriesList.push({
+        type: 'heatmap',
+        coordinateSystem: 'calendar',
+        calendarIndex: index,
+        data: yearData[year] || []
+      });
+    });
+
+    // 配置文章发布热力图选项
+    var calendarOption = {
+      title: {
+        text: '文章发布热力图',
+        x: 'center',
+        textStyle: {
+          color: color
+        }
+      },
+      tooltip: {
+        formatter: function (params) {
+          return params.value[0] + '<br/>文章篇数：' + params.value[1]
+        }
+      },
+      // 工具箱配置，提供保存图片、数据视图和还原功能
+      toolbox: {
+        show: true,
+        right: '5%',
+        // 工具箱图标颜色适配当前主题
+        iconStyle: {
+          borderColor: color
+        },
+        feature: {
+          // 保存为图片
+          saveAsImage: {
+            show: true,
+            title: '保存为图片',
+            pixelRatio: 2
+          },
+          // 数据视图，可查看原始数据
+          dataView: {
+            show: true,
+            title: '数据视图',
+            readOnly: true,
+            lang: ['数据视图', '关闭', '刷新']
+          },
+          // 还原初始状态
+          restore: {
+            show: true,
+            title: '还原'
+          }
+        }
+      },
+      // 视觉映射组件，根据文章数量映射颜色深浅
+      visualMap: {
+        min: 0,
+        max: maxCount,
+        calculable: true,
+        orient: 'horizontal',
+        left: 'center',
+        bottom: years.length > 1 ? '0%' : '5%',
+        textStyle: {
+          color: color
+        },
+        inRange: {
+          color: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
+        }
+      },
+      // 日历组件数组（多年份时多个 calendar 垂直排列）
+      calendar: calendars,
+      series: seriesList
+    };
+    calChart.setOption(calendarOption);
+    // 监听窗口大小变化，自动调整图表尺寸
+    window.addEventListener('resize', () => {
+      calChart.resize();
+    });
+    // 监听图表点击事件，点击后跳转到对应月份的归档页面
+    calChart.on('click', 'series', (event) => {
+      if (event.componentType === 'series') {
+        var date = event.value[0].split('-')
+        window.location.href = '/archives/' + date[0] + '/' + date[1] + '/'
+      }
+    });
+  </script></div></div></main><footer id="footer" style="background-image: url(/img/footimg.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By zhangxixi</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div><div class="footer_custom_text">你的未来定闪闪发光、光芒万丈！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="&#x7B80;&#x7E41;&#x8F6C;&#x6362;">繁</button><button id="darkmode" type="button" title="&#x65E5;&#x95F4;&#x548C;&#x591C;&#x95F4;&#x6A21;&#x5F0F;&#x5207;&#x6362;"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="&#x8BBE;&#x7F6E;"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="&#x56DE;&#x5230;&#x9876;&#x90E8;"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="/js/tw_cn.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Please search here..." type="text"></div><hr><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.5-b1"></script></div></div></body></html>
