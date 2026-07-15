@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>现代物理学科普笔记1 | zhangxixi的博客</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="现代物理学科普笔记1 https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1cz421i7k8&#x2F; 量子纠缠 波粒二象性：叠加态（不测量就一直处于其中） 两个粒子：相互缠绕 衰变成2个：相互缠绕 会超越空间和时间 相互作用：对一个进行测量，同时决定另一个的结果 “测量坍塌效应” 量子纠缠不存在速度概念，是同时作用  实验： 远处的幽灵行动，速度下限是光速4个数量级 如何实现： 标准模型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="现代物理学科普笔记1">
+<meta property="og:url" content="http://zhangxixi2008.github.io/post/4159054256">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="现代物理学科普笔记1 https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1cz421i7k8&#x2F; 量子纠缠 波粒二象性：叠加态（不测量就一直处于其中） 两个粒子：相互缠绕 衰变成2个：相互缠绕 会超越空间和时间 相互作用：对一个进行测量，同时决定另一个的结果 “测量坍塌效应” 量子纠缠不存在速度概念，是同时作用  实验： 远处的幽灵行动，速度下限是光速4个数量级 如何实现： 标准模型">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260714212140048.png">
+<meta property="article:published_time" content="2026-07-14T13:22:15.000Z">
+<meta property="article:modified_time" content="2026-07-14T16:04:30.812Z">
+<meta property="article:author" content="zhangxixi">
+<meta property="article:tag" content="上帝粒子">
+<meta property="article:tag" content="希格斯机制">
+<meta property="article:tag" content="希格斯粒子">
+<meta property="article:tag" content="普朗克单位">
+<meta property="article:tag" content="物理">
+<meta property="article:tag" content="量子纠缠">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260714212140048.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "现代物理学科普笔记1",
+  "url": "http://zhangxixi2008.github.io/post/4159054256",
+  "image": "https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260714212140048.png",
+  "datePublished": "2026-07-14T13:22:15.000Z",
+  "dateModified": "2026-07-14T16:04:30.812Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "zhangxixi",
+      "url": "http://zhangxixi2008.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="http://zhangxixi2008.github.io/post/4159054256"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xfiga2r6c8");
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":350,"highlightFullpage":true,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '现代物理学科普笔记1',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><script src="https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.min.js"></script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div class="bg-animation" id="web_bg" style="background-image: url(https://i.loli.net/2019/09/09/5oDRkWVKctx2b6A.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">705</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">565</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">29</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fa fa-chart-bar"></i><span> Statistic</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260714212140048.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">现代物理学科普笔记1</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fa fa-chart-bar"></i><span> Statistic</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">现代物理学科普笔记1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2026-07-14T13:22:15.000Z" title="发表于 2026-07-14 21:22:15">2026-07-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%89%A9%E7%90%86/">物理</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%89%A9%E7%90%86/%E7%8E%B0%E4%BB%A3%E7%89%A9%E7%90%86%E5%AD%A6%E7%A7%91%E6%99%AE/">现代物理学科普</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1>现代物理学科普笔记1</h1>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cz421i7k8/">https://www.bilibili.com/video/BV1cz421i7k8/</a></p>
+<h2 id="量子纠缠">量子纠缠</h2>
+<p>波粒二象性：叠加态（不测量就一直处于其中）</p>
+<p>两个粒子：相互缠绕</p>
+<p>衰变成2个：相互缠绕</p>
+<p>会超越空间和时间</p>
+<p>相互作用：对一个进行测量，同时决定另一个的结果</p>
+<p>“测量坍塌效应”</p>
+<p>量子纠缠不存在速度概念，是同时作用</p>
+<hr>
+<p>实验：</p>
+<p>远处的幽灵行动，速度下限是光速4个数量级</p>
+<p>如何实现：</p>
+<p>标准模型中，介质上限是光速</p>
+<p>另一种解释：逻辑判断</p>
+<blockquote>
+<p>寡妇模型：</p>
+<p>对一个纠缠粒子测量会同时影响</p>
+<p>手套模型：</p>
+<p>打开一个盒子，就会立刻知道另一个盒子里是什么</p>
+</blockquote>
+<p>如果是逻辑判断，那应该不变</p>
+<p>但多次测量纠缠粒子，其结果并不相同</p>
+<p>爱因斯坦：因违背区域实在论，隐变量（未发现）</p>
+<p>普朗克和薛定谔暂时支持爱因斯坦</p>
+<p>哥本哈根学派的理论不被保守派认可</p>
+<p>EPR</p>
+<p>贝尔不等式：纠缠粒子和磁场角度关系</p>
+<p>最终：贝尔不等式成立，即不存在隐变量</p>
+<ol>
+<li>不存在传播子</li>
+<li>无法承载信息和能量</li>
+<li>不违反相对论</li>
+</ol>
+<p>想法：上下旋结果为01</p>
+<p>问题：自旋叠加态坍塌是完全随机的，无法控制。即无法有效信息</p>
+<p>想法：是否坍塌变为0或1</p>
+<p>问题：想知道是否坍塌只能观察</p>
+<p>只能用概率表示模糊</p>
+<p>本质：<strong>量子不可分离性</strong>（只有纠缠态，就是同一个粒子）</p>
+<p>所以本来两个就是一个整理，只是缝隙有点大</p>
+<p>一种说法：高维空间的体现</p>
+<h2 id="上帝粒子">上帝粒子</h2>
+<p>万有理论的基础</p>
+<p>2012 标准模型 希格斯粒子在统计学上被发现</p>
+<p>没有直接探测过</p>
+<hr>
+<h3 id="希格斯机制">希格斯机制</h3>
+<p>三大力可以由粒子描述</p>
+<p>希格斯粒子不存在，则粒子质量不知道哪里来源</p>
+<p>什么是粒子：不是实心小球</p>
+<p>原子的本质：夸克 + 粒子</p>
+<p>基于<strong>量子场论</strong>，采用其观点</p>
+<p>宇宙只存在量子场，没有固定边界，有固定的激发能量值</p>
+<p>粒子是量子场被激发的产物</p>
+<p>比如：夸克场、光子场</p>
+<p>量子场本身不额外携带能量，即没有静止质量</p>
+<p>目前：仅光子和胶子无质量</p>
+<p>一定存在一个粒子不断提高能量：<strong>希格斯场</strong></p>
+<hr>
+<p>对称性破缺</p>
+<p>弱力和电磁力本来是一种力</p>
+<p>希格斯场也因为不对称</p>
+<p>费米子</p>
+<p>能量最低：第二三代费米子很容易变成第一代费米子</p>
+<p>质量越大，越易衰变</p>
+<p><img src="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260714212140048.png" alt="image-20260713150156167" loading='lazy'></p>
+<p>希格斯粒子质量第二大，仅次于顶夸克</p>
+<p>中微子轻、稳定。总是振荡</p>
+<hr>
+<p>关键：找到希格斯粒子</p>
+<p>如何确认：反向思维</p>
+<p>反向变成希格斯粒子（费曼图可逆）</p>
+<p>不断加大粒子动能</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>E</mi><mn>2</mn></msup><mo>=</mo><mo stretchy="false">(</mo><mi>p</mi><mi>c</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mi>m</mi><mi>c</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E^2=(pc)^2+(mc)^2
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mord mathnormal">c</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">c</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>粒子总能量：势能项+动能项</p>
+<p>电子总能量：125GeV</p>
+<p>但不会电子对撞（质量太小）直接拿质子对撞（质量1GeV）</p>
+<p>为什么难以观测：</p>
+<ol>
+<li>对撞瞬间，动能为0，粒子会静止，无法飞到探测器</li>
+<li>希格斯粒子重，容易衰变</li>
+</ol>
+<p>经常存在，但其他粒子带电荷，可以用电磁探测器</p>
+<p>方法：考古</p>
+<p>假设产生过希格斯粒子，会随机衰变，计算剩余粒子质量之和，判断其是否等于希格斯粒子</p>
+<p>大量重复实验</p>
+<p>2012 统计性是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mi>σ</mi></mrow><annotation encoding="application/x-tex">5\sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span><span class="mord mathnormal" style="margin-right:0.0359em;">σ</span></span></span></span></p>
+<p>如今提高到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mi>σ</mi></mrow><annotation encoding="application/x-tex">6\sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span><span class="mord mathnormal" style="margin-right:0.0359em;">σ</span></span></span></span></p>
+<p>标准模型新征程：尝试统一万有引力</p>
+<h2 id="普朗克单位">普朗克单位</h2>
+<p>普朗克长度、时间、质量、温度（宇宙最高温度）</p>
+<hr>
+<p>普朗克常数，猜出来</p>
+<p>两朵乌云：</p>
+<ol>
+<li>光速问题</li>
+<li>黑体辐射问题（来自此）</li>
+</ol>
+<p>1900，普朗克认为放弃能量连续概念，只能一份一份。</p>
+<p>能量最小值：能量子</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mi>h</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">E=hv
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.0359em;">v</span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span> 为普朗克常数，没有物理意义</p>
+<p>非连续间断量子概念</p>
+<hr>
+<p>普朗克长度：物理生效最小尺度</p>
+<p>宇宙基本像素点 =&gt; 弦理论</p>
+<p>小于普朗克的变化无法有时间，所以有普朗克时间</p>
+<p>如何计算？</p>
+<blockquote>
+<p>有一个粒子（位置信息+动量信息）</p>
+<p>由不确定原理，用光子打它，得位置。</p>
+<p>为了提高准度</p>
+<p>光子能量恰好为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">mc^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal">m</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></p>
+<ol>
+<li>
+<p>康普顿波长</p>
+</li>
+<li>
+<p>史瓦西半径：恰好无光子返回</p>
+</li>
+</ol>
+<p>用光子策略达到康普顿波长，没有意义，但大于史瓦西半径</p>
+<p>粒子半径质量越大，史瓦西半径越大，康普顿波长越小</p>
+<p>因此粒子质量打到一定程度，即二者相等，人们就无法测量</p>
+<p>因此就有了普朗克质量和普朗克长度</p>
+</blockquote>
+<p>普朗克质量</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>h</mi><mi mathvariant="normal">/</mi><mi>m</mi><mi>c</mi><mo>=</mo><mi>G</mi><mi>m</mi><mi mathvariant="normal">/</mi><msup><mi>c</mi><mn>2</mn></msup><mspace linebreak="newline"></mspace><mi>m</mi><mo>=</mo><msqrt><mrow><mi>h</mi><mi>c</mi><mi mathvariant="normal">/</mi><mi>G</mi></mrow></msqrt><mspace linebreak="newline"></mspace><mi>l</mi><mo>=</mo><msqrt><mrow><mi>h</mi><mi>G</mi><mi mathvariant="normal">/</mi><msup><mi>c</mi><mn>3</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">h/mc=Gm/c^2 \\
+m =\sqrt{hc/G}\\
+l = \sqrt{hG/c^3}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mord">/</span><span class="mord mathnormal">m</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord mathnormal">G</span><span class="mord mathnormal">m</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.2561em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9839em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord mathnormal">h</span><span class="mord mathnormal">c</span><span class="mord">/</span><span class="mord mathnormal">G</span></span></span><span style="top:-2.9439em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewBox="0 0 400000 1296" preserveAspectRatio="xMinYMin slice"><path d="M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2561em;"><span></span></span></span></span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.2561em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9839em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord mathnormal">h</span><span class="mord mathnormal">G</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span><span style="top:-2.9439em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewBox="0 0 400000 1296" preserveAspectRatio="xMinYMin slice"><path d="M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2561em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p>普朗克长度是光速在普朗克时间内走过的长度</p>
+<p>普朗克温度：温度本质粒子运动剧烈，粒子运动剧烈程度有上限</p>
+<p>基本量：质量、长度、时间。用动量来描述</p>
+<p>引入狭义相对论，质量和速度有关。所以只和速度有关。速度上限为光速</p>
+<p>此时辐射波长为普朗克长度的光子</p>
+<p>光子能量最大值，能量和频率成正比。频率和波长成反比。波长最短就是普朗克长度。</p>
+<p>当波长为普朗克长度，就可以得到光子能量最大值</p>
+<p>由</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mi>h</mi><mi>c</mi><mi mathvariant="normal">/</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">E=hc/\lambda
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mord mathnormal">c</span><span class="mord">/</span><span class="mord mathnormal">λ</span></span></span></span></span></p>
+<p>能量和温度之间线性关系：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mi>k</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">E=kT
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span></span></span></span> 为玻尔兹曼常数</p>
+<p>普朗克温度不一定是最小长度，而是现代物理失效的最小长度</p>
+<div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;距离上次更新已过去&quot;,&quot;messageNext&quot;:&quot;天，文章内容可能已过时。&quot;,&quot;postUpdate&quot;:&quot;2026-07-15 00:04:30&quot;}" hidden></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://zhangxixi2008.github.io">zhangxixi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://zhangxixi2008.github.io/post/4159054256">http://zhangxixi2008.github.io/post/4159054256</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://zhangxixi2008.github.io" target="_blank">zhangxixi的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%89%A9%E7%90%86/">物理</a><a class="post-meta__tags" href="/tags/%E9%87%8F%E5%AD%90%E7%BA%A0%E7%BC%A0/">量子纠缠</a><a class="post-meta__tags" href="/tags/%E4%B8%8A%E5%B8%9D%E7%B2%92%E5%AD%90/">上帝粒子</a><a class="post-meta__tags" href="/tags/%E5%B8%8C%E6%A0%BC%E6%96%AF%E7%B2%92%E5%AD%90/">希格斯粒子</a><a class="post-meta__tags" href="/tags/%E5%B8%8C%E6%A0%BC%E6%96%AF%E6%9C%BA%E5%88%B6/">希格斯机制</a><a class="post-meta__tags" href="/tags/%E6%99%AE%E6%9C%97%E5%85%8B%E5%8D%95%E4%BD%8D/">普朗克单位</a></div><div class="post-share"><div class="social-share" data-image="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260714212140048.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/post/3111660691" title="现代物理学科普 笔记2"><img class="cover" src="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260715112331923.png" onerror="onerror=null;src='/img/404.png'" alt="cover of previous post" loading='lazy'><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">现代物理学科普 笔记2</div></div><div class="info-2"><div class="info-item-1">物理学科普讲座 笔记2 时间的本质 时间不存在——《时间的秩序》 时间来自哪里？来自宇宙大爆炸 因此宇宙大爆炸之前没有时间。 只有光子、胶子，时间是静止的。 时间消失：  大爆炸之前 光速  有变化才有时间 宇宙没有绝对真空，对观测者来说，度量本身就是时间 比如，对光子本身，不存在红移 类似双生子谬论，他们无法感知自己的时间又任何变化。只有看对方，才知道 这里时间变慢是真实发生的 错误解释：加速减速过程、加速度变成引力场 但这是广义相对论，不是主因 可以用闵可夫空间即可 t-x，x代表空间。两点连线代表时间 如果是直线，代表以恒速进行。 静止不动，B-A就是时间差 但如果动了，就不能用勾...</div></div></div></a><a class="pagination-related" href="/post/485048191" title="余秋雨《文化苦旅》读书札记"><img class="cover" src="/page_img/p9.png" onerror="onerror=null;src='/img/404.png'" alt="cover of next post" loading='lazy'><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">余秋雨《文化苦旅》读书札记</div></div><div class="info-2"><div class="info-item-1">余秋雨《文化苦旅》读书札记 久闻这本书的大名，终于有幸读了一次。 前后跨度很大，读了好久才读完。但不得不说，是非常好的一本书。 选文简评 都江堰 这是关于李冰父子治水的文章，之前在试卷里看到里面的选文，后来听老师提过一嘴余秋雨，才跑去找他的书来看。 可以说，这篇文章里的其中某一段，就是我与秋雨先生相遇的起源。 道士塔 道士塔的内容，我现在已经有点模糊。大抵是我前段时间刚好看了一篇有关王道士的公众号的文章。那场敦煌文物的买卖，无论是秋雨，还是那篇公众号，没有人能说清功与过、得与失。但是，它总归是在文化重新发掘自身过程中，做过的一次挣扎。 宁古塔 宁古塔讲述的，是一个一群清朝的文人，也是一个...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">现代物理学科普笔记1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E7%BA%A0%E7%BC%A0"><span class="toc-number">1.1.</span> <span class="toc-text">量子纠缠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E5%B8%9D%E7%B2%92%E5%AD%90"><span class="toc-number">1.2.</span> <span class="toc-text">上帝粒子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%8C%E6%A0%BC%E6%96%AF%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text">希格斯机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%AE%E6%9C%97%E5%85%8B%E5%8D%95%E4%BD%8D"><span class="toc-number">1.3.</span> <span class="toc-text">普朗克单位</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url(/img/footimg.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By zhangxixi</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div><div class="footer_custom_text">你的未来定闪闪发光、光芒万丈！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="/js/tw_cn.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Please search here..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.5-b1"></script></div></div></body></html>
