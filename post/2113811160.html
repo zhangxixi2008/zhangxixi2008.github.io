@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>探究原子世界 | zhangxixi的博客</title><meta name="author" content="zhangxixi"><meta name="copyright" content="zhangxixi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="此讲座笔记为本人手写版笔记经AI转成电子版  探究原子世界（华中科大 科英双） 5.7  引力场：各处 ggg 的变化 ⇒ 监测地下水、石油 引力波：时空涟漪  凝聚态物理  石墨 ⇐高温\Leftarrow{高温}⇐高温 金刚石（天然钻石形状定） λ&#x3D;hp动量&#x3D;hmv\lambda &#x3D; \frac{h}{p_{\text{动量}}} &#x3D; \frac{h}{mv}λ&#x3D;p动量​h​&#x3D;mvh​（电子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="探究原子世界">
+<meta property="og:url" content="http://zhangxixi2008.github.io/post/2113811160">
+<meta property="og:site_name" content="zhangxixi的博客">
+<meta property="og:description" content="此讲座笔记为本人手写版笔记经AI转成电子版  探究原子世界（华中科大 科英双） 5.7  引力场：各处 ggg 的变化 ⇒ 监测地下水、石油 引力波：时空涟漪  凝聚态物理  石墨 ⇐高温\Leftarrow{高温}⇐高温 金刚石（天然钻石形状定） λ&#x3D;hp动量&#x3D;hmv\lambda &#x3D; \frac{h}{p_{\text{动量}}} &#x3D; \frac{h}{mv}λ&#x3D;p动量​h​&#x3D;mvh​（电子">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260720152050908.png">
+<meta property="article:published_time" content="2025-05-07T08:33:59.000Z">
+<meta property="article:modified_time" content="2026-07-20T12:04:11.683Z">
+<meta property="article:author" content="zhangxixi">
+<meta property="article:tag" content="凝聚态物理">
+<meta property="article:tag" content="原子">
+<meta property="article:tag" content="扫描隧道显微镜">
+<meta property="article:tag" content="物理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260720152050908.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "探究原子世界",
+  "url": "http://zhangxixi2008.github.io/post/2113811160",
+  "image": "https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260720152050908.png",
+  "datePublished": "2025-05-07T08:33:59.000Z",
+  "dateModified": "2026-07-20T12:04:11.683Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "zhangxixi",
+      "url": "http://zhangxixi2008.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="http://zhangxixi2008.github.io/post/2113811160"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xfiga2r6c8");
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":350,"highlightFullpage":true,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '探究原子世界',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><script src="https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.min.js"></script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div class="bg-animation" id="web_bg" style="background-image: url(https://i.loli.net/2019/09/09/5oDRkWVKctx2b6A.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">740</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">628</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fa fa-chart-bar"></i><span> Statistic</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260720152050908.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zhangxixi的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">探究原子世界</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-th-large"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fa fa-chart-bar"></i><span> Statistic</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">探究原子世界</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2025-05-07T08:33:59.000Z" title="发表于 2025-05-07 16:33:59">2025-05-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Lecture-Note/">Lecture Note</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Lecture-Note/%E5%A4%A7%E4%B8%AD%E8%A1%94%E6%8E%A5%E8%AE%B2%E5%BA%A7/">大中衔接讲座</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">448</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p>此讲座笔记为本人手写版笔记经AI转成电子版</p>
+</blockquote>
+<h1>探究原子世界（华中科大 科英双） 5.7</h1>
+<ul>
+<li>引力场：各处 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span></span></span></span> 的变化 ⇒ 监测地下水、石油</li>
+<li>引力波：时空涟漪</li>
+</ul>
+<h2 id="凝聚态物理">凝聚态物理</h2>
+<ul>
+<li>石墨 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇐</mo><mtext>高温</mtext></mrow><annotation encoding="application/x-tex">\Leftarrow{高温}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">⇐</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord cjk_fallback">高温</span></span></span></span></span> 金刚石（天然钻石形状定）</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mfrac><mi>h</mi><msub><mi>p</mi><mtext>动量</mtext></msub></mfrac><mo>=</mo><mfrac><mi>h</mi><mrow><mi>m</mi><mi>v</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\lambda = \frac{h}{p_{\text{动量}}} = \frac{h}{mv}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.3612em;vertical-align:-0.4811em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord cjk_fallback mtight">动量</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1433em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4811em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2251em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span><span class="mord mathnormal mtight" style="margin-right:0.0359em;">v</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>（电子波动性）；<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mfrac><msup><mi>p</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>=</mo><mfrac><msup><mi>h</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>m</mi><msup><mi>λ</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">E = \frac{p^2}{2m} = \frac{h^2}{2m\lambda^2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.415em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.07em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">m</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4461em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">p</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-2.931em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.3629em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0179em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">m</span><span class="mord mtight"><span class="mord mathnormal mtight">λ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7463em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-2.931em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+<li>液体中，电子波干涉；<strong>晶体</strong>中，电子波干涉（√）</li>
+</ul>
+<h3 id="解释导电性：允带是否有电子">解释导电性：允带是否有电子</h3>
+<ul>
+<li>晶体管：\ce{Si}→全钢石结构，会共：饱和
+<ul>
+<li>\ce{Si}：\ce{P}（多一个电子，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>-type）、\ce{B}（少一个电子，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span></span></span></span>-type）→ 二极管</li>
+<li>1948 贝尔：晶体管 → 2015 IBM 7nm 台积电 2nm；1956 TAN 硬 → 2007 法 2014 LED×7 RGB</li>
+</ul>
+</li>
+<li><strong>摩尔定律</strong>：① 脱利、电子跑；② 延续50年、2016失效</li>
+</ul>
+<h3 id="扫描隧道显微镜">扫描隧道显微镜</h3>
+<ul>
+<li>1981 IBM 发明；1986 诺奖</li>
+<li>类似盲人摸 → \ce{Si(111)}</li>
+<li>原理：电子量子隧穿；高度灵敏 ⇒ 电流变化大 ⇒ 可得原子性质；微观尺度运动：扫描管（0.5pm / 2cm = 0.1μm / 4000m）</li>
+<li>超低湿、强磁场、超真空（平均自由程 1000km）</li>
+<li>原子定构：电子波 → 原子操纵：摆出特定结构</li>
+</ul>
+<hr>
+<h1>应用</h1>
+<ol>
+<li>分子电子学（最小电子器件），最高集成密度；分子作晶体管</li>
+<li>自旋电子学：超高密度信息存储</li>
+<li>超导：完全抗磁（★）；核磁共振（医院、保低温）
+<ul>
+<li>悬浮山（常温超导）：
+<ul>
+<li>方向1：找材料（零下100℃目标）</li>
+<li>方向2：原理探</li>
+</ul>
+</li>
+<li>原理：超导能隙，用扫描</li>
+</ul>
+</li>
+<li>量子比特：
+<ul>
+<li>问题：与外界有影响；任意一点可存储</li>
+<li>5d：拓扑量子计算 → 杯子=环（有圆）；对材料细节不关心，只求本质</li>
+</ul>
+</li>
+</ol>
+<div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;距离上次更新已过去&quot;,&quot;messageNext&quot;:&quot;天，文章内容可能已过时。&quot;,&quot;postUpdate&quot;:&quot;2026-07-20 20:04:11&quot;}" hidden></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://zhangxixi2008.github.io">zhangxixi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://zhangxixi2008.github.io/post/2113811160">http://zhangxixi2008.github.io/post/2113811160</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://zhangxixi2008.github.io" target="_blank">zhangxixi的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%89%A9%E7%90%86/">物理</a><a class="post-meta__tags" href="/tags/%E5%87%9D%E8%81%9A%E6%80%81%E7%89%A9%E7%90%86/">凝聚态物理</a><a class="post-meta__tags" href="/tags/%E5%8E%9F%E5%AD%90/">原子</a><a class="post-meta__tags" href="/tags/%E6%89%AB%E6%8F%8F%E9%9A%A7%E9%81%93%E6%98%BE%E5%BE%AE%E9%95%9C/">扫描隧道显微镜</a></div><div class="post-share"><div class="social-share" data-image="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260720152050908.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/post/1969052754" title="从试错到预测：先进材料"><img class="cover" src="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260720152050908.png" onerror="onerror=null;src='/img/404.png'" alt="cover of previous post" loading='lazy'><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">从试错到预测：先进材料</div></div><div class="info-2"><div class="info-item-1"> 此讲座笔记为本人手写版笔记经AI转成电子版  从试错到预测：先进材料 干刚成（港科广） 先进材料  ① 科幻中（振金、乌路、士本钠合金） ② 记忆材料：3D打印记忆 ③ 可自我修复材料：可逆化学键、手机屏幕 ④ 负折射率：光学|隐身材料 → 军事隐形 ⑤ 负泊松比力学材料（能量吸收性 + 形状贴合性）  材料研发发展史  旧石器时代：石头 ；新石器：磨制 + 陶器 青铜器时代：青铜 ；铁器：春秋 青铜：铜 + 锡 合金，→ 配比 数百年实践摸索 爱迪生电灯丝：6000多次植物纤维 人类文明 → 材料发现、发展、使用 ；试错 → 阻碍  现代困境  新型合金：多种合金、配方、配比 10年...</div></div></div></a><a class="pagination-related" href="/post/224571574" title="我的劳动偶像：黄仁勋与我的中国显卡梦"><img class="cover" src="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260718162710352.png" onerror="onerror=null;src='/img/404.png'" alt="cover of next post" loading='lazy'><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">我的劳动偶像：黄仁勋与我的中国显卡梦</div></div><div class="info-2"><div class="info-item-1"> 此文章为本人高二时的劳动作业  我的劳动偶像：黄仁勋与我的&quot;中国显卡梦&quot;  班级：E6 姓名：张霆希 学号：20230618   一、初识黄仁勋 我初中开始，就喜欢看科技新闻。记得高一上学期的11月，GPT-3横空出世。作为显卡教父，黄仁勋先生也出现在我的认知范围内。他是一名华人，又是AI时代最大的获益者，英伟达成为继微软和苹果后第三个万亿美金的公司。我慢慢开始欣赏这位企业家身上的闪光之处。以下是他的事例： 黄仁勋的故事：  餐厅洗碗工→科技巨头CEO： 一个男人，15岁在Denny’s餐厅打工擦桌子，30年后在同一家餐厅发布改变世界的GPU，这就是独属于华人的浪漫...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/post/2249083358" title="现代物理学科普讲座 笔记3"><img class="cover" src="/page_img/p8.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-16</div><div class="info-item-2">现代物理学科普讲座 笔记3</div></div><div class="info-2"><div class="info-item-1">现代物理学科普讲座 笔记3 狭义相对论 1971，两飞机反向飞，原子钟有时间误差 1864 麦克斯韦 完整电磁理论 可以预测光速不变 以太风测定实验：以太不存在 飞船发光，飞船上的人同时抵达左右，外面的人会看到不一样 因此：同一事件在不同观测者眼里为不同事件 方向不同、表面弯曲：透视原理 有质量的物体会弯曲时空 斜着运动：空间轴不平行，和角度有关 双胞胎问题：飞船上的人的路径更长 地球有质量，不同高度的物体时间不一样 广义相对论 为什么时空弯曲？   任何物理之前都有引力   牛顿理论：引力由质量决定   实际：引力不是真正的力 例子：  卫星落地面，不在中心 水星绕太阳轨道的偏差   ...</div></div></div></a><a class="pagination-related" href="/post/2291420317" title="新一代软机器与智能"><img class="cover" src="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260720152050908.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-19</div><div class="info-item-2">新一代软机器与智能</div></div><div class="info-2"><div class="info-item-1"> 此讲座笔记为本人手写版笔记经AI转成电子版  新一代软机器与智能 讲师：刘子顺 日期：3.19 一、职业挑战？  吊车问题 → 力学平衡计算  二、力学基础概念  应力（Stress）：σ=FA\boldsymbol{\sigma = \frac{F}{A}}σ=AF​（类比“压强”，力/面积） 应变（Strain）：ε=ΔLL0\boldsymbol{\varepsilon = \frac{\Delta L}{L_0}}ε=L0​ΔL​（形变与原长的比值） 强度、刚度、稳定性：材料/结构的力学性能指标  三、人体力学与生物应用  人体力学利用：高跟鞋问题（力学设计）、生物力学利用（如...</div></div></div></a><a class="pagination-related" href="/post/4159054256" title="现代物理学科普笔记1"><img class="cover" src="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260714212140048.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-14</div><div class="info-item-2">现代物理学科普笔记1</div></div><div class="info-2"><div class="info-item-1">现代物理学科普笔记1 https://www.bilibili.com/video/BV1cz421i7k8/ 量子纠缠 波粒二象性：叠加态（不测量就一直处于其中） 两个粒子：相互缠绕 衰变成2个：相互缠绕 会超越空间和时间 相互作用：对一个进行测量，同时决定另一个的结果 “测量坍塌效应” 量子纠缠不存在速度概念，是同时作用  实验： 远处的幽灵行动，速度下限是光速4个数量级 如何实现： 标准模型中，介质上限是光速 另一种解释：逻辑判断  寡妇模型： 对一个纠缠粒子测量会同时影响 手套模型： 打开一个盒子，就会立刻知道另一个盒子里是什么  如果是逻辑判断，那应该不变 但多次测量纠缠粒子，...</div></div></div></a><a class="pagination-related" href="/post/1504560524" title="现代物理学科普 笔记8"><img class="cover" src="https://raw.githubusercontent.com/zhangxixi2008/img/main/test/20260719224505920.png" alt="cover" loading='lazy'><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-19</div><div class="info-item-2">现代物理学科普 笔记8</div></div><div class="info-2"><div class="info-item-1">现代物理学科普 笔记8 暗物质 暗物质仅参与引力，不参与其他作用力 这种粒子就是：惰性中微子 费米子：构成物质 波色子：粒子相互作用 夸克：参与4种力 μ\muμ 子和 τ\tauτ 子很电子类似  夸克味变：质子和中子相互转化，会产生中微子 所以中微子只会由弱力产生 所以标准模型预测还有一种粒子存在  每一种粒子又有自己的反粒子 如：电子有电荷的正负 中微子的反粒子是手型不同 微观粒子由螺旋度，但观测者有关 右旋是顺时针 手性有左右，和观测者无关 电子和反电子的手性也不一样 所以正反电子按手性划分有4种类型，但只有两种参与弱力  所以还有两种产生的粒子，叫做惰性中微子 反应堆中微子反常...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">探究原子世界（华中科大 科英双） 5.7</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%9D%E8%81%9A%E6%80%81%E7%89%A9%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">凝聚态物理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E5%AF%BC%E7%94%B5%E6%80%A7%EF%BC%9A%E5%85%81%E5%B8%A6%E6%98%AF%E5%90%A6%E6%9C%89%E7%94%B5%E5%AD%90"><span class="toc-number">1.1.1.</span> <span class="toc-text">解释导电性：允带是否有电子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%AB%E6%8F%8F%E9%9A%A7%E9%81%93%E6%98%BE%E5%BE%AE%E9%95%9C"><span class="toc-number">1.1.2.</span> <span class="toc-text">扫描隧道显微镜</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">应用</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url(/img/footimg.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By zhangxixi</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div><div class="footer_custom_text">你的未来定闪闪发光、光芒万丈！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><script src="/js/tw_cn.js?v=5.5.5-b1"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Please search here..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.5-b1"></script></div></div></body></html>
